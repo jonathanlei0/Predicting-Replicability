@@ -1,0 +1,19 @@
+<template name="CalculatorWSWM">
+    <div id="welcome-instruction" class="instruction">
+        {{> TutorialHeader step='3'}}
+        <br>
+        <div>
+            <h5 style="float: right;"> 
+                <!--table style="border:3px outset; border-spacing: 0px"><tr><td-->
+                    &nbsp;Suggested reading time: 2.0 mins&nbsp;
+                <!--/td></tr></table-->
+            </h5>
+            <h4 style="float: left;"> <strong> Calculator </strong> </h4>
+        </div>
+        <div style="clear: both;"></div>
+        <h5> We are providing a simple reward calculator below. Using this calculator, you can specify your prediction and point allocation as well as those of the other two participants. The calculator will show your reward. You can play with this calculator to see how your reward changes with the others' decisions and yours.
+        </h5>
+        <br> {{> CalculatorGadgetWSWM}}
+        <br> {{> BidirectNavigation prevPage="MechanismWSWM" nextPage="EndTutorialWSWM"}}
+    </div>
+</template>

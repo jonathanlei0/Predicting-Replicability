@@ -1,0 +1,130 @@
+<template name="MechanismWSWM">
+    <div id="welcome-instruction" class="instruction">
+        {{> TutorialHeader step='2'}}
+        <br>
+        <div>
+            <h5 style="float: right;"> 
+                <!--table style="border:3px outset; border-spacing: 0px"><tr><td-->
+                    &nbsp;Suggested reading time: 3.5 mins&nbsp;
+                <!--/td></tr></table-->
+            </h5>
+            <h4 style="float: left;"> <strong> Reward Mechanism</strong> </h4>
+        </div>
+        <div style="clear: both;"></div>
+        <h5> Our reward mechanism determines the points you'll obtain in a forecasting game based on both your decisions and others'. <!--To see how your prediction and point allocation influence your reward, consider an example where you are in a game with players Alice and Bob on predicting how likely <em>Amazon stock price will go up next week</em>.--></h5>
+        <br>
+        <h5><strong>1. How does your prediction affect your reward?</strong></h5>
+        <h5> In general, our mechanism measures your relative prediction accuracy. The more accurate your prediction is, compared with other participants', the more points you win. 
+        <br><br><strong>Example:</strong> Suppose only you, Alice and Bob were playing the game. Alice and Bob each allocated 10 points on this event. Alice predicted 0.9 for the event to happen, while Bob predicted 0.2. You can slide your prediction bar below to see how your reward changes with your prediction: </h5>
+        <div align="center">
+            <h5>
+                <table width="100%" id="example1" border="1" align="center">
+                    <tr>
+                        <th>Player</th>
+                        <th>Prediction</th>
+                        <th>Points</th>
+                        <td width="65%" rowspan="4">
+                            <strong>Result</strong>
+                            <center>
+                            <table border="1" style="background: #FFF;">
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td> If the price went up</td>
+                                    <td> If the price didn't go up</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Your net payoff</strong></td>
+                                    <td><strong class="netGain1" style="color: red;"></strong> <strong class="netLose1" style="color: green;"></strong> points</td>
+                                    <td><strong class="netGain2" style="color: red;"></strong> <strong class="netLose2" style="color: green;"></strong> points</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Your final points</strong></td>
+                                    <td><strong class="total1" style="color: blue;"></strong> </td>
+                                    <td><strong class="total2" style="color: blue;"></strong> </td>
+                                </tr>
+                            </table>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>You</td>
+                        <td>
+                            <input type="range" id="exam1Pred1" min="0" max="1.0" step="0.05" value="0.5">
+                            <output id="exam1Pred1Box">0.5</output>
+                        </td>
+                        <td id="exam1Point1">10</td>
+                    </tr>
+                    <tr>
+                        <td>Alice</td>
+                        <td id="exam1Pred2">0.9</td>
+                        <td id="exam1Point2">10</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td id="exam1Pred3">0.3</td>
+                        <td id="exam1Point3">10</td>
+                    </tr>
+                </table>
+            </h5>
+        </div>
+        <!--h5>By sliding the bar, you can see that if you predict 0.6 while the price doesn't go up, you can still win points as Alice's prediction 0.7 is less accurate than yours. </h5-->
+        <br>
+        <h5><strong>2. How does your point allocation influence your reward?</strong></h5>
+        <h5>In our mechanism, the more points you allocate, the more points you may win or lose. The mechanism will scale your reward according to your and others’ point allocations.
+        <br><br><strong>Example:</strong>  Suppose you predicted 0.0 for the event to happen, while Alice and Bob both predicted 1.0. You can slide your point allocation bar below to see how your reward changes with your point allocation: </h5>
+        <div align="center">
+            <h5>
+                <table width="100%" id="example2" border="1" align="center">
+                    <tr>
+                        <th>Player</th>
+                        <th>Pred.</th>
+                        <th>Points</th>
+                        <td width="65%" rowspan="4">
+                            <strong>Result</strong>
+                            <center>
+                            <table border="1" style="background: #FFF;">
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td> If the price went up</td>
+                                    <td> If the price didn't go up</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Your net payoff</strong></td>
+                                    <td><strong class="netGain1" style="color: red;"></strong> <strong class="netLose1" style="color: green;"></strong> points</td>
+                                    <td><strong class="netGain2" style="color: red;"></strong> <strong class="netLose2" style="color: green;"></strong> points</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Your final points</strong></td>
+                                    <td><strong class="total1" style="color: blue;"></strong> </td>
+                                    <td><strong class="total2" style="color: blue;"></strong> </td>
+                                </tr>
+                            </table>
+                            </center>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>You</td>
+                        <td id="exam2Pred1">0.0</td>
+                        <td>
+                            <input type="range" id="exam2Point1" min="0.0" max="25" step="1" value="10">
+                            <output id="exam2Point1Box">10</output></td>
+                    </tr>
+                    <tr>
+                        <td>Alice</td>
+                        <td id="exam2Pred2">1.0</td>
+                        <td id="exam2Point2">10</td>
+                    </tr>
+                    <tr>
+                        <td>Bob</td>
+                        <td id="exam2Pred3">1.0</td>
+                        <td id="exam2Point3">10</td>
+                    </tr>
+                </table>
+            </h5>
+        </div>
+        <br>
+        {{> BidirectNavigation prevPage="ExampleWSWM" nextPage="CalculatorWSWM"}}
+    </div>
+</template>

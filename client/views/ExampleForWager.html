@@ -1,0 +1,25 @@
+<template name="ExampleForWager">
+    <div id="welcome-instruction" class="instruction">
+        {{> TutorialHeader step='1'}}
+        <br>
+        <div>
+            <h5 style="float: right;"> 
+                <!--table style="border:3px outset; border-spacing: 0px"><tr><td-->
+                    &nbsp;Suggested reading time: 1.5 mins&nbsp;
+                <!--/td></tr></table-->
+            </h5>
+            <h4 style="float: left;"> <strong> Experimental Procedure </strong> </h4>
+        </div>
+        <div style="clear: both;"></div>
+        <h5> Our experiment consists of 3 independent rounds. In each round you are given 25 experimental points and 5 real-world events to forecast. For each event, you need to specify a number between 0 and 1 representing how likely you think the event will happen. Meanwhile, you have to allocate <strong>ALL</strong> the 25 experimental points across the 5 events to support your predictions. An example event is as follows:</h5>
+        <form id="exampleForm" onSubmit="return false">
+            <table id="taskTable" border="1" class="tasktable" align="center" style="border-spacing: 1px">
+                {{#each tasks}} {{>taskV3}} {{/each}}
+            </table>
+        </form>
+        <br>
+        <h4><strong> Forecasting Game Rules</strong></h4>
+        <h5>
+        For each event, you are participating in a forecasting game with 10~15 other participants. You may gain or lose points in the game depending on your prediction and point allocation, other participants’ predictions and point allocations, and the realized outcome of the event in the future. We will use a betting mechanism to determine how many points you win or lose in the game. At the end of the games, we’ll convert the  experimental points you have into USD at the exchange rate of <strong style="color: red;">1 point to 1 cent as your bonus payment</strong>. The exact mechanism is introduced on the next page. <strong > When making your decisions, you are allowed to use any resource / method,</strong> such as searching the Internet and asking others.</h5>
+    </div>
+</template>

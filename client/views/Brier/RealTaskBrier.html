@@ -1,0 +1,21 @@
+<template name="RealTaskBrier">
+    <div id="welcome-instruction" class="instruction">
+        <h2 style="margin: 0 0 0px">Round {{setNum}}</h2>
+        <hr style="border-width: 2px; margin: 1px 0px 15px;">
+        <h4> In this round, you are given 5 real-world events to predict. <br> Please specify how likely each event will happen from 0 to 1. 
+        </h4>
+        <div id="formArea" style="padding: 0px 0px 15px 0px;">
+            <form id="taskForm" onSubmit="return false">
+                <table id="taskTable{{num}}" border="1" align="center" style="border-spacing: 1px">
+                    {{#each tasks}} {{>taskBrier}} {{/each}}
+                </table>
+                <br>
+                <div id="submitArea" style="text-align: center;">
+                    <button type="submit" class="btn" id="submit"> Comfirm and go to next round </button>
+                </div>
+            </form>
+        </div>
+        <!--h5> Following is a reward calculator for your reference:</h5--> 
+        {{> CalculatorGadgetBrier}}
+    </div>
+</template>

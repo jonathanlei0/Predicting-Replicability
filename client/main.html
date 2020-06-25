@@ -1,0 +1,30 @@
+<template name="MainLayout">
+    <head>
+    	<title>Predicting Replicability</title>
+    </head>
+    <body>
+
+    <div id="templatemo_header_wrapper">
+    	<div id="templatemo_header">
+        	<div id="site_title"><a href="/">Predicting Replicability</a></div>
+        </div>
+    </div>
+
+    <div id="templatemo_main_wrapper">
+    	<div id="templatemo_main">
+    		<div id="content">
+                <div id="home" class="section">
+                    {{>yield}}
+                </div> <!-- END of Home -->
+            </div>
+        </div>
+    </div>
+
+    <div id="templatemo_footer_wrapper">
+    	<div id="templatemo_footer">
+        	<p>Copyright © 2020 CopyrightNameInc</p>
+        </div>
+    </div>
+
+    </body>
+</template>

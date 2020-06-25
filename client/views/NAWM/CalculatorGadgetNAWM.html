@@ -1,0 +1,63 @@
+<template name="CalculatorGadgetNAWM">
+    <h5 style="text-align: center;"> <strong> Calculator </strong></h5>
+    <form id="CalculatorForm" onSubmit="return false" oninput="calPred1Box.value=parseFloat(calPred1Bar.value).toFixed(2); calPred2Box.value=parseFloat(calPred2Bar.value).toFixed(2); calPred3Box.value=parseFloat(calPred3Bar.value).toFixed(2)">
+        <table align="center" width="100%" border="1">
+            <tr>
+                <th>Player</th>
+                <th>Prediction</th>
+                <th>Points</th>
+                <td rowspan="4" width="60%" style="padding: 5px; background: #FFFFFF;">
+                    <h4> <strong>Your decisions</strong></h4>
+                    <h5>
+                        &nbsp;&bull;&nbsp;&nbsp;Your prediction: {{pred1}}; your point allocation: {{point1}} points.<br>
+                        &nbsp;&bull;&nbsp;&nbsp;Alice's prediction: {{pred2}}; her point allocation: {{point2}} points.<br>
+                        &nbsp;&bull;&nbsp;&nbsp;Bob's prediction: {{pred3}}; his point allocation: {{point3}} points.<br>
+                    </h5>
+                    <h4> <strong>Results</strong></h4>
+                    <h5>
+                        &nbsp;&bull;&nbsp;&nbsp;If the event happened, you <strong id="netGain1" style="color: red;"></strong> <strong id="netLose1" style="color: green;"></strong> points.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You have a total of <strong style="color: blue;">{{pay1}}</strong> points at the end of this game.<br>
+                        &nbsp;&bull;&nbsp;&nbsp;If the event didn't happen, you <strong id="netGain2" style="color: red;"></strong> <strong id="netLose2" style="color: green;"></strong> points.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You have a total of <strong style="color: blue;">{{pay2}}</strong> points at the end of this game.
+                    </h5>
+                </td>
+            </tr>
+            <tr>
+                <td>You</td>
+                <td style="height: 55px;">
+                    <h5 style="text-align: center;">
+                        <input type="range" id="calPred1Bar" name="calPred1Bar" min="0.0" max="1.0" step="0.01" value="0.5">
+                        <output id="calPred1Box" name="calPred1Box" for="calPred1Bar">0.50</output>
+                    </h5>
+                </td>
+                <td>
+                    <input type="number" id="calPoint1" name="calPoint1" min="0" max="25" step="1" value="10" style="font-size: 15px;">
+                </td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td style="height: 55px;">
+                    <h5 style="text-align: center;">
+                        <input type="range" id="calPred2Bar" name="calPred2Bar" min="0.0" max="1.0" step="0.01" value="0.5">
+                        <output id="calPred2Box" name="calPred2Box" for="calPred2Bar">0.50</output>
+                    </h5>
+                </td>
+                <td>
+                    <input type="number" id="calPoint2" name="calPoint2" min="0" max="25" step="1" value="10" style="font-size: 15px;">
+                </td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>
+                    <h5 style="text-align: center;">
+                        <input type="range" id="calPred3Bar" name="calPred3Bar" min="0.0" max="1.0" step="0.01" value="0.5">
+                        <output id="calPred3Box" name="calPred3Box" for="calPred3Bar">0.50</output>
+                    </h5>
+                </td>
+                <td>
+                    <input type="number" id="calPoint3" name="calPoint3" min="0" max="25" step="1" value="10" style="font-size: 15px;">
+                </td>
+            </tr>
+        </table>
+    </form>
+</template>

@@ -1,0 +1,37 @@
+<template name="CalculatorGadgetBrier">
+    <h5 style="text-align: center;"> <strong> Calculator </strong></h5>
+    <form id="CalculatorForm" onSubmit="return false" oninput="calPredBox.value=parseFloat(calPredBar.value).toFixed(2);">
+        <table align="center" width="800" border="1">
+            <tr>
+                <td>
+                    <h5 style="text-align: center;margin: 0px;"><strong>Your prediction on an event</strong></h5>
+                </td>
+                <td colspan="2">
+                    <h5 style="text-align: center;margin: 0px;"><strong>Your bonus payment on the event</strong></h5>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2">
+                    <h5 style="text-align: center;">
+                    <input type="range" id="calPred" name="calPredBar" min="0.0" max="1.0" step="0.01" value="0.5">
+                    <output id="calPredBox" name="calPredBox" for="calPredBar">0.50</output>
+                    </h5>
+                </td>
+                <td>
+                    <h5 style="text-align: center; margin: 0px;"> If the event happened </h5>
+                </td>
+                <td>
+                    <h5 style="text-align: center; margin: 0px;"> If the event didn't happen</h5>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5 style="text-align: center; margin: 0px;"> <strong id="netGain" style="color: red;"> {{netGain1}}</strong> cent</h5>
+                </td>
+                <td>
+                    <h5 style="text-align: center; margin: 0px;"><strong id="netGain" style="color: red;"> {{netGain2}}</strong> cent</h5>
+                </td>
+            </tr>
+        </table>
+    </form>
+</template>

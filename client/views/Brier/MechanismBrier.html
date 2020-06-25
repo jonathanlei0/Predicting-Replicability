@@ -1,0 +1,33 @@
+<template name="MechanismBrier">
+    <div id="welcome-instruction" class="instruction">
+        {{> TutorialHeader step='2'}}
+        <br>
+        <div>
+            <h5 style="float: right;"> 
+                <!--table style="border:3px outset; border-spacing: 0px"><tr><td-->
+                    &nbsp;Suggested reading time: 2.5 mins&nbsp;
+                <!--/td></tr></table-->
+            </h5>
+            <h4 style="float: left;"> <strong> Reward Mechanism</strong> </h4>
+        </div>
+        <div style="clear: both;"></div>
+        
+        <h5>For each event, you will get a score as follows: <br><br>
+        Suppose that you predicted the event to happen with a 0.6 chance, and it not to happen with a 0.4 chance.
+        <br>
+        <br>
+        If the event indeed happened, you would receive a score of</h5>
+        <h5>
+        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1- (1-0.6)*(1-0.6) = 0.84.</strong></h5>
+        <h5>
+        If it didn't happen, you would receive a score</h5>
+        <h5>
+        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1- (1-0.4)*(1-0.4) = 0.64.</strong></h5>
+        <h5>
+        <br>
+        Then, <strong style="color: red;"> we will multiple 6.6667 to your score as your bonus payment in cent</strong>. For example, if you got a score of 0.84, you will receive 0.84 * 6.6667 = 5.60 cents on this event. Your total bonus payment of this HIT is the sum of your bonus payments over all events. <br>
+        <br>
+        The table below shows the bonus payments (in cent) of different predictions according to this scoring method:</h5> {{> BrierScoreTable}}
+    </div>
+    {{> BidirectNavigation prevPage="ExampleBrier" nextPage="CalculatorBrier"}}
+</template>

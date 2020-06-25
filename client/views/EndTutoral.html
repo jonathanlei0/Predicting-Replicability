@@ -1,0 +1,26 @@
+<template name="EndTutorial">
+    <div id="welcome-instruction" class="instruction">
+        {{> TutorialHeader step='4'}}
+        <br>
+        <h5> 
+            <strong style="color: red;">Congratulations!</strong> You have just completed the tutorial. 
+            Before entering the forecasting games, please note:
+        </h5>
+        <br>
+        <h5><strong>&nbsp;&bull;&nbsp;&nbsp;The experiment has 3 independent rounds.</strong></h5>
+        <br>
+        <h5><strong>&nbsp;&bull;&nbsp;&nbsp;During the experiment you cannot go back to previous round nor the tutotial.</strong></h5>
+        {{#if this.Brier}} 
+        {{else}}
+            <br>
+            <h5><strong>&nbsp;&bull;&nbsp;&nbsp;In each round, you’re given {{totalPoints}} experimental points to allocate across your predictions for {{eventsPerRound}} events.</strong></h5>
+        {{/if}}
+        <br> 
+        <h5><strong>&nbsp;&bull;&nbsp;&nbsp;Your bonus payments will be paid out within a week after all future event outcomes are realized.
+        </strong></h5>
+        <br>
+        <h5>If you are ready, please click "Next >>" and enter the forecasting games.
+        </h5>
+    </div>
+    {{> BidirectNavigation prevPage=this.prevPage nextPage=this.nextPage}}
+</template>
