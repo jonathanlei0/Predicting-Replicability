@@ -1,2 +1,2 @@
-# wager_exp
-experimenting on wagering mechanisms
+# Predicting Replicability
+A survey developed with Meteor to collect data to predict replicability
