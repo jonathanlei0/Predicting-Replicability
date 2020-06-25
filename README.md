@@ -1,2 +1,2 @@
-# Predicting-Replicability
-Test. 
+# wager_exp
+experimenting on wagering mechanisms
