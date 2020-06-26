@@ -334,3 +334,21 @@ Router.route('/welcome', function() {
     this.layout('MainLayout');
     this.render('welcome');
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router.route('/SurveyInstruction', function() {
+    this.layout('MainLayout');
+    this.render('SurveyInstruction');
+});
