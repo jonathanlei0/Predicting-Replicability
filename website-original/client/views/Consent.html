@@ -1,0 +1,133 @@
+<template name="Consent">
+  <div id="welcome-instruction" class="instruction">
+    <div
+      id="consentDiv"
+      style="
+        overflow: auto;
+        height: auto;
+        background-color: #fff;
+        border: 2px inset;
+      "
+    >
+      <div class=".visible-print" style="margin: 30px 50px 0px;">
+        <h4 align="center"><strong> Consent for Participation </strong></h4>
+        <h5>
+          <b>
+            <i
+              ><u>
+                What is the purpose of this research?
+              </u>
+            </i>
+          </b>
+        </h5>
+        <p>
+          We hope to improve the ability to forecast replications and identify
+          effective tools toobtain confidence on social science claims, with
+          economical and scalable approach. The term “replication” refers to
+          whether repetition of a research study by some independent research
+          group will lead to the same result as the original study. We hope that
+          we can crowdsourcing the assessment of social science studies to
+          people on online platforms and can use machine learning techniques to
+          generate accurate predictions about the replicability of the studies
+          using the inputs obtained from these people. Ultimately, we hope to
+          help improve the quality of social science research.
+        </p>
+        <br />
+        <h5>
+          <b>
+            <i>
+              <u>
+                What can I expect if I take part in this research?
+              </u>
+            </i>
+          </b>
+        </h5>
+        <p>
+          You will take part in this research online. You will enter an online
+          survey webpage wedesigned and complete a survey process. The whole
+          process takes about 1 hour andthe exact time depends on how fast you
+          read materials and answer questions.
+        </p>
+        <p>
+          In our website, you will be asked to read the summaries and some
+          sections of a few scientific papers. After reading the materials for
+          each paper, you will be asked somequestions about the accessibility of
+          the writing and the plausibility of the findings in the paper. You
+          will be asked to do some simple summarizing tasks, and to make
+          predictions about the replicability of the main findings of the paper.
+          At the end, you will be asked to complete a brief exit survey about
+          your age, gender, highest degree, possible feedback for our study and
+          our online survey.
+        </p>
+        <p>
+          You will not be asked to interact with any real person. We will
+          present the instructions of how to finish the survey in the entering
+          page of our website.
+        </p>
+        <br />
+        <h5>
+          <b
+            ><i>
+              What should I know about a research study?
+            </i>
+          </b>
+        </h5>
+        <li>
+          Whether you participate or not is voluntary.
+        </li>
+        <li>
+          Your participation is completely voluntary.
+        </li>
+        <li>
+          You can choose not to take part.
+        </li>
+        <li>
+          You can agree to take part and later change your mind.
+        </li>
+        <li>
+          Your decision will not be held against you.
+        </li>
+        <li>
+          Your refusal to participate will not result in any consequences or any
+          loss of benefits that you are otherwise entitled to receive.
+        </li>
+        <li>
+          You can ask all the questions you want before you decide.
+        </li>
+        <br />
+        <h5>
+          <i>
+            <b>
+              <u>
+                Who can I talk to?
+              </u>
+            </b>
+          </i>
+        </h5>
+        <p>
+          If you have questions, concerns, or complaints, or think the research
+          has hurt you, talk to the research team at
+          <a href="mailto:social_experiments@seas.harvard.edu"
+            >social_experiments@seas.harvard.edu</a
+          >
+        </p>
+        <br />
+        <br />
+        You can save or print a copy of this screen for your record.
+        <button id="printBtn" onclick="window.print();return false;">
+          Print
+        </button>
+      </div>
+      <br />
+    </div>
+    <p style="font-size: 15px; margin: 20px 50px 0px;">
+      <strong>
+        If you agree to take part in this research with full knowledge of all
+        foregoing, please click the "Confirm and Proceed" button below!
+      </strong>
+    </p>
+  </div>
+  <br />
+  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage=this.nextPage
+  prevRemoved=true}}
+</template>

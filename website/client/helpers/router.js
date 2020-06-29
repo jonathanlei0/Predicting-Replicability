@@ -106,249 +106,27 @@ Router.route('/WelcomeForAll', function() {
 });
 
 
+
+
+
+
 //Brier*************************************************
 Router.route('/WelcomeBrier', function() {
     this.layout('MainLayout');
     this.render('WelcomeBrier');
 });
 
-Router.route('/ConsentBrier', function() {
+Router.route('/Consent', function() {
     this.layout('MainLayout');
-    this.render('ConsentBrier');
+    this.render('Consent');
 });
-
-Router.route('/ExampleBrier', function() {
-    this.layout('MainLayout');
-    this.render('ExampleBrier');
-});
-
-Router.route('/MechanismBrier', function() {
-    this.layout('MainLayout');
-    this.render('MechanismBrier');
-});
-
-Router.route('/CalculatorBrier', function() {
-    this.layout('MainLayout');
-    this.render('CalculatorBrier');
-});
-
-Router.route('/EndTutorialBrier', function() {
-    this.layout('MainLayout');
-    this.render('EndTutorialBrier');
-});
-
-Router.route('/RealTaskBrier', function() {
-    this.layout('MainLayout');
-    this.render('RealTaskBrier');
-});
-
-
-//BrierConfidence****************************************
-Router.route('/WelcomeBC', function() {
-    this.layout('MainLayout');
-    this.render('WelcomeBC');
-});
-
-Router.route('/ConsentBC', function() {
-    this.layout('MainLayout');
-    this.render('ConsentBC');
-});
-
-Router.route('/ExampleBC', function() {
-    this.layout('MainLayout');
-    this.render('ExampleBC');
-});
-
-Router.route('/MechanismBC', function() {
-    this.layout('MainLayout');
-    this.render('MechanismBC');
-});
-
-Router.route('/CalculatorBC', function() {
-    this.layout('MainLayout');
-    this.render('CalculatorBC');
-});
-
-Router.route('/EndTutorialBC', function() {
-    this.layout('MainLayout');
-    this.render('EndTutorialBC');
-});
-
-Router.route('/RealTaskBC', function() {
-    this.layout('MainLayout');
-    this.render('RealTaskBC');
-});
-
-//BrierConfidenceWeighted****************************************
-Router.route('/WelcomeBCW', function() {
-    this.layout('MainLayout');
-    this.render('WelcomeBCW');
-});
-
-Router.route('/ConsentBCW', function() {
-    this.layout('MainLayout');
-    this.render('ConsentBCW');
-});
-
-Router.route('/ExampleBCW', function() {
-    this.layout('MainLayout');
-    this.render('ExampleBCW');
-});
-
-Router.route('/MechanismBCW', function() {
-    this.layout('MainLayout');
-    this.render('MechanismBCW');
-});
-
-Router.route('/CalculatorBCW', function() {
-    this.layout('MainLayout');
-    this.render('CalculatorBCW');
-});
-
-Router.route('/EndTutorialBCW', function() {
-    this.layout('MainLayout');
-    this.render('EndTutorialBCW');
-});
-
-Router.route('/RealTaskBCW', function() {
-    this.layout('MainLayout');
-    this.render('RealTaskBCW');
-});
-
-//NAWM********************************************************
-Router.route('/ConsentNAWM', function() {
-    this.layout('MainLayout');
-    this.render('ConsentNAWM');
-});
-
-Router.route('/ExampleNAWM', function() {
-    this.layout('MainLayout');
-    this.render('ExampleNAWM');
-});
-
-Router.route('/MechanismNAWM', function() {
-    this.layout('MainLayout');
-    this.render('MechanismNAWM');
-});
-
-Router.route('/CalculatorNAWM', function() {
-    this.layout('MainLayout');
-    this.render('CalculatorNAWM');
-});
-
-Router.route('/EndTutorialNAWM', function() {
-    this.layout('MainLayout');
-    this.render('EndTutorialNAWM');
-});
-
-Router.route('/RealTaskNAWM', function() {
-    this.layout('MainLayout');
-    this.render('RealTaskNAWM');
-});
-
-
-//WSWM********************************************************
-Router.route('/ConsentWSWM', function() {
-    this.layout('MainLayout');
-    this.render('ConsentWSWM');
-});
-
-Router.route('/ExampleWSWM', function() {
-    this.layout('MainLayout');
-    this.render('ExampleWSWM');
-});
-
-Router.route('/MechanismWSWM', function() {
-    this.layout('MainLayout');
-    this.render('MechanismWSWM');
-});
-
-Router.route('/CalculatorWSWM', function() {
-    this.layout('MainLayout');
-    this.render('CalculatorWSWM');
-});
-
-Router.route('/EndTutorialWSWM', function() {
-    this.layout('MainLayout');
-    this.render('EndTutorialWSWM');
-});
-
-Router.route('/RealTaskWSWM', function() {
-    this.layout('MainLayout');
-    this.render('RealTaskWSWM');
-});
-
-
-
-Router.route('/calculator', function() {
-    this.layout('MainLayout');
-    this.render('calculator');
-});
-
-Router.route('/consent', function() {
-    this.layout('MainLayout');
-    this.render('consent');
-});
-
-Router.route('/end', function() {
-    this.layout('MainLayout');
-    this.render('end');
-});
-
-Router.route('/endTutorial', function() {
-    this.layout('MainLayout');
-    this.render('endTutorial');
-});
-
-Router.route('/error', function() {
-    this.layout('MainLayout');
-    this.render('error');
-});
-
-Router.route('/example', function() {
-    this.layout('MainLayout');
-    this.render('example');
-});
-
-Router.route('/NAWMTutorial', function() {
-    this.layout('MainLayout');
-    this.render('NAWMTutorial');
-});
-
-Router.route('/payment', function() {
-    this.layout('MainLayout');
-    this.render('payment');
-});
-
-Router.route('/preview', function() {
-    this.layout('MainLayout');
-    this.render('preview');
-});
-
-Router.route('/RealTask', function() {
-    this.layout('MainLayout');
-    this.render('RealTask');
-});
-
-Router.route('/welcome', function() {
-    this.layout('MainLayout');
-    this.render('welcome');
-});
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 Router.route('/SurveyInstruction', function() {
     this.layout('MainLayout');
     this.render('SurveyInstruction');
 });
+
+
+
+

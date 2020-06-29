@@ -1,11 +1,11 @@
-/* SLIMBOX */
+/* SLIMBOX
 
 /* Credit: http://www.templatemo.com */
+
 
 body {
   margin: 0;
   padding: 0;
-  /*color: #e2e2e2;*/
   font-size: 14px;
   line-height: 1.6em;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
@@ -27,7 +27,6 @@ ul,
 li {
   padding: 0;
   margin: 0;
-  /*list-style:none;*/
 }
 
 h1,
@@ -40,11 +39,15 @@ h6 {
   font-weight: normal;
 }
 
+
+
 h1 {
   font-size: 36px;
   margin: 0 0 30px;
   padding: 5px 0;
 }
+
+
 
 h2 {
   font-size: 24px;
@@ -85,9 +88,6 @@ p {
   text-align: left;
   color: #000;
 }
-
-/*p a, p a:link, p a:visited { color: #00CCFF; font-weight: normal; text-decoration: none }*/
-
 p a,
 p a:link,
 p a:visited {
@@ -410,7 +410,6 @@ a.header {
   -moz-border-radius-bottomleft: 0px;
   border-bottom-left-radius: 0px;
   border: 2px solid #b6b6b6;
-  /*color:#666666;*/
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 15px;
   font-weight: bold;
@@ -418,7 +417,6 @@ a.header {
   height: 40px;
   line-height: 40px;
   padding: 0px 40px 0px;
-  /*width: 121px;*/
   text-indent: 0px;
   text-decoration: none;
   text-align: center;
@@ -502,17 +500,13 @@ img {
 
 #templatemo_main_wrapper {
   width: 1000px;
-  /*height: 2000px;*/
   margin: auto;
-  /*padding: 9px;
-    background: url(/images/templatemo_content_bg.png) no-repeat;
-    background-size: 100% 100%;*/
+    background-size: 100% 100%;
   box-shadow: 0px 0px 10px gray;
 }
 
 #templatemo_main {
   width: 1000px;
-  /*height: 2000px;*/
   margin: auto;
   overflow: hidden;
 }
@@ -571,9 +565,7 @@ img {
   position: relative;
   float: left;
   width: 1000px;
-  /*height: 2000px;*/
   margin-right: 20px;
-  /*background: #d3d3d3;*/
 }
 
 .section_with_padding {
@@ -972,9 +964,7 @@ td {
 }
 
 table.bordertable {
-  /*border: 5px outset;*/
   border-collapse: collapse;
-  /*padding:3px;*/
   text-align: center;
   color: #000;
 }
@@ -992,17 +982,6 @@ table.tasktable td {
   padding: 0px 5px 0px;
   vertical-align: middle;
 }
-
-/*
-table.bordertable th
-{
-	border:1px solid #000;
-	border-collapse:collapse;
-	padding:3px;
-	text-align: center;
-	color: #000;
-}*/
-
 table.nobordertable {
   border: none;
   padding: 3px;
@@ -1028,10 +1007,6 @@ table.nobordertable td {
   overflow: hidden;
   width: 7000px;
   position: relative;
-  /*height: 3000px;*/
-  /*background: #d3d3d3;*/
-  /*background: #FFF3E0;*/
   padding-bottom: 100px;
   background: #fff6e5;
-  /*background: #FeF9E7;*/
-}
+} 
