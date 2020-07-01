@@ -1,30 +1,20 @@
 <template name="MainLayout">
-    <head>
-    	<title>Predicting Replicability</title>
-    </head>
-    <body>
-
-    <div id="templatemo_header_wrapper">
-    	<div id="templatemo_header">
-        	<div id="site_title"><a href="/">Predicting Replicability</a></div>
-        </div>
-    </div>
-
-    <div id="templatemo_main_wrapper">
-    	<div id="templatemo_main">
-    		<div id="content">
-                <div id="home" class="section">
-                    {{>yield}}
-                </div> <!-- END of Home -->
+  <head>
+    <title>Predicting Replicability</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm py-5">
+          <div class="card">
+            <div class="p-5">
+              {{>yield}}
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
-    <div id="templatemo_footer_wrapper">
-    	<div id="templatemo_footer">
-        	<p>Copyright © 2020 CopyrightNameInc</p>
-        </div>
-    </div>
-
-    </body>
+    <i class="fa fa-user"></i>
+  </body>
 </template>

@@ -1,13 +1,24 @@
 <template name="BidirectNavigation">
-  <div id="buttonArea" style="text-align: center;">
+  <br />
+  <div style="text-align: center;">
     {{#if this.prevRemoved}} {{else}} {{#if this.prevText}}
-    <button href="" class="btn" id="prevBtn">{{prevText}}</button>
+    <button href="" class="btn btn-lg btn-outline-primary" id="prevBtn">
+      {{prevText}}
+    </button>
+
     {{else}}
-    <button href="" class="btn" id="prevBtn">&lt;&lt; Prev</button>
+    <button href="" class="btn btn-lg btn-outline-primary" id="prevBtn">
+      Back
+      <i class="fas fa-chevron-left"></i>
+    </button>
     {{/if}} {{/if}} &nbsp; {{#if this.nextText}}
-    <button href="" class="btn" id="nextBtn">{{nextText}}</button>
+    <button href="" class="btn btn-lg btn-outline-primary" id="nextBtn">
+      {{nextText}}
+    </button>
     {{else}}
-    <button href="" class="btn" id="nextBtn">Next &gt;&gt;</button>
+    <button href="" class="btn btn-lg btn-outline-primary" id="nextBtn">
+      Next
+    </button>
     {{/if}}
   </div>
 </template>
