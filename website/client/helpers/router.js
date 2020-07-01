@@ -111,9 +111,9 @@ Router.route('/WelcomeForAll', function() {
 
 
 //Brier*************************************************
-Router.route('/WelcomeBrier', function() {
+Router.route('/Error', function() {
     this.layout('MainLayout');
-    this.render('WelcomeBrier');
+    this.render('Error');
 });
 
 Router.route('/Consent', function() {

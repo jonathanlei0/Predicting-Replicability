@@ -1,6 +1,5 @@
 <template name="SurveyInstruction">
-  <h1>Survey Instruction</h1>
-  <br />
+  {{>Title title="Survey Instruction"}}
   <h4>
     This task has two phases.
   </h4>
@@ -18,7 +17,6 @@
     answer some simple questions. This time, you will be able to make comparison
     between the two articles before answering your questions.
   </p>
-  <br />
   {{> BidirectNavigation nextText="Confirm and Proceed!" nextPage="Consent"
-  prevRemoved=true}}
+  prevPage="Consent"}}
 </template>
