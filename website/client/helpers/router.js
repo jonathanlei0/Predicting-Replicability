@@ -106,16 +106,6 @@ Router.route('/WelcomeForAll', function() {
 });
 
 
-
-
-
-
-//Brier*************************************************
-Router.route('/Error', function() {
-    this.layout('MainLayout');
-    this.render('Error');
-});
-
 Router.route('/Consent', function() {
     this.layout('MainLayout');
     this.render('Consent');
@@ -128,5 +118,19 @@ Router.route('/SurveyInstruction', function() {
 });
 
 
+Router.route('/Error', function() {
+    this.layout('MainLayout');
+    this.render('Error');
+});
+
+//Paper1************************************************
+Router.route('/Paper1Start', function() {
+    this.layout('MainLayout');
+    this.render('Paper1Start');
+});
 
 
+Router.route('/Paper1Study1', function() {
+    this.layout('MainLayout');
+    this.render('Paper1Study1');
+});
