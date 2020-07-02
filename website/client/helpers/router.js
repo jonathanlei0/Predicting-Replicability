@@ -124,13 +124,19 @@ Router.route('/Error', function() {
 });
 
 //Paper1************************************************
-Router.route('/Paper1Start', function() {
+Router.route('/Paper1Page1', function() {
     this.layout('MainLayout');
-    this.render('Paper1Start');
+    this.render('Paper1Page1');
 });
 
 
-Router.route('/Paper1Study1', function() {
+Router.route('/Paper1Page2', function() {
     this.layout('MainLayout');
-    this.render('Paper1Study1');
+    this.render('Paper1Page2');
+});
+
+
+Router.route('/Paper1Page3', function() {
+    this.layout('MainLayout');
+    this.render('Paper1Page3');
 });

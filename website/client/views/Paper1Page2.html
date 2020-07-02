@@ -1,8 +1,8 @@
-<template name="Paper1Study1">
+<template name="Paper1Page2">
   {{>Title title="Paper 1"}} {{>ProgressBar length="11"}}
-  <h4 class="text-center">
+  <h5 class="text-center">
     Please read the following material and answer questions.
-  </h4>
+  </h5>
   <br />
   <div class="w-100 px-3 pt-3 border border-dark">
     <p>
@@ -13,10 +13,10 @@
     </p>
   </div>
   <br />
-  <h4 class="text-center">
+  <h5 class="text-center">
     Instruction: The material below is the abstract (summary) of the whole
     study. Read the abstract and answer the following questions.
-  </h4>
+  </h5>
   <br />
   <div class="w-100 px-3 pt-3 border border-dark">
     <p>
@@ -40,23 +40,23 @@
   <br />
   <div class="w-100 px-3 pt-3 border border-dark">
     <form>
-      <p>
+      <label>
         <b>
           1. How many phrases or terms in the abstract that are unfamiliar to
           you?
         </b>
-      </p>
+      </label>
       <div class="container">
         <div class="form-row m-1">
           <div class="form-check col">
             <input
               class="form-check-input"
               type="radio"
-              name="unfamiliarterms"
-              id="unfamilar1to2"
-              value="unfamilar1to2"
+              name="unfamiliarTerms"
+              id="unfamiliar1to2"
+              value="unfamiliar1to2"
             />
-            <label class="form-check-label" for="unfamilar1to2">
+            <label class="form-check-label" for="unfamiliar1to2">
               1~2
             </label>
           </div>
@@ -64,11 +64,11 @@
             <input
               class="form-check-input"
               type="radio"
-              name="unfamiliarterms"
-              id="unfamilar3to4"
-              value="unfamilar3to4"
+              name="unfamiliarTerms"
+              id="unfamiliar3to4"
+              value="unfamiliar3to4"
             />
-            <label class="form-check-label" for="unfamilar3to4">
+            <label class="form-check-label" for="unfamiliar3to4">
               3~4
             </label>
           </div>
@@ -76,11 +76,11 @@
             <input
               class="form-check-input"
               type="radio"
-              name="unfamiliarterms"
-              id="unfamilar4to5"
-              value="unfamilar4to5"
+              name="unfamiliarTerms"
+              id="unfamiliar4to5"
+              value="unfamiliar4to5"
             />
-            <label class="form-check-label" for="unfamilar4to5">
+            <label class="form-check-label" for="unfamiliar4to5">
               4~5
             </label>
           </div>
@@ -88,45 +88,45 @@
             <input
               class="form-check-input"
               type="radio"
-              name="unfamiliarterms"
-              id="unfamilar6ormore"
-              value="unfamilar6ormore"
+              name="unfamiliarTerms"
+              id="unfamiliar6ormore"
+              value="unfamiliar6ormore"
             />
-            <label class="form-check-label" for="unfamilar6ormore">
+            <label class="form-check-label" for="unfamiliar6ormore">
               6 or more than 6
             </label>
           </div>
         </div>
       </div>
       <br />
-      <p>
+      <label for="unfamiliarTermsUserInput">
         <b>
           2. Please write down one or two terms or phrases that you are
           unfamiliar with.
         </b>
-      </p>
+      </label>
       <input
         type="text"
         class="form-control"
-        id="formGroupExampleInput"
+        id="unfamiliarTermsUserInput"
         placeholder="Type Here. Separate by comma “,”"
       />
       <br />
-      <p>
+      <label>
         <b>
           3. How much do you understand the main claims/findings of the study
           after reading the abstract
         </b>
-      </p>
+      </label>
       <div class="form-check">
         <input
           class="form-check-input"
           type="radio"
-          name="exampleRadios"
-          id="exampleRadios1"
-          value="option1"
+          name="mainClaims"
+          id="mainClaimsGeneralVeryClear"
+          value="mainClaimsGeneralVeryClear"
         />
-        <label class="form-check-label" for="exampleRadios1">
+        <label class="form-check-label" for="mainClaimsGeneralVeryClear">
           It is very clear to me what the study has found.
         </label>
       </div>
@@ -134,11 +134,11 @@
         <input
           class="form-check-input"
           type="radio"
-          name="exampleRadios"
-          id="exampleRadios2"
-          value="option2"
+          name="mainClaims"
+          id="mainClaimsGeneralIdeas"
+          value="mainClaimsGeneralIdeas"
         />
-        <label class="form-check-label" for="exampleRadios2">
+        <label class="form-check-label" for="mainClaimsGeneralIdeas">
           I have some general ideas about what the study has found but still
           find some places unclear
         </label>
@@ -147,11 +147,11 @@
         <input
           class="form-check-input"
           type="radio"
-          name="exampleRadios"
-          id="exampleRadios3"
-          value="option3"
+          name="mainClaims"
+          id="mainClaimsNotSure"
+          value="mainClaimsNotSure"
         />
-        <label class="form-check-label" for="exampleRadios3">
+        <label class="form-check-label" for="mainClaimsNotSure">
           I am not so sure about what the study has found, but I can make a
           rough guess
         </label>
@@ -160,35 +160,36 @@
         <input
           class="form-check-input"
           type="radio"
-          name="exampleRadios"
-          id="exampleRadios4"
-          value="option4"
+          name="mainClaims"
+          id="mainClaimsNoIdea"
+          value="mainClaimsNoIdea"
         />
-        <label class="form-check-label" for="exampleRadios4">
+        <label class="form-check-label" for="mainClaimsNoIdea">
           I have no idea what the study attempts to achieve
         </label>
       </div>
-      <p>
+      <br />
+      <label for="mainClaimsUserInput">
         <b>
-          4. Use your own langue to briefly describe the main claims/findings of
-          the paper based on your understanding of the abstract. Make your best
-          guess if necessary.
+          4. Use your own language to briefly describe the main claims/findings
+          of the paper based on your understanding of the abstract. Make your
+          best guess if necessary.
         </b>
-      </p>
+      </label>
       <input
         type="text"
         class="form-control"
-        id="formGroupExampleInput"
+        id="mainClaimsUserInput"
         placeholder="Type Here."
       />
       <br />
-      <p>
+      <label>
         <b>
           5. Use your own langue to briefly describe the main claims/findings of
           the paper based on your understanding of the abstract. Make your best
           guess if necessary.
         </b>
-      </p>
+      </label>
       <div class="container">
         <div class="form-row m-1">
           <div class="form-check-inline">
@@ -196,12 +197,12 @@
               class="form-check-input"
               type="radio"
               name="contradictions"
-              id="contradictcompletelycontradict"
-              value="contradictcompletelycontradict"
+              id="ContradictCompletelyContradict"
+              value="ContradictCompletelyContradict"
             />
             <label
               class="form-check-label"
-              for="contradictcompletelycontradict"
+              for="ContradictCompletelyContradict"
             >
               Completely contradict to
             </label>
@@ -211,10 +212,10 @@
               class="form-check-input"
               type="radio"
               name="contradictions"
-              id="contradictsomewhatcontradict"
-              value="contradictsomewhatcontradict"
+              id="ContradictSomewhatContradict"
+              value="ContradictSomewhatContradict"
             />
-            <label class="form-check-label" for="contradictsomewhatcontradict">
+            <label class="form-check-label" for="ContradictSomewhatContradict">
               Somewhat contradict to
             </label>
           </div>
@@ -223,10 +224,10 @@
               class="form-check-input"
               type="radio"
               name="contradictions"
-              id="contradicthardtosay"
-              value="contradicthardtosay"
+              id="ContradictHardToSay"
+              value="ContradictHardToSay"
             />
-            <label class="form-check-label" for="contradicthardtosay">
+            <label class="form-check-label" for="ContradictHardToSay">
               Hard to say/no relevant experience
             </label>
           </div>
@@ -235,10 +236,10 @@
               class="form-check-input"
               type="radio"
               name="contradictions"
-              id="contradictsomewhatsupport"
-              value="contradictsomewhatsupport"
+              id="ContradictSomewhatSupport"
+              value="ContradictSomewhatSupport"
             />
-            <label class="form-check-label" for="contradictsomewhatsupport">
+            <label class="form-check-label" for="ContradictSomewhatSupport">
               Somewhat support
             </label>
           </div>
@@ -247,10 +248,10 @@
               class="form-check-input"
               type="radio"
               name="contradictions"
-              id="contradictcompletelysupport"
-              value="contradictcompletelysupport"
+              id="contradictCompletelySupport"
+              value="contradictCompletelySupport"
             />
-            <label class="form-check-label" for="contradictcompletelysupport">
+            <label class="form-check-label" for="contradictCompletelySupport">
               Completely Support
             </label>
           </div>
@@ -260,6 +261,6 @@
     <br />
   </div>
 
-  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper1Study1"
-  prevPage="Paper1Start"}}
+  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper1Page3"
+  prevPage="Paper1Page1"}}
 </template>

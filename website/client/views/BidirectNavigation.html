@@ -3,21 +3,20 @@
   <div style="text-align: center;">
     {{#if this.prevRemoved}} {{else}} {{#if this.prevText}}
     <button href="" class="btn btn-lg btn-outline-primary" id="prevBtn">
-      {{prevText}}
+      &#x3C; {{prevText}}
     </button>
 
     {{else}}
     <button href="" class="btn btn-lg btn-outline-primary" id="prevBtn">
-      Back
-      <i class="fas fa-chevron-left"></i>
+      &#x3C; Back
     </button>
     {{/if}} {{/if}} &nbsp; {{#if this.nextText}}
     <button href="" class="btn btn-lg btn-outline-primary" id="nextBtn">
-      {{nextText}}
+      {{nextText}} &#62;
     </button>
     {{else}}
     <button href="" class="btn btn-lg btn-outline-primary" id="nextBtn">
-      Next
+      Next &#62;
     </button>
     {{/if}}
   </div>
