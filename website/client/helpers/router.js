@@ -140,3 +140,39 @@ Router.route('/Paper1Page3', function() {
     this.layout('MainLayout');
     this.render('Paper1Page3');
 });
+
+//Paper2************************************************
+Router.route('/Paper2Page1', function() {
+    this.layout('MainLayout');
+    this.render('Paper2Page1');
+});
+
+
+Router.route('/Paper2Page2', function() {
+    this.layout('MainLayout');
+    this.render('Paper2Page2');
+});
+
+
+Router.route('/Paper2Page3', function() {
+    this.layout('MainLayout');
+    this.render('Paper2Page3');
+});
+
+//Paper3************************************************
+Router.route('/Paper3Page1', function() {
+    this.layout('MainLayout');
+    this.render('Paper3Page1');
+});
+
+
+Router.route('/Paper3Page2', function() {
+    this.layout('MainLayout');
+    this.render('Paper3Page2');
+});
+
+
+Router.route('/Paper3Page3', function() {
+    this.layout('MainLayout');
+    this.render('Paper3Page3');
+});

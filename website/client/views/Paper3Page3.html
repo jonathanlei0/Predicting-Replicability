@@ -1,5 +1,5 @@
-<template name="Paper1Page3">
-  {{>Title title="Paper 1"}} {{>ProgressBar length="17"}}
+<template name="Paper3Page3">
+  {{>Title title="Paper 3"}} {{>ProgressBar length="50"}}
   <h5 class="text-center">
     Please read the following material and answer questions.
   </h5>
@@ -86,8 +86,7 @@
           % (with certainty the same finding).
         </b>
       </label>
-      <input type="range" id="predictionProbability" />
-      <input type="range" class="custom-range" />
+      <input type="range" class="custom-range" id="predictionProbability" />
       <label for="predictionProbability"
         >Your Prediction: <span id="predictionProbabilityValue"></span>%
       </label>
@@ -101,32 +100,6 @@
         };
       </script>
 
-      <style>
-        /*Chrome*/
-        @media screen and (-webkit-min-device-pixel-ratio: 0) {
-          input[type="range"] {
-            width: 100%;
-            cursor: pointer;
-          }
-          input[type="range"]::-webkit-slider-thumb {
-            box-shadow: -100vw 0 1 100vw;
-          }
-        }
-        /** FF*/
-        input[type="range"]::-moz-range-progress {
-          background-color: #0075ff;
-        }
-        input[type="range"]::-moz-range-track {
-          background-color: #efefef;
-        }
-        /* IE*/
-        input[type="range"]::-ms-fill-lower {
-          background-color: #0075ff;
-        }
-        input[type="range"]::-ms-fill-upper {
-          background-color: #efefef;
-        }
-      </style>
       <br />
       <br />
       <label>
@@ -181,6 +154,6 @@
     <br />
   </div>
 
-  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper2Page1"
-  prevPage="Paper1Page2"}}
+  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper3Page3"
+  prevPage="Paper3Page2"}}
 </template>
