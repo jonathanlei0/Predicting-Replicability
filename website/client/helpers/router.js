@@ -176,3 +176,26 @@ Router.route('/Paper3Page3', function() {
     this.layout('MainLayout');
     this.render('Paper3Page3');
 });
+
+//Pair1************************************************
+Router.route('/Pair1Page1', function() {
+    this.layout('MainLayout');
+    this.render('Pair1Page1');
+});
+
+Router.route('/Pair1Page2', function() {
+    this.layout('MainLayout');
+    this.render('Pair1Page2');
+});
+
+
+//End************************************************
+Router.route('/ExitSurvey', function() {
+    this.layout('MainLayout');
+    this.render('ExitSurvey');
+});
+
+Router.route('/ExperimentEnd', function() {
+    this.layout('MainLayout');
+    this.render('ExperimentEnd');
+});
