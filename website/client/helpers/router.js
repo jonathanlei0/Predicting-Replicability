@@ -76,11 +76,11 @@ gup = function(path, name) {
 
 
 Router.route('/', function() {
-    if (BrowserDetection() == "IE") {
-        this.layout('MainLayout');
-        this.render('BrowserError');
-        return false;
-    }
+    // if (BrowserDetection() == "IE") {
+    //     this.layout('MainLayout');
+    //     this.render('BrowserError');
+    //     return false;
+    // }
     path = window.location.href;
     workerId = gup(path, 'workerId');
     if (workerId == "") workerId = Math.random().toString(36).substring(7);
