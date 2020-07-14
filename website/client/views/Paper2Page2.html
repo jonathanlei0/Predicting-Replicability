@@ -1,5 +1,5 @@
 <template name="Paper2Page2">
-  {{>Title title="Paper 2"}} {{>ProgressBar length="28"}}
+  {{>Title title="Paper 2"}} {{>ProgressBar length="14"}}
   <h5 class="text-center">
     Please read the following material and answer questions.
   </h5>
@@ -7,7 +7,8 @@
   <div class="w-100 px-3 pt-3 border border-dark">
     <p>
       <b>
-        Study title: Accelerated Relearning After Retrieval-Induced Forgetting The Benefit of Being Forgotten
+        Study title: Accelerated Relearning After Retrieval-Induced Forgetting
+        The Benefit of Being Forgotten
       </b>
     </p>
   </div>
@@ -19,7 +20,21 @@
   <br />
   <div class="w-100 px-3 pt-3 border border-dark">
     <p>
-      <b>Abstract: </b>Research on retrieval-induced forgetting has demonstrated that retrieving some information from memory can cause the forgetting of other information in memory. Here, the authors report research on the relearning of items that have been subjected to retrieval-induced forgetting. Participants studied a list of category- exemplar pairs, underwent a series of retrieval-practice and relearning trials, and, finally, were tested on the initially studied pairs. The final recall of non-relearned items exhibited a cumulative effect of retrieval-induced forgetting such that the size of the effect increased with each block of retrieval practice. Of most interest, and very surprising from a common-sense standpoint, items that were relearned benefited more from that relearning if they had previously been forgotten. The results offer insights into the nature and durability of retrieval-induced forgetting and provide additional evidence that forgetting is an enabler--rather than a disabler--of future learning.
+      <b>Abstract: </b>Research on retrieval-induced forgetting has demonstrated
+      that retrieving some information from memory can cause the forgetting of
+      other information in memory. Here, the authors report research on the
+      relearning of items that have been subjected to retrieval-induced
+      forgetting. Participants studied a list of category- exemplar pairs,
+      underwent a series of retrieval-practice and relearning trials, and,
+      finally, were tested on the initially studied pairs. The final recall of
+      non-relearned items exhibited a cumulative effect of retrieval-induced
+      forgetting such that the size of the effect increased with each block of
+      retrieval practice. Of most interest, and very surprising from a
+      common-sense standpoint, items that were relearned benefited more from
+      that relearning if they had previously been forgotten. The results offer
+      insights into the nature and durability of retrieval-induced forgetting
+      and provide additional evidence that forgetting is an enabler--rather than
+      a disabler--of future learning.
     </p>
   </div>
   <br />
@@ -251,5 +266,5 @@
   </div>
 
   {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper2Page3"
-  prevPage="Paper2Page1"}}
+  prevRemoved=true prevPage="Paper2Page1"}}
 </template>
