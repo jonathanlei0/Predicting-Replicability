@@ -3,7 +3,7 @@
     <title>Predicting Replicability</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body class="bg-light">
+  <body class="bg-light" id="body">
     <div class="container">
       <div class="row">
         <div class="col-sm py-5">
@@ -16,5 +16,20 @@
       </div>
     </div>
     <i class="fa fa-user"></i>
+    <div
+      style="position: absolute; top: 0px; display: none;"
+      id="highlightBox"
+      class="bg-light border border-dark p-3"
+    >
+      <a href="javascript:highlight();" class="btn btn-lg btn-outline-primary">
+        Highlight
+      </a>
+      <a
+        href="javascript:highlightClosePopup();"
+        class="btn btn-lg btn-outline-danger"
+      >
+        X
+      </a>
+    </div>
   </body>
 </template>
