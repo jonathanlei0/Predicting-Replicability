@@ -159,123 +159,24 @@ Router.route('/Paper2Page3', function() {
     this.render('Paper2Page3');
 });
 
-//Paper3************************************************
-Router.route('/Paper3Page1', function() {
-    this.layout('MainLayout');
-    this.render('Paper3Page1');
-});
-
-
-Router.route('/Paper3Page2', function() {
-    this.layout('MainLayout');
-    this.render('Paper3Page2');
-});
-
-
-Router.route('/Paper3Page3', function() {
-    this.layout('MainLayout');
-    this.render('Paper3Page3');
-});
-
-
-//Paper4************************************************
-Router.route('/Paper4Page1', function() {
-    this.layout('MainLayout');
-    this.render('Paper4Page1');
-});
-
-
-Router.route('/Paper4Page2', function() {
-    this.layout('MainLayout');
-    this.render('Paper4Page2');
-});
-
-
-Router.route('/Paper4Page3', function() {
-    this.layout('MainLayout');
-    this.render('Paper4Page3');
-});
-
-
-//Paper5************************************************
-Router.route('/Paper5Page1', function() {
-    this.layout('MainLayout');
-    this.render('Paper5Page1');
-});
-
-
-Router.route('/Paper5Page2', function() {
-    this.layout('MainLayout');
-    this.render('Paper5Page2');
-});
-
-
-Router.route('/Paper5Page3', function() {
-    this.layout('MainLayout');
-    this.render('Paper5Page3');
-});
-
-
-//Paper6************************************************
-Router.route('/Paper6Page1', function() {
-    this.layout('MainLayout');
-    this.render('Paper6Page1');
-});
-
-
-Router.route('/Paper6Page2', function() {
-    this.layout('MainLayout');
-    this.render('Paper6Page2');
-});
-
-
-Router.route('/Paper6Page3', function() {
-    this.layout('MainLayout');
-    this.render('Paper6Page3');
-});
-
-
-
-
 //Pair1************************************************
 Router.route('/Pair1Page1', function() {
     this.layout('MainLayout');
     this.render('Pair1Page1');
 });
 
+
 Router.route('/Pair1Page2', function() {
     this.layout('MainLayout');
     this.render('Pair1Page2');
 });
-
-//Pair2************************************************
-Router.route('/Pair2Page1', function() {
-    this.layout('MainLayout');
-    this.render('Pair2Page1');
-});
-
-Router.route('/Pair2Page2', function() {
-    this.layout('MainLayout');
-    this.render('Pair2Page2');
-});
-
-//Pair3************************************************
-Router.route('/Pair3Page1', function() {
-    this.layout('MainLayout');
-    this.render('Pair3Page1');
-});
-
-Router.route('/Pair3Page2', function() {
-    this.layout('MainLayout');
-    this.render('Pair3Page2');
-});
-
 
 //End************************************************
 Router.route('/ExitSurvey', function() {
     this.layout('MainLayout');
     this.render('ExitSurvey');
 });
+
 
 Router.route('/ExperimentEnd', function() {
     this.layout('MainLayout');
