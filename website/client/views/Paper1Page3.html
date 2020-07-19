@@ -33,14 +33,13 @@
         Participants A total of 100 Purdue University undergraduates who were
         native speakers of American English participated in exchange for course
         credit. <br /><strong>Stimuli</strong><br />
-        The to-be-remembered items were 64 one-syllable words used
-        by Surprenant, Neath, and LeCompte (1999) to study PSEs. An example
-        similar list is vote, boat, goat, float, note, and coat. An example
-        dissimilar list is break, sick, vote, greet, rat, and fun. Each word
-        appeared in both similar and dissimilar lists (e.g., vote in the above
-        example). Lists were randomized such that participants saw the same
-        words but in different random orders. <br /><strong>Procedure</strong
-        ><br />
+        The to-be-remembered items were 64 one-syllable words used by
+        Surprenant, Neath, and LeCompte (1999) to study PSEs. An example similar
+        list is vote, boat, goat, float, note, and coat. An example dissimilar
+        list is break, sick, vote, greet, rat, and fun. Each word appeared in
+        both similar and dissimilar lists (e.g., vote in the above example).
+        Lists were randomized such that participants saw the same words but in
+        different random orders. <br /><strong>Procedure</strong><br />
         Participants were informed that we were interested in how accurately
         they could remember the order in which a series of words had been
         presented. Each word was shown in uppercase, center justified, for 1.5 s
@@ -48,15 +47,15 @@
         word was shown, six response buttons became active and were labeled with
         the six words in alphabetical order. The participants were asked to
         indicate the presentation order by clicking on appropriately labeled
-        buttons using the mouse. For example, if they thought the first word
-        was break, they should click on the button labeled break first. If they
-        thought the third word was vote, they should click on the button
-        labeled vote third. Participants received 20 lists, half with dissimilar
-        and half with similar items, and were informed they could take rest
-        breaks at any point. The order of dissimilar and similar trials was
-        randomly determined for each participant. Participants were tested
-        individually, and an experimenter remained in the room to ensure
-        compliance with the instructions.
+        buttons using the mouse. For example, if they thought the first word was
+        break, they should click on the button labeled break first. If they
+        thought the third word was vote, they should click on the button labeled
+        vote third. Participants received 20 lists, half with dissimilar and
+        half with similar items, and were informed they could take rest breaks
+        at any point. The order of dissimilar and similar trials was randomly
+        determined for each participant. Participants were tested individually,
+        and an experimenter remained in the room to ensure compliance with the
+        instructions.
       </p>
     </div>
   </div>
@@ -203,7 +202,6 @@
     </form>
     <br />
   </div>
-
   <script>
     mouseXPosition = 0;
     canHighlight = false;
@@ -245,28 +243,39 @@
           document.getElementById("highlightBox").style.display = "block";
         }
       });
-
-      /*$(document).on("click", function (event) {
-        $target = $(event.target);
-        $target.removeClass("highlight");
-      });*/
     });
     function highlight() {
       document.getElementById("highlightBox").style.display = "none";
       if (selectedText.length === endPoint - startPoint) {
         highlighted = true;
-
         if (anchorTag.className !== "highlight") {
           highlightSelection();
         } else {
-          alert("Testing");
-          /*var afterText =
-            selectedText +
-            "<span class = 'highlight'>" +
-            anchorTag.innerHTML.substr(endPoint) +
-            "</span>";
-          anchorTag.innerHTML = anchorTag.innerHTML.substr(0, startPoint);
-          anchorTag.insertAdjacentHTML("afterend", afterText);*/
+          anchorTag.innerHTML = anchorTag.innerHTML.replace("</span>", "");
+          anchorTag.innerHTML = anchorTag.innerHTML.replace(
+            '<span class="highlight">',
+            ""
+          );
+          anchorTag.innerHTML = anchorTag.innerHTML.replace(
+            "(?<=<[^>]*)&nbsp;",
+            " "
+          );
+          anchorTag.innerHTML = anchorTag.innerHTML.replace("&amp;nbsp;", " ");
+          anchorTag.innerHTML = anchorTag.innerHTML.replace("&nbsp;", " ");
+          var x = anchorTag.innerHTML.substr(0, startPoint);
+          var y = selectedText;
+          var z = anchorTag.innerHTML.substr(startPoint + selectedText.length);
+          anchorTag.innerHTML = "";
+          anchorTag.insertAdjacentHTML(
+            "afterend",
+            "<span class='highlight'>" +
+              x +
+              "</span>" +
+              y +
+              "<span class='highlight'>" +
+              z +
+              "</span>"
+          );
         }
       } else {
         if (
@@ -274,14 +283,22 @@
           focusTag.className !== "highlight"
         ) {
           highlightSelection();
-          highlighted = true;
+        } else {
+          $("#modal1").modal("toggle");
         }
       }
-
-      document.getElementById("body").style.userSelect = "none";
-      setTimeout(function () {
-        document.getElementById("body").style.userSelect = "auto";
-      }, 100);
+      if (window.getSelection) {
+        if (window.getSelection().empty) {
+          // Chrome
+          window.getSelection().empty();
+        } else if (window.getSelection().removeAllRanges) {
+          // Firefox
+          window.getSelection().removeAllRanges();
+        }
+      } else if (document.selection) {
+        // IE?
+        document.selection.empty();
+      }
     }
 
     function highlightSelection() {
@@ -296,16 +313,45 @@
       var range = selection.getRangeAt(0);
 
       //If the range spans some text, and inside a tag, set its css class.
-      if (range && !selection.isCollapsed) {
-        if (selection.anchorNode.parentNode == selection.focusNode.parentNode) {
-          var span = document.createElement("span");
-          span.className = "highlight";
-          span.textContent = selection.toString();
-          selection.deleteFromDocument();
-          range.insertNode(span);
-          //                        range.surroundContents(span);
-        }
+      // if (range && !selection.isCollapsed) {
+      //   if (selection.anchorNode.parentNode == selection.focusNode.parentNode) {
+      var btn = document.createElement("a");
+      btn.className = "btn btn-lg btn-outline-primary";
+      btn.id = randomstring(5);
+      btn.href = "javascript:remove('" + btn.id + "')";
+      //.className='' class=btn btn-lg btn-warning> Lenia </a> </div>";
+
+      var span = document.createElement("span");
+      span.id = btn.id;
+      span.className = "highlight";
+
+      span.textContent = selection.toString();
+      selection.deleteFromDocument();
+      range.insertNode(span);
+      document.getElementById("body").appendChild(btn);
+      //                        range.surroundContents(span);
+      //    }
+      //  }
+    }
+
+    function remove(id) {
+      document.getElementById(id).className = "";
+      /* = document
+        .getElementById(id)
+        .className.replace("highlight", "");*/
+    }
+
+    function randomstring(length) {
+      var result = "";
+      var characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      var charactersLength = characters.length;
+      for (var i = 0; i < length; i++) {
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
       }
+      return result;
     }
 
     function highlightClosePopup() {
@@ -328,7 +374,8 @@
       background: yellow;
     }
   </style>
-
-  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper2Page1"
-  prevRemoved=true prevPage="Paper1Page2"}}
+  <!--prettier-ignore-->
+  {{>Modal modalTitle="Important Alert" modalText="You have attempted to toggle text that is in two states. Please make sure you only select either normal or highlighted text but not a combination."}}
+  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
+  ="Paper2Page1" prevRemoved=true prevPage="Paper1Page2"}}
 </template>
