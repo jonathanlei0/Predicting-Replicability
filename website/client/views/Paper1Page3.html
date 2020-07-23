@@ -1,68 +1,70 @@
 <template name="Paper1Page3">
   {{>Title title="Paper 1"}} {{>ProgressBar length="38"}}
-  <h5 class="text-center">
-    Please read the following material and answer questions.
-  </h5>
-  <br />
-  <div class="w-100 px-3 pt-3 border border-dark">
-    <p>
-      <b>
-        Study title: A Single-System Account of the Relationship Between
-        Priming, Recognition, and Fluency
-      </b>
-    </p>
-  </div>
-  <br />
-  <div>
-    <h5>
-      Instruction: The material below describes an experiment the authors ran to
-      testify the claims/findings presented in the abstract (previous page).
-      Read the material and answer the following questions.
+  <form action="javascript:void(0);">
+    <h5 class="text-center">
+      Please read the following material and answer questions.
     </h5>
-  </div>
-  <br />
-  <div class="w-100 px-3 pt-3 border border-dark">
-    <div id="test-text">
+    <br />
+    <div class="w-100 px-3 pt-3 border border-dark">
       <p>
-        <strong>Experiment 1</strong><br />Experiment 1 compares recall
-        performance of lists of phonologically similar items with recall of
-        lists of dissimilar items. The major difference between this and other
-        published studies is the number of participants. <br /><strong
-          >Method</strong
-        ><br />
-        Participants A total of 100 Purdue University undergraduates who were
-        native speakers of American English participated in exchange for course
-        credit. <br /><strong>Stimuli</strong><br />
-        The to-be-remembered items were 64 one-syllable words used by
-        Surprenant, Neath, and LeCompte (1999) to study PSEs. An example similar
-        list is vote, boat, goat, float, note, and coat. An example dissimilar
-        list is break, sick, vote, greet, rat, and fun. Each word appeared in
-        both similar and dissimilar lists (e.g., vote in the above example).
-        Lists were randomized such that participants saw the same words but in
-        different random orders. <br /><strong>Procedure</strong><br />
-        Participants were informed that we were interested in how accurately
-        they could remember the order in which a series of words had been
-        presented. Each word was shown in uppercase, center justified, for 1.5 s
-        in the middle of the screen in 20-point Helvetica font. After the final
-        word was shown, six response buttons became active and were labeled with
-        the six words in alphabetical order. The participants were asked to
-        indicate the presentation order by clicking on appropriately labeled
-        buttons using the mouse. For example, if they thought the first word was
-        break, they should click on the button labeled break first. If they
-        thought the third word was vote, they should click on the button labeled
-        vote third. Participants received 20 lists, half with dissimilar and
-        half with similar items, and were informed they could take rest breaks
-        at any point. The order of dissimilar and similar trials was randomly
-        determined for each participant. Participants were tested individually,
-        and an experimenter remained in the room to ensure compliance with the
-        instructions.
+        <b>
+          Study title: A Single-System Account of the Relationship Between
+          Priming, Recognition, and Fluency
+        </b>
       </p>
     </div>
-  </div>
-  <br />
-  <br />
-  <div class="w-100 px-3 pt-3 border border-dark">
-    <form>
+    <br />
+    <div>
+      <h5>
+        Instruction: The material below describes an experiment the authors ran
+        to testify the claims/findings presented in the abstract (previous
+        page). Read the material and answer the following questions.
+      </h5>
+    </div>
+    <br />
+    <div class="w-100 px-3 pt-3 border border-dark">
+      <div id="test-text">
+        <p>
+          <strong>Experiment 1</strong><br />Experiment 1 compares recall
+          performance of lists of phonologically similar items with recall of
+          lists of dissimilar items. The major difference between this and other
+          published studies is the number of participants. <br /><strong
+            >Method</strong
+          ><br />
+          Participants A total of 100 Purdue University undergraduates who were
+          native speakers of American English participated in exchange for
+          course credit. <br /><strong>Stimuli</strong><br />
+          The to-be-remembered items were 64 one-syllable words used by
+          Surprenant, Neath, and LeCompte (1999) to study PSEs. An example
+          similar list is vote, boat, goat, float, note, and coat. An example
+          dissimilar list is break, sick, vote, greet, rat, and fun. Each word
+          appeared in both similar and dissimilar lists (e.g., vote in the above
+          example). Lists were randomized such that participants saw the same
+          words but in different random orders. <br /><strong>Procedure</strong
+          ><br />
+          Participants were informed that we were interested in how accurately
+          they could remember the order in which a series of words had been
+          presented. Each word was shown in uppercase, center justified, for 1.5
+          s in the middle of the screen in 20-point Helvetica font. After the
+          final word was shown, six response buttons became active and were
+          labeled with the six words in alphabetical order. The participants
+          were asked to indicate the presentation order by clicking on
+          appropriately labeled buttons using the mouse. For example, if they
+          thought the first word was break, they should click on the button
+          labeled break first. If they thought the third word was vote, they
+          should click on the button labeled vote third. Participants received
+          20 lists, half with dissimilar and half with similar items, and were
+          informed they could take rest breaks at any point. The order of
+          dissimilar and similar trials was randomly determined for each
+          participant. Participants were tested individually, and an
+          experimenter remained in the room to ensure compliance with the
+          instructions.
+        </p>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="w-100 px-3 pt-3 border border-dark">
       <label for="participantRecruitCheck">
         <b>
           6. How many participants were recruited in the experimental study?
@@ -75,6 +77,7 @@
             class="form-control"
             id="participantRecruitCheck"
             placeholder="0"
+            required
           />
         </div>
         <div class="col-sm no-gutters">
@@ -92,7 +95,7 @@
           % (with certainty the same finding).
         </b>
       </label>
-      <input type="range" id="predictionProbability" />
+      <input type="range" id="predictionProbability" required />
       <!-- <input type="range" class="custom-range" /> -->
       <label for="predictionProbability"
         >Your Prediction: <span id="predictionProbabilityValue"></span>%
@@ -167,6 +170,7 @@
               name="otherScenarioEstimate"
               id="otherScenarioNo"
               value="otherScenarioNo"
+              required
             />
             <label class="form-check-label" for="otherScenarioNo">
               The claims/findings will probability NOT hold in other scenarios.
@@ -179,6 +183,7 @@
               name="otherScenarioEstimate"
               id="otherScenarioMaybe"
               value="otherScenarioMaybe"
+              required
             />
             <label class="form-check-label" for="otherScenarioMaybe">
               The claims/findings may partially hold in some similar scenarios.
@@ -191,6 +196,7 @@
               name="otherScenarioEstimate"
               id="otherScenarioTrue"
               value="otherScenarioTrue"
+              required
             />
             <label class="form-check-label" for="otherScenarioTrue">
               The claims/findings will hold to be true in many other similar
@@ -199,183 +205,189 @@
           </div>
         </div>
       </div>
-    </form>
-    <br />
-  </div>
-  <script>
-    mouseXPosition = 0;
-    canHighlight = false;
+      <br />
+    </div>
+    <script>
+      mouseXPosition = 0;
+      canHighlight = false;
 
-    var highlighted;
-    var selection;
-    var selectedText;
-    var startPoint;
-    var endPoint;
-    var anchorTag;
-    var focusTag;
-
-    $(document).ready(function () {
-      $("#test-text").mousedown(function (e1) {
-        document.getElementById("body").style.userSelect = "auto";
-        mouseXPosition = e1.pageX; //register the mouse down position
-
-        document.getElementById("highlightBox").style.display = "none";
-      });
-
-      $("#test-text").mouseup(function (e2) {
-        highlighted = false;
-        selection = window.getSelection();
-        selectedText = selection.toString();
-        if (selectedText.includes("\n")) {
-          return;
-        }
-        startPoint = window.getSelection().getRangeAt(0).startOffset;
-        endPoint = window.getSelection().getRangeAt(0).endOffset;
-        anchorTag = selection.anchorNode.parentNode;
-        focusTag = selection.focusNode.parentNode;
-        if (e2.pageX - mouseXPosition < 0) {
-          focusTag = selection.anchorNode.parentNode;
-          anchorTag = selection.focusNode.parentNode;
-        }
-        if (startPoint !== endPoint) {
-          document.getElementById("highlightBox").style.left = e2.pageX + "px";
-          document.getElementById("highlightBox").style.top = e2.pageY + "px";
-          document.getElementById("highlightBox").style.display = "block";
-        }
-      });
-    });
-    function highlight() {
-      document.getElementById("highlightBox").style.display = "none";
-      if (selectedText.length === endPoint - startPoint) {
-        highlighted = true;
-        if (anchorTag.className !== "highlight") {
-          highlightSelection();
-        } else {
-          anchorTag.innerHTML = anchorTag.innerHTML.replace("</span>", "");
-          anchorTag.innerHTML = anchorTag.innerHTML.replace(
-            '<span class="highlight">',
-            ""
-          );
-          anchorTag.innerHTML = anchorTag.innerHTML.replace(
-            "(?<=<[^>]*)&nbsp;",
-            " "
-          );
-          anchorTag.innerHTML = anchorTag.innerHTML.replace("&amp;nbsp;", " ");
-          anchorTag.innerHTML = anchorTag.innerHTML.replace("&nbsp;", " ");
-          var x = anchorTag.innerHTML.substr(0, startPoint);
-          var y = selectedText;
-          var z = anchorTag.innerHTML.substr(startPoint + selectedText.length);
-          anchorTag.innerHTML = "";
-          anchorTag.insertAdjacentHTML(
-            "afterend",
-            "<span class='highlight'>" +
-              x +
-              "</span>" +
-              y +
-              "<span class='highlight'>" +
-              z +
-              "</span>"
-          );
-        }
-      } else {
-        if (
-          anchorTag.className !== "highlight" &&
-          focusTag.className !== "highlight"
-        ) {
-          highlightSelection();
-        } else {
-          $("#modal1").modal("toggle");
-        }
-      }
-      if (window.getSelection) {
-        if (window.getSelection().empty) {
-          // Chrome
-          window.getSelection().empty();
-        } else if (window.getSelection().removeAllRanges) {
-          // Firefox
-          window.getSelection().removeAllRanges();
-        }
-      } else if (document.selection) {
-        // IE?
-        document.selection.empty();
-      }
-    }
-
-    function highlightSelection() {
+      var highlighted;
       var selection;
+      var selectedText;
+      var startPoint;
+      var endPoint;
+      var anchorTag;
+      var focusTag;
 
-      //Get the selected stuff
-      if (window.getSelection) selection = window.getSelection();
-      else if (typeof document.selection != "undefined")
-        selection = document.selection;
+      $(document).ready(function () {
+        $("#test-text").mousedown(function (e1) {
+          document.getElementById("body").style.userSelect = "auto";
+          mouseXPosition = e1.pageX; //register the mouse down position
 
-      //Get a the selected content, in a range object
-      var range = selection.getRangeAt(0);
+          document.getElementById("highlightBox").style.display = "none";
+        });
 
-      //If the range spans some text, and inside a tag, set its css class.
-      // if (range && !selection.isCollapsed) {
-      //   if (selection.anchorNode.parentNode == selection.focusNode.parentNode) {
-      var btn = document.createElement("a");
-      btn.className = "btn btn-lg btn-outline-primary";
-      btn.id = randomstring(5);
-      btn.href = "javascript:remove('" + btn.id + "')";
-      //.className='' class=btn btn-lg btn-warning> Lenia </a> </div>";
+        $("#test-text").mouseup(function (e2) {
+          highlighted = false;
+          selection = window.getSelection();
+          selectedText = selection.toString();
+          if (selectedText.includes("\n")) {
+            return;
+          }
+          startPoint = window.getSelection().getRangeAt(0).startOffset;
+          endPoint = window.getSelection().getRangeAt(0).endOffset;
+          anchorTag = selection.anchorNode.parentNode;
+          focusTag = selection.focusNode.parentNode;
+          if (e2.pageX - mouseXPosition < 0) {
+            focusTag = selection.anchorNode.parentNode;
+            anchorTag = selection.focusNode.parentNode;
+          }
+          if (startPoint !== endPoint) {
+            document.getElementById("highlightBox").style.left =
+              e2.pageX + "px";
+            document.getElementById("highlightBox").style.top = e2.pageY + "px";
+            document.getElementById("highlightBox").style.display = "block";
+          }
+        });
+      });
+      function highlight() {
+        document.getElementById("highlightBox").style.display = "none";
+        if (selectedText.length === endPoint - startPoint) {
+          highlighted = true;
+          if (anchorTag.className !== "highlight") {
+            highlightSelection();
+          } else {
+            anchorTag.innerHTML = anchorTag.innerHTML.replace("</span>", "");
+            anchorTag.innerHTML = anchorTag.innerHTML.replace(
+              '<span class="highlight">',
+              ""
+            );
+            anchorTag.innerHTML = anchorTag.innerHTML.replace(
+              "(?<=<[^>]*)&nbsp;",
+              " "
+            );
+            anchorTag.innerHTML = anchorTag.innerHTML.replace(
+              "&amp;nbsp;",
+              " "
+            );
+            anchorTag.innerHTML = anchorTag.innerHTML.replace("&nbsp;", " ");
+            var x = anchorTag.innerHTML.substr(0, startPoint);
+            var y = selectedText;
+            var z = anchorTag.innerHTML.substr(
+              startPoint + selectedText.length
+            );
+            anchorTag.innerHTML = "";
+            anchorTag.insertAdjacentHTML(
+              "afterend",
+              "<span class='highlight'>" +
+                x +
+                "</span>" +
+                y +
+                "<span class='highlight'>" +
+                z +
+                "</span>"
+            );
+          }
+        } else {
+          if (
+            anchorTag.className !== "highlight" &&
+            focusTag.className !== "highlight"
+          ) {
+            highlightSelection();
+          } else {
+            $("#modal1").modal("toggle");
+          }
+        }
+        if (window.getSelection) {
+          if (window.getSelection().empty) {
+            // Chrome
+            window.getSelection().empty();
+          } else if (window.getSelection().removeAllRanges) {
+            // Firefox
+            window.getSelection().removeAllRanges();
+          }
+        } else if (document.selection) {
+          // IE?
+          document.selection.empty();
+        }
+      }
 
-      var span = document.createElement("span");
-      span.id = btn.id;
-      span.className = "highlight";
+      function highlightSelection() {
+        var selection;
 
-      span.textContent = selection.toString();
-      selection.deleteFromDocument();
-      range.insertNode(span);
-      //document.getElementById("body").appendChild(btn);
-      //                        range.surroundContents(span);
-      //    }
-      //  }
-    }
+        //Get the selected stuff
+        if (window.getSelection) selection = window.getSelection();
+        else if (typeof document.selection != "undefined")
+          selection = document.selection;
 
-    function remove(id) {
-      document.getElementById(id).className = "";
-      /* = document
+        //Get a the selected content, in a range object
+        var range = selection.getRangeAt(0);
+
+        //If the range spans some text, and inside a tag, set its css class.
+        // if (range && !selection.isCollapsed) {
+        //   if (selection.anchorNode.parentNode == selection.focusNode.parentNode) {
+        var btn = document.createElement("a");
+        btn.className = "btn btn-lg btn-outline-primary";
+        btn.id = randomstring(5);
+        btn.href = "javascript:remove('" + btn.id + "')";
+        //.className='' class=btn btn-lg btn-warning> Lenia </a> </div>";
+
+        var span = document.createElement("span");
+        span.id = btn.id;
+        span.className = "highlight";
+
+        span.textContent = selection.toString();
+        selection.deleteFromDocument();
+        range.insertNode(span);
+        //document.getElementById("body").appendChild(btn);
+        //                        range.surroundContents(span);
+        //    }
+        //  }
+      }
+
+      function remove(id) {
+        document.getElementById(id).className = "";
+        /* = document
         .getElementById(id)
         .className.replace("highlight", "");*/
-    }
-
-    function randomstring(length) {
-      var result = "";
-      var characters =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      var charactersLength = characters.length;
-      for (var i = 0; i < length; i++) {
-        result += characters.charAt(
-          Math.floor(Math.random() * charactersLength)
-        );
       }
-      return result;
-    }
 
-    function highlightClosePopup() {
-      setTimeout(function () {
-        document.getElementById("highlightBox").style.display = "none";
-      }, 100);
-    }
-  </script>
-  <style>
-    .highlight {
-      background-color: yellow;
-    }
-    #test-text::-moz-selection {
-      /* Code for Firefox */
+      function randomstring(length) {
+        var result = "";
+        var characters =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var charactersLength = characters.length;
+        for (var i = 0; i < length; i++) {
+          result += characters.charAt(
+            Math.floor(Math.random() * charactersLength)
+          );
+        }
+        return result;
+      }
 
-      background: yellow;
-    }
+      function highlightClosePopup() {
+        setTimeout(function () {
+          document.getElementById("highlightBox").style.display = "none";
+        }, 100);
+      }
+    </script>
+    <style>
+      .highlight {
+        background-color: yellow;
+      }
+      #test-text::-moz-selection {
+        /* Code for Firefox */
 
-    #test-text::selection {
-      background: yellow;
-    }
-  </style>
-  <!--prettier-ignore-->
-  {{>Modal modalTitle="Important Alert" modalText="You have attempted to toggle text that is in two states. Please make sure you only select either normal or highlighted text but not a combination."}}
+        background: yellow;
+      }
+
+      #test-text::selection {
+        background: yellow;
+      }
+    </style>
+    <!--prettier-ignore-->
+    {{>Modal modalTitle="Important Alert" modalText="You have attempted to toggle text that is in two states. Please make sure you only select either normal or highlighted text but not a combination."}}
   {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
   ="Paper2Page1" prevRemoved=true prevPage="Paper1Page2"}}
+  </form>
 </template>

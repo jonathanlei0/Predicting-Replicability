@@ -11,11 +11,15 @@
       &#x3C; Back
     </button>
     {{/if}} {{/if}} &nbsp; {{#if this.nextText}}
-    <button href="" class="btn btn-lg btn-outline-primary" id="nextBtn">
-      {{nextText}} &#62;
-    </button>
+    <input
+      type="submit"
+      value="{{nextText}} &#62;"
+      class="btn btn-lg btn-outline-primary"
+      id="nextBtn"
+    />
+
     {{else}}
-    <button href="" class="btn btn-lg btn-outline-primary" id="nextBtn">
+    <button class="btn btn-lg btn-outline-primary" id="nextBtn">
       Next &#62;
     </button>
     {{/if}}
