@@ -1,6 +1,6 @@
-Papers = new Mongo.Collection('papers');
+MyCollection = new Mongo.Collection('myCollection');
 
-var PaperLocations = {
+var myData = {
    key1: "[abstract]0.txt",
    key2: "[abstract]1.txt",
    key3: "[abstract]2.txt",
@@ -8,7 +8,7 @@ var PaperLocations = {
    key5: "[abstract]4.txt"
 }
 
-Papers.insert(PaperLocations);
+MyCollection.insert(myData);
 
-var findCollection = Papers.find().fetch();
+var findCollection = MyCollection.find().fetch();
 console.log(findCollection);

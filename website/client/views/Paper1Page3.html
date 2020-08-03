@@ -7,9 +7,8 @@
     <br />
     <div class="w-100 px-3 pt-3 border border-dark">
       <p>
-        <b>
-          Study title: A Single-System Account of the Relationship Between
-          Priming, Recognition, and Fluency
+        <b id="studyTitle">
+          Loading Title...
         </b>
       </p>
     </div>
@@ -24,41 +23,8 @@
     <br />
     <div class="w-100 px-3 pt-3 border border-dark">
       <div id="test-text">
-        <p>
-          <strong>Experiment 1</strong><br />Experiment 1 compares recall
-          performance of lists of phonologically similar items with recall of
-          lists of dissimilar items. The major difference between this and other
-          published studies is the number of participants. <br /><strong
-            >Method</strong
-          ><br />
-          Participants A total of 100 Purdue University undergraduates who were
-          native speakers of American English participated in exchange for
-          course credit. <br /><strong>Stimuli</strong><br />
-          The to-be-remembered items were 64 one-syllable words used by
-          Surprenant, Neath, and LeCompte (1999) to study PSEs. An example
-          similar list is vote, boat, goat, float, note, and coat. An example
-          dissimilar list is break, sick, vote, greet, rat, and fun. Each word
-          appeared in both similar and dissimilar lists (e.g., vote in the above
-          example). Lists were randomized such that participants saw the same
-          words but in different random orders. <br /><strong>Procedure</strong
-          ><br />
-          Participants were informed that we were interested in how accurately
-          they could remember the order in which a series of words had been
-          presented. Each word was shown in uppercase, center justified, for 1.5
-          s in the middle of the screen in 20-point Helvetica font. After the
-          final word was shown, six response buttons became active and were
-          labeled with the six words in alphabetical order. The participants
-          were asked to indicate the presentation order by clicking on
-          appropriately labeled buttons using the mouse. For example, if they
-          thought the first word was break, they should click on the button
-          labeled break first. If they thought the third word was vote, they
-          should click on the button labeled vote third. Participants received
-          20 lists, half with dissimilar and half with similar items, and were
-          informed they could take rest breaks at any point. The order of
-          dissimilar and similar trials was randomly determined for each
-          participant. Participants were tested individually, and an
-          experimenter remained in the room to ensure compliance with the
-          instructions.
+        <p id="methodText">
+          Loading Methodology...
         </p>
       </div>
     </div>
@@ -390,4 +356,38 @@
   {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
   ="Paper2Page1" prevRemoved=true prevPage="Paper1Page2"}}
   </form>
+
+  <script>
+    var id=8;
+    function httpGet(theUrl)
+    {
+        if (window.XMLHttpRequest)
+        {// code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// code for IE6, IE5
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                return xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", theUrl, false );
+        xmlhttp.send();  
+        return xmlhttp.responseText;  
+    }
+    
+    document.getElementById("methodText").innerHTML=
+    ""+httpGet("/paper_data/method/[method]"+id+".txt")
+    
+    document.getElementById("studyTitle").innerHTML=
+    "Study Title: "+httpGet("/paper_data/title/[title]"+id+".txt");
+
+        </script>
+
+
 </template>
