@@ -1,5 +1,6 @@
-const Papers = new Mongo.Collection('papers');
+import { EJSON } from 'meteor/ejson'
 
+const Papers = new Mongo.Collection('papers');
 /*var PaperLocations = {
    key1: "[abstract]0.txt",
    key2: "[abstract]1.txt",
@@ -9,23 +10,32 @@ const Papers = new Mongo.Collection('papers');
 }*/
 
 //Papers.insert(PaperLocations);
-
+ 
 var findCollection = Papers.find().fetch();
-Papers.update({ _id: '9BgEFHEvN7CmskHiF' }, { key1:"TESTING" });
 console.log(findCollection);
 
 if(Meteor.isServer){
-Meteor.publish('testing', function() {
-   return Papers.find();
- });
+  Meteor.publish('generalInfo', function() {
+    Papers.update("SKKH53LaGYgsF3Bc5",{
+      hitID: 5,
+      paper1: 4,
+      paper2: 8
+    });
+    return Papers.find();
+  });
 }
 
+
 if(Meteor.isClient){
-const handle = Meteor.subscribe('testing');
-Tracker.autorun(() => {
-  const isReady = handle.ready();
-  console.log(`Handle is ${isReady ? 'ready' : 'not ready'}`);
-  console.log(handle);
-  console.log(Papers.find().fetch())
-});
+  const handle = Meteor.subscribe('generalInfo');
+  Tracker.autorun(() => {
+    const isReady = handle.ready();
+    if(isReady){
+      var paper1 = Papers.findOne("SKKH53LaGYgsF3Bc5").paper1;
+      var paper2 = Papers.findOne("SKKH53LaGYgsF3Bc5").paper2;
+      sessionStorage['paper1'] = paper1;
+      sessionStorage['paper2'] = paper2;
+    }
+  });
+
 }

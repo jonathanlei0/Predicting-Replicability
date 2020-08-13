@@ -13,6 +13,7 @@ urls = '';
 treatment = '';
 
 
+
 // Database subscription
 Meteor.subscribe('papers');
 
