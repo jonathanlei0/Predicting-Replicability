@@ -11,14 +11,11 @@ const Papers = new Mongo.Collection('papers');
 
 //Papers.insert(PaperLocations);
  
-var findCollection = Papers.find().fetch();
-console.log(findCollection);
-
 if(Meteor.isServer){
   Meteor.publish('generalInfo', function() {
     Papers.update("SKKH53LaGYgsF3Bc5",{
       hitID: 5,
-      paper1: 4,
+      paper1: 1,
       paper2: 8
     });
     return Papers.find();
@@ -37,5 +34,4 @@ if(Meteor.isClient){
       sessionStorage['paper2'] = paper2;
     }
   });
-
 }
