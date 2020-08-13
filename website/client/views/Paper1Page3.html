@@ -38,13 +38,7 @@
       </label>
       <div class="row container">
         <div style="width: 120px;">
-          <input
-            type="number"
-            class="form-control"
-            id="participantRecruitCheck"
-            placeholder="0"
-            required
-          />
+          <input type="number" class="form-control" id="participantRecruitCheck" placeholder="0" required />
         </div>
         <div class="col-sm no-gutters">
           <label for="participantRecruitCheck">Participants</label>
@@ -63,8 +57,7 @@
       </label>
       <input type="range" id="predictionProbability" required />
       <!-- <input type="range" class="custom-range" /> -->
-      <label for="predictionProbability"
-        >Your Prediction: <span id="predictionProbabilityValue"></span>%
+      <label for="predictionProbability">Your Prediction: <span id="predictionProbabilityValue"></span>%
       </label>
       <script>
         var slider = document.getElementById("predictionProbability");
@@ -103,17 +96,21 @@
             box-shadow: -50vw 0 0 50vw #90bae8 !important;
           }
         }
+
         /** FF*/
         input[type="range"]::-moz-range-progress {
           background-color: #007bff !important;
         }
+
         input[type="range"]::-moz-range-track {
           background-color: #e9ecef !important;
         }
+
         /* IE*/
         input[type="range"]::-ms-fill-lower {
           background-color: #007bff !important;
         }
+
         input[type="range"]::-ms-fill-upper {
           background-color: #e9ecef !important;
         }
@@ -130,40 +127,19 @@
       <div class="container">
         <div class="form-group">
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="otherScenarioEstimate"
-              id="otherScenarioNo"
-              value="otherScenarioNo"
-              required
-            />
+            <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioNo" value="otherScenarioNo" required />
             <label class="form-check-label" for="otherScenarioNo">
               The claims/findings will probability NOT hold in other scenarios.
             </label>
           </div>
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="otherScenarioEstimate"
-              id="otherScenarioMaybe"
-              value="otherScenarioMaybe"
-              required
-            />
+            <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioMaybe" value="otherScenarioMaybe" required />
             <label class="form-check-label" for="otherScenarioMaybe">
               The claims/findings may partially hold in some similar scenarios.
             </label>
           </div>
           <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="otherScenarioEstimate"
-              id="otherScenarioTrue"
-              value="otherScenarioTrue"
-              required
-            />
+            <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioTrue" value="otherScenarioTrue" required />
             <label class="form-check-label" for="otherScenarioTrue">
               The claims/findings will hold to be true in many other similar
               scenarios.
@@ -246,12 +222,12 @@
             anchorTag.insertAdjacentHTML(
               "afterend",
               "<span class='highlight'>" +
-                x +
-                "</span>" +
-                y +
-                "<span class='highlight'>" +
-                z +
-                "</span>"
+              x +
+              "</span>" +
+              y +
+              "<span class='highlight'>" +
+              z +
+              "</span>"
             );
           }
         } else {
@@ -341,6 +317,7 @@
       .highlight {
         background-color: yellow;
       }
+
       #test-text::-moz-selection {
         /* Code for Firefox */
 
@@ -353,41 +330,36 @@
     </style>
     <!--prettier-ignore-->
     {{>Modal modalTitle="Important Alert" modalText="You have attempted to toggle text that is in two states. Please make sure you only select either normal or highlighted text but not a combination."}}
-  {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
+    {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
   ="Paper2Page1" prevRemoved=true prevPage="Paper1Page2"}}
   </form>
 
   <script>
-    var id=8;
-    function httpGet(theUrl)
-    {
-        if (window.XMLHttpRequest)
-        {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
+    var id = 8;
+    function httpGet(theUrl) {
+      if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+      }
+      else {// code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          return xmlhttp.responseText;
         }
-        else
-        {// code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange=function()
-        {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-                return xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET", theUrl, false );
-        xmlhttp.send();  
-        return xmlhttp.responseText;  
+      }
+      xmlhttp.open("GET", theUrl, false);
+      xmlhttp.send();
+      return xmlhttp.responseText;
     }
-    
-    document.getElementById("methodText").innerHTML=
-    ""+httpGet("/paper_data/method/[method]"+id+".txt")
-    
-    document.getElementById("studyTitle").innerHTML=
-    "Study Title: "+httpGet("/paper_data/title/[title]"+id+".txt");
 
-        </script>
+    document.getElementById("methodText").innerHTML =
+      "" + httpGet("/paper_data/method/[method]" + id + ".txt")
+
+    document.getElementById("studyTitle").innerHTML =
+      "Study Title: " + httpGet("/paper_data/title/[title]" + id + ".txt");
+
+  </script>
 
 
 </template>
