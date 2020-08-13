@@ -180,7 +180,7 @@
     }
 
     document.getElementById("abstractText").innerHTML =
-      "<b>Abstract: </b>" + httpGet("/paper_data/abstract/[abstract]" + id + ".txt");
+      "<b>Abstract: </b>" + httpGet("/paper_data/method/[method]" + id + ".txt");
 
     document.getElementById("studyTitle").innerHTML =
       "Study Title: " + httpGet("/paper_data/title/[title]" + id + ".txt");
