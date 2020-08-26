@@ -9,15 +9,25 @@ const Papers = new Mongo.Collection('papers');
    key5: "[abstract]4.txt"
 }*/
 
+
+
 //Papers.insert(PaperLocations);
  
 if(Meteor.isServer){
   Meteor.publish('generalInfo', function() {
-    Papers.update("SKKH53LaGYgsF3Bc5",{
-      hitID: 5,
-      paper1: 1,
-      paper2: 8
+    Papers.update("gWZweFSXpe4aHRArR",{
+      p0: 0,
+      p1: 0,
+      p2: 0,
+      p3: 0,
+      p4: 0,
+      p5: 0,
+      p6: 0,
+      p7: 0,
+      p8: 0,
+      p9: 0
     });
+    console.log(Papers.find().fetch());
     return Papers.find();
   });
 }
@@ -28,10 +38,30 @@ if(Meteor.isClient){
   Tracker.autorun(() => {
     const isReady = handle.ready();
     if(isReady){
-      var paper1 = Papers.findOne("SKKH53LaGYgsF3Bc5").paper1;
-      var paper2 = Papers.findOne("SKKH53LaGYgsF3Bc5").paper2;
-      sessionStorage['paper1'] = paper1;
-      sessionStorage['paper2'] = paper2;
+      var p0 = Papers.findOne("gWZweFSXpe4aHRArR").p0;
+      var p1 = Papers.findOne("gWZweFSXpe4aHRArR").p1;
+      var p2 = Papers.findOne("gWZweFSXpe4aHRArR").p2;
+      var p3 = Papers.findOne("gWZweFSXpe4aHRArR").p3;
+      var p4 = Papers.findOne("gWZweFSXpe4aHRArR").p4;
+      var p5 = Papers.findOne("gWZweFSXpe4aHRArR").p5;
+      var p6 = Papers.findOne("gWZweFSXpe4aHRArR").p6;
+      var p7 = Papers.findOne("gWZweFSXpe4aHRArR").p7;
+      var p8 = Papers.findOne("gWZweFSXpe4aHRArR").p8;
+      var p9 = Papers.findOne("gWZweFSXpe4aHRArR").p9;
+      sessionStorage['p0'] = p0;
+      sessionStorage['p1'] = p1;
+      sessionStorage['p2'] = p2;
+      sessionStorage['p3'] = p3;
+      sessionStorage['p4'] = p4;
+      sessionStorage['p5'] = p5;
+      sessionStorage['p6'] = p6;
+      sessionStorage['p7'] = p7;
+      sessionStorage['p8'] = p8;
+      sessionStorage['p9'] = p9;
+
+
+      sessionStorage['sesP1'] = Math.floor(Math.random() * 10);
+      sessionStorage['sesP2'] = Math.floor(Math.random() * 10);
     }
   });
 }
