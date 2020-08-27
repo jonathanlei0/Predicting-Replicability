@@ -60,8 +60,8 @@ if(Meteor.isClient){
       sessionStorage['p9'] = p9;
 
 
-      sessionStorage['sesP1'] = 0;
-      sessionStorage['sesP2'] = 0;
+      sessionStorage['sesP1'] = 4;
+      sessionStorage['sesP2'] = 3;
     }
   });
 }

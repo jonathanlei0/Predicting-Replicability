@@ -33,20 +33,6 @@
     </div>
     
     <script>
-
-      function randomstring(length) {
-        var result = "";
-        var characters =
-          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        var charactersLength = characters.length;
-        for (var i = 0; i < length; i++) {
-          result += characters.charAt(
-            Math.floor(Math.random() * charactersLength)
-          );
-        }
-        return result;
-      }
-
       const elements = document.querySelectorAll('.sentence');
         Array.from(elements).forEach((element, index) => {
           element.addEventListener("click", function( event ) {
@@ -87,6 +73,7 @@
         document.getElementById("highlightBox").style.display = "none";
         document.getElementById("selectedSentence").id="";
       }
+      
     </script>
   </body>
 </template>
