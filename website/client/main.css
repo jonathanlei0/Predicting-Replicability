@@ -53,6 +53,10 @@ input[type="range"]::-ms-fill-upper {
 }
 
 #hoverSentence{
+  background-color: #e6e6e6;
+}
+
+#selectedSentence{
   background-color: #b7d6f7;
 }
 
