@@ -1,37 +1,35 @@
 <template name="Paper1Page3">
-  {{>Title title="Paper 1"}} {{>ProgressBar length="38"}}
-  <form action="javascript:void(0);">
-    <h5 class="text-center">
-      Please read the following material and answer questions.
-    </h5>
-    <br />
-    <div class="w-100 px-3 pt-3 border border-dark">
-      <p>
-        <b id="studyTitle">
-          Loading Title...
-        </b>
-      </p>
-    </div>
-    <br />
-    <div>
-      <h5>
-        Instruction: The material below describes an experiment the authors ran
-        to testify the claims/findings presented in the abstract (previous
-        page). Read the material and answer the following questions.
-      </h5>
-    </div>
-    <br />
-    <div class="w-100 px-3 pt-3 border border-dark">
-      <div id="test-text">
-        <p id="methodText">
-          Loading Methodology...
-        </p>
-      </div>
-    </div>
-    <br />
-    <br />
-    <div class="w-100 px-3 pt-3 border border-dark">
-      <label for="participantRecruitCheck">
+    {{>ProgressBar}}
+    {{>Title}}
+    <form action="javascript:void(0);">
+        <!--h5 class="text-center">
+            Please read the following material and answer questions.
+        </h5-->
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <h5 id="studyTitle">
+                Loading Title...
+            </h5>
+        </div>
+        <br />
+        <div>
+            <h5>
+                <b>Instruction: </b> The material below describes one of the experiments that the authors ran to testify the findings/claims in the abstract (previous
+                page). Read the material and answer the following questions.
+            </h5>
+        </div>
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <div id="test-text">
+                <p id="methodText" class="methodText">
+                    Loading...
+                </p>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <!--label for="participantRecruitCheck">
         <b>
           6. How many participants were recruited in the experimental study?
         </b>
@@ -44,33 +42,62 @@
           <label for="participantRecruitCheck">Participants</label>
         </div>
       </div>
-
-      <br />
-      <p></p>
-      <label for="predictionProbability">
-        <b>
-          7. If the same type of experiments are re-performed, what probability
-          do you assign that the findings presented in the abstract will be
-          observed? Make your best prediction from 0% (not likely at all) to 100
-          % (with certainty the same finding).
-        </b>
-      </label>
-      <input type="range" id="predictionProbability" required />
-      <!-- <input type="range" class="custom-range" /> -->
-      <label for="predictionProbability">Your Prediction: <span id="predictionProbabilityValue"></span>%
-      </label>
-      <script>
-        var slider = document.getElementById("predictionProbability");
+      <br /-->
+            <label for="method-q-main-claim">
+                <b>
+                    7. Please select a single setence that best describes what the experiment/study in the material does?
+                </b>
+            </label>
+            <div id="method-q-main-claim-display" class="card" style="display: none; padding: 6px 12px; color:#4B5057;">
+                Loading...
+            </div>
+            <div id='method-q-main-claim-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <div style="text-align: center;">
+                <button class="btn btn-sm btn-primary" id="method-q-main-claim-switch" style="font-weight: bold; width: 25%;">Start selection</button>
+            </div>
+            <br />
+            <div class="row container"></div>
+            <label for="method-main-claim">
+                <b>
+                    8. Please try your best to select <b class="text-success">three</b> setences that best indicate the most important three steps of the experiment/study in the material.
+                </b>
+                <p> More info: A "step" decribes what the organizer does or what the participants are asked to do. The most important steps may appear in different sections of the material. (If there are multiple experiments/ studies/ trials/ treatments, please select the corresponding setences for the first experiments/ studies/ trials/ treatments mentioned.)
+                </p>
+            </label>
+            <div id="method-q-main-step-display" class="card" style="display: none; padding: 6px 12px; color:#4B5057;">
+                Loading...
+            </div>
+            <div id='method-q-main-step-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <div style="text-align: center;">
+                <button class="btn btn-sm btn-primary" id="method-q-main-step-switch" style="font-weight: bold; width: 25%;">Start selection</button>
+            </div>
+            <br />
+            <div class="row container"></div>
+            <p></p>
+            <label for="predictionProbability">
+                <b>
+                    9. If the same type of experiments are re-performed, what probability
+                    do you assign that the findings presented in the abstract will be
+                    observed? Make your best prediction from 0% (not likely at all) to 100
+                    % (with certainty the same finding).
+                </b>
+            </label>
+            <input type="range" id="predictionProbability" required />
+            <!-- <input type="range" class="custom-range" /> -->
+            <label for="predictionProbability">Your prediction: <span id="predictionProbabilityValue"></span>%
+            </label>
+            <script>
+                var slider = document.getElementById("predictionProbability");
         var output = document.getElementById("predictionProbabilityValue");
         output.innerHTML = slider.value;
 
         slider.oninput = function () {
           output.innerHTML = this.value;
+          bar_status = "changed";
         };
       </script>
-
-      <style>
-        /*Chrome*/
+            <style>
+                /*Chrome*/
         @media screen and (-webkit-min-device-pixel-ratio: 0) {
           input[type="range"] {
             overflow: hidden !important;
@@ -115,87 +142,58 @@
           background-color: #e9ecef !important;
         }
       </style>
-      <br />
-      <br />
-      <label>
-        <b>
-          8. How do you feel that the claims/findings of the whole study may
-          hold in other scenarios besides the scenario tested in the above
-          experiment?
-        </b>
-      </label>
-      <div class="container">
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioNo" value="otherScenarioNo" required />
-            <label class="form-check-label" for="otherScenarioNo">
-              The claims/findings will probability NOT hold in other scenarios.
+            <br />
+            <br />
+            <label>
+                <b>
+                    10. How do you feel that the findings/claims of the whole paper may
+                    hold in other scenarios besides the scenario tested in the above
+                    experiment?
+                </b>
             </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioMaybe" value="otherScenarioMaybe" required />
-            <label class="form-check-label" for="otherScenarioMaybe">
-              The claims/findings may partially hold in some similar scenarios.
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioTrue" value="otherScenarioTrue" required />
-            <label class="form-check-label" for="otherScenarioTrue">
-              The claims/findings will hold to be true in many other similar
-              scenarios.
-            </label>
-          </div>
+            <div class="container">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioNo" value="otherScenarioNo" required />
+                        <label class="form-check-label" for="otherScenarioNo">
+                            The claims/findings will probability NOT hold in other scenarios.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioMaybe" value="otherScenarioMaybe" required />
+                        <label class="form-check-label" for="otherScenarioMaybe">
+                            The claims/findings may partially hold in some similar scenarios.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioTrue" value="otherScenarioTrue" required />
+                        <label class="form-check-label" for="otherScenarioTrue">
+                            The claims/findings will hold to be true in many other similar
+                            scenarios.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
         </div>
-      </div>
-      <br />
-    </div>
-    <style>
-      .highlight {
-        background-color: yellow;
-      }
-
-      #test-text::-moz-selection {
-        /* Code for Firefox */
-
-        background: yellow;
-      }
-
-      #test-text::selection {
-        background: yellow;
-      }
-    </style>
-    <!--prettier-ignore-->
-    {{>Modal modalTitle="Important Alert" modalText="You have attempted to toggle text that is in two states. Please make sure you only select either normal or highlighted text but not a combination."}}
-    {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
-  ="Paper2Page1" prevRemoved=true prevPage="Paper1Page2"}}
-  </form>
-
-  <script>
-    var id = sessionStorage['sesP1'];
-    function httpGet(theUrl) {
-      if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-      }
-      else {// code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          return xmlhttp.responseText;
+        <style>
+        .highlight {
+            background-color: yellow;
         }
-      }
-      xmlhttp.open("GET", theUrl, false);
-      xmlhttp.send();
-      return xmlhttp.responseText;
-    }
 
-    document.getElementById("methodText").innerHTML =
-      "" + httpGet("/paper_data/method/[method]" + id + ".txt")
+        #test-text::-moz-selection {
+            /* Code for Firefox */
 
-    document.getElementById("studyTitle").innerHTML =
-      "Study Title: " + httpGet("/paper_data/title/[title]" + id + ".txt");
+            background: yellow;
+        }
 
-  </script>
-
-
+        #test-text::selection {
+            background: yellow;
+        }
+        </style>
+        <!--prettier-ignore-->
+        <!--{{>Modal modalTitle="Important Alert" modalText="You have attempted to toggle text that is in two states. Please make sure you only select either normal or highlighted text but not a combination."}}-->
+        {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
+        ="Pair1Page1" prevRemoved=true prevPage="Paper1Page2"}}
+    </form>
 </template>

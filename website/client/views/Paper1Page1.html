@@ -1,7 +1,8 @@
 <template name="Paper1Page1">
-  {{>Title title="Paper 1"}} {{>ProgressBar length="13"}}
-  <h4 class="text-center">Phase I. Individual paper assessment</h4>
-  <br />
-  <h4 class="text-center">Study 1</h4>
-  {{> BidirectNavigation nextPage ="Paper1Page2" prevRemoved=true}}
+    {{>ProgressBar}}
+    {{>Title title="Phase I."}}
+    <!--h4 class="text-center">Phase I. Individual paper assessment</h4-->
+    <br />
+    <h2 class="text-center" id="Paper1Page1-title"></h2>
+    {{> BidirectNavigation nextPage ="Paper1Page2" prevRemoved=true}}
 </template>

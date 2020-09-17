@@ -29,6 +29,23 @@ gup = function(path, name) {
 };
 
 
+const httpGet = function(theUrl) {
+    if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp = new XMLHttpRequest();
+    } else { // code for IE6, IE5
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            return xmlhttp.responseText;
+        }
+    }
+    xmlhttp.open("GET", theUrl, false);
+    xmlhttp.send();
+    return xmlhttp.responseText;
+}
+
+
 Router.route('/', function() {
     // if (BrowserDetection() == "IE") {
     //     this.layout('MainLayout');
@@ -41,7 +58,7 @@ Router.route('/', function() {
     assignmentId = gup(path, 'assignmentId');
     //assignmentId = "ASSIGNMENT_ID_NOT_AVAILABLE";
     hitId = gup(path, 'hitId');
-    
+
     sessionStorage.setItem('workerId', Math.random().toString(7));
     sessionStorage.setItem('assignmentId', gup(path, 'assignmentId'));
     sessionStorage.setItem('hitId', gup(path, 'hitId'));

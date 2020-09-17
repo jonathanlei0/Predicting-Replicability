@@ -1,192 +1,174 @@
 <template name="Paper1Page2">
-  {{>Title title="Paper 1"}} {{>ProgressBar length="25"}}
-  <form action="javascript:void(0);">
-      <h5 class="text-center">
-      Please read the following material and answer questions.
-    </h5>
-    <br />
-    <div class="w-100 px-3 pt-3 border border-dark">
-      <p>
-        <b id="studyTitle">
-          Loading Title...
-        </b>
-      </p>
-    </div>
-    <br />
-    <h5>
-      Instruction: The material below is the abstract (summary) of the whole
-      study. Read the abstract and answer the following questions.
-    </h5>
-    <br />
-    <div class="w-100 px-3 pt-3 border border-dark">
-      <p id="abstractText">
-        Loading...
-      </p>
-    </div>
-    <br />
-    <br />
-    <div class="w-100 px-3 pt-3 border border-dark">
-      <label>
-        <b>
-          1. How many phrases or terms in the abstract that are unfamiliar to you?
-        </b>
-      </label>
-      <div class="container">
-        <div class="form-row m-1">
-          <div class="form-check col">
-            <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar1to2" value="unfamiliar1to2" required />
-            <label class="form-check-label" for="unfamiliar1to2">
-              1~2
-            </label>
-          </div>
-          <div class="form-check col">
-            <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar3to4" value="unfamiliar3to4" />
-            <label class="form-check-label" for="unfamiliar3to4">
-              3~4
-            </label>
-          </div>
-          <div class="form-check col">
-            <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar5to6" value="unfamiliar5to6" />
-            <label class="form-check-label" for="unfamiliar5to6">
-              5~6
-            </label>
-          </div>
-          <div class="form-check col">
-            <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar6more" value="unfamiliar6more" />
-            <label class="form-check-label" for="unfamiliar6more">
-              More than 6
-            </label>
-          </div>
+    {{>ProgressBar}}
+    {{>Title title}}
+    <form action="javascript:void(0);">
+        <!--h5 class="text-center">
+            Please read the following material and answer questions.
+        </h5-->
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <h5 id="studyTitle">
+                Loading Title...
+            </h5>
         </div>
-      </div>
-      <br />
-      <label for="unfamiliarTermsUserInput">
-        <b>
-          2. Please write down one or two terms or phrases that you are unfamiliar
-          with.
-        </b>
-      </label>
-      <input type="text" class="form-control" id="unfamiliarTermsUserInput" placeholder="Type Here. Separate by comma “,”" required />
-      <br />
-      <label>
-        <b>
-          3. How much do you understand the
-          <span class="text-success">main claims/findings</span> of the study
-          after reading the abstract
-        </b>
-      </label>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsGeneralVeryClear" value="mainClaimsGeneralVeryClear" required />
-        <label class="form-check-label" for="mainClaimsGeneralVeryClear">
-          It is very clear to me what the study has found.
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsGeneralIdeas" value="mainClaimsGeneralIdeas" />
-        <label class="form-check-label" for="mainClaimsGeneralIdeas">
-          I have some general ideas about what the study has found but still find
-          some places unclear
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsNotSure" value="mainClaimsNotSure" />
-        <label class="form-check-label" for="mainClaimsNotSure">
-          I am not so sure about what the study has found, but I can make a rough
-          guess
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsNoIdea" value="mainClaimsNoIdea" />
-        <label class="form-check-label" for="mainClaimsNoIdea">
-          I have no idea what the study attempts to achieve
-        </label>
-      </div>
-      <br />
-      <label for="mainClaimsUserInput">
-        <b>
-          4. Use your own language to briefly describe the
-          <span class="text-success">main claims/findings</span> of the paper
-          based on your understanding of the abstract. Make your best guess if
-          necessary.
-        </b>
-      </label>
-
-      <textarea class="form-control" id="mainClaimsUserInput" rows="3" placeholder="Type Here." required></textarea>
-      <br />
-      <label>
-        <b>
-          5. How did your own experience support or contradict to the
-          <span class="text-success">claims/findings</span> of the study presented
-          in the abstract?
-        </b>
-      </label>
-      <div class="container">
-        <div class="form-row m-1">
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="contradictions" id="ContradictCompletelyContradict" value="ContradictCompletelyContradict" required />
-            <label class="form-check-label" for="ContradictCompletelyContradict">
-              Completely contradict to
-            </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="contradictions" id="ContradictSomewhatContradict" value="ContradictSomewhatContradict" />
-            <label class="form-check-label" for="ContradictSomewhatContradict">
-              Somewhat contradict to
-            </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="contradictions" id="ContradictHardToSay" value="ContradictHardToSay" />
-            <label class="form-check-label" for="ContradictHardToSay">
-              Hard to say/no relevant experience
-            </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="contradictions" id="ContradictSomewhatSupport" value="ContradictSomewhatSupport" />
-            <label class="form-check-label" for="ContradictSomewhatSupport">
-              Somewhat support
-            </label>
-          </div>
-          <div class="form-check-inline">
-            <input class="form-check-input" type="radio" name="contradictions" id="contradictCompletelySupport" value="contradictCompletelySupport" />
-            <label class="form-check-label" for="contradictCompletelySupport">
-              Completely Support
-            </label>
-          </div>
+        <br />
+        <h5>
+            <b>Instruction: </b>Abstract is a summary of the whole paper. Read the abstract and answer the questions below.
+        </h5>
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <p id="abstractText">
+                Loading...
+            </p>
         </div>
-      </div>
-      <br />
-    </div>
-
-    {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper1Page3"
-    prevRemoved=true prevPage="Paper1Page1"}}
-  </form>
-
-  <script>
-    var id = sessionStorage['sesP1'];
-    function httpGet(theUrl) {
-      if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp = new XMLHttpRequest();
-      }
-      else {// code for IE6, IE5
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-          return xmlhttp.responseText;
-        }
-      }
-      xmlhttp.open("GET", theUrl, false);
-      xmlhttp.send();
-      return xmlhttp.responseText;
-    }
-
-    document.getElementById("abstractText").innerHTML =
-      "<b>Abstract: </b>" + httpGet("/paper_data/abstract/[abstract]" + id + ".txt");
-
-    document.getElementById("studyTitle").innerHTML =
-      "Study Title: " + httpGet("/paper_data/title/[title]" + id + ".txt");
-
-
-  </script>
-
+        <br />
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <label>
+                <b>
+                    1. In the abstract, how many phrases or terms are NOT familiar to you?
+                </b>
+            </label>
+            <div class="container">
+                <div class="form-row m-1">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar1to2" value="unfamiliar1to2" required />
+                        <label class="form-check-label" for="unfamiliar1to2">
+                            1~2
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar3to4" value="unfamiliar3to4" />
+                        <label class="form-check-label" for="unfamiliar3to4">
+                            3~4
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar5to6" value="unfamiliar5to6" />
+                        <label class="form-check-label" for="unfamiliar5to6">
+                            5~6
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar6more" value="unfamiliar6more" />
+                        <label class="form-check-label" for="unfamiliar6more">
+                            More than 6
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <label for="unfamiliarTermsUserInput">
+                <b>
+                    2. Please write down one or two phrases or terms that you are LEAST familiar
+                    with.
+                </b>
+            </label>
+            <!--input type="text" class="form-control" id="unfamiliarTermsUserInput" placeholder="Type Here." autocomplete="off" required /-->
+            <textarea class="form-control" id="unfamiliarTermsUserInput" rows="1" placeholder="Type Here." autocomplete="off" required></textarea>
+            <p style="padding: 3px 12px;">Separate by comma “,” .</p>
+            <label>
+                <b>
+                    3. Please select a single sentence which best describes the <span class="text-success">main findings/claims</span> of the paper.
+                </b>
+            </label>
+            <div id="abstract-q3-display" class="card" style="display: none; padding: 6px 12px; color:#4B5057;">
+                Loading...
+            </div>
+            <div id='abstract-q3-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <div style="text-align: center;">
+                <button class="btn btn-sm btn-primary" id="abstract-q3-switch" style="font-weight: bold; width: 25%;">Start selection</button>
+            </div>
+            <br />
+            <label>
+                <b>
+                    4. How much do you understand the
+                    <span class="text-success">main findings/claims</span> of the study
+                    after reading the abstract
+                </b>
+            </label>
+            <div class="container">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsGeneralVeryClear" value="mainClaimsGeneralVeryClear" required />
+                    <label class="form-check-label" for="mainClaimsGeneralVeryClear">
+                        It is very clear to me what the study has found.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsGeneralIdeas" value="mainClaimsGeneralIdeas" />
+                    <label class="form-check-label" for="mainClaimsGeneralIdeas">
+                        I have some general ideas about what the study has found but still find
+                        some places unclear
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsNotSure" value="mainClaimsNotSure" />
+                    <label class="form-check-label" for="mainClaimsNotSure">
+                        I am not so sure about what the study has found, but I can make a rough
+                        guess
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaims" id="mainClaimsNoIdea" value="mainClaimsNoIdea" />
+                    <label class="form-check-label" for="mainClaimsNoIdea">
+                        I have no idea what the study attempts to achieve
+                    </label>
+                </div>
+            </div>
+            <br />
+            <label for="mainClaimsUserInput">
+                <b>
+                    5. Use your own language to briefly describe the
+                    <span class="text-success">main findings/claims</span> of the paper. Make your best guess if necessary.
+                </b>
+            </label>
+            <textarea class="form-control" id="mainClaimsUserInput" rows="3" placeholder="Type Here." autocomplete="off" required></textarea>
+            <br />
+            <label>
+                <b>
+                    6. How do your own experiences in general support or contradict to the
+                    claims/findings of the paper?
+                </b>
+            </label>
+            <div class="container">
+                <!--div class="form-row m-1"-->
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contradictions" id="ContradictCompletelyContradict" value="ContradictCompletelyContradict" required />
+                    <label class="form-check-label" for="ContradictCompletelyContradict">
+                        Completely contradict to
+                    </label>
+                    <br />
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contradictions" id="ContradictSomewhatContradict" value="ContradictSomewhatContradict" />
+                    <label class="form-check-label" for="ContradictSomewhatContradict">
+                        Somewhat contradict to
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contradictions" id="ContradictHardToSay" value="ContradictHardToSay" />
+                    <label class="form-check-label" for="ContradictHardToSay">
+                        Hard to say/no relevant experience
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contradictions" id="ContradictSomewhatSupport" value="ContradictSomewhatSupport" />
+                    <label class="form-check-label" for="ContradictSomewhatSupport">
+                        Somewhat support
+                    </label>
+                    <br />
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="contradictions" id="contradictCompletelySupport" value="contradictCompletelySupport" />
+                    <label class="form-check-label" for="contradictCompletelySupport">
+                        Completely Support
+                    </label>
+                </div>
+                <!--/div-->
+            </div>
+            <br />
+        </div>
+        {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper1Page3"
+        prevRemoved=true prevPage="Paper1Page1"}}
+    </form>
 </template>
