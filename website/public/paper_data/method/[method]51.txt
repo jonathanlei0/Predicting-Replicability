@@ -28,7 +28,7 @@ semantically related picture also served as a semantically unrelated picture
 and each phonologically related picture also served as a phonologically
 unrelated picture. </span><span class="sentence">The Appendix lists the materials. </span><span class="sentence">The pictures were line
 drawings on a black background. </span><span class="sentence">They were digitized and scaled to fit into a
-virtual frame of 10 cm × 10 cm. On average, the pictures subtended
+virtual frame of 10 cm × 10 cm. </span><span class="sentence">On average, the pictures subtended
 8.7° horizontally and 8.7° vertically at a viewing
 distance of 66 cm (roughly the distance between the participant and the
 screen). </span><span class="sentence">The arrows were presented in 28-point uppercase Arial font,
@@ -57,7 +57,7 @@ latencies were measured using an electronic voice key.</span></p><p class="body-
 participants were tested individually. </span><span class="sentence">They were seated in front of the
 computer monitor, a panel with a left and a right push button, and the
 microphone. </span><span class="sentence">The distance between participant and screen was approximately 66
-cm. Participants were given written instructions telling them how their eyes
+cm. </span><span class="sentence">Participants were given written instructions telling them how their eyes
 would be monitored and what the task was. </span><span class="sentence">The experimenter also orally
 described the eye-tracking equipment and restated the instructions. </span><span class="sentence">The
 participants were told that they had to name the green picture of

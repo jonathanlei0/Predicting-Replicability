@@ -5,7 +5,7 @@ websiteLevelVariablesRefresh = function() {
     //****************************************
     mySessionStorage.set('task_id', 0);
     mySessionStorage.set('paper_list', []);
-    mySessionStorage.set('curr_paper_id', 4);
+    mySessionStorage.set('curr_paper_id', 11);
     MAX_TASK_NUM = 2;
 }
 
@@ -29,8 +29,9 @@ pageLevelVariablesRefresh = function() {
     METHOD_HIGHLIGHT_COLOR1 = 1;
     METHOD_HIGHLIGHT_COLOR2 = 2;
     METHOD_SELECTION_NUM_TYPE2 = 3;
-    ABSTRACT_INSTRUCTION_TYPE1 = "Please go to the abstact and click a sentence. It will be displayed here.<br /><br />";
-    METHOD_INSTRUCTION_TYPE1 = "Please go to the method part and click a sentence. It will be displayed here.<br /><br />";
+    //ABSTRACT_INSTRUCTION_TYPE1 = "Please go to the abstact and click a sentence. It will be displayed here.<br /><br />";
+    ABSTRACT_INSTRUCTION_TYPE1 = 'Please click "Start selection" below to start. Then, click a sentence in the abstract and the showing "Toggle Selection" to select the sentence. After completing your selection, come back here and click the showing "Comfirm selection" to finish.'
+    METHOD_INSTRUCTION_TYPE1 = 'Please click "Start selection" below to start. Then, click a sentence in the material and the showing "Toggle Selection" to select the sentence. After completing your selection, come back here and click the showing "Comfirm selection" to finish.'
     customized_question_complete_status = [0];
 
     //****************************************
