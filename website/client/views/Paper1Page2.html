@@ -27,33 +27,54 @@
         <div class="w-100 px-3 pt-3 border border-dark">
             <label>
                 <b>
-                    1. In the abstract, how many phrases or terms are NOT familiar to you?
+                    1. Please select a single sentence in the abstract that best describes the <span class="text-success">main findings/claims</span> of the paper.
+                </b>
+                <!--br />
+                <p style="padding: 3px 12px">
+                    Please click "Start selection" button below to enable sentence selection in the abstract. After your selection, a "Confirm selection" buttom will appear here. Please click it to complete the question.
+                </p-->
+            </label>
+            <div id="abstract-q3-display" class="card" style=" padding: 6px 12px; color:#4B5057;">
+                Loading...
+            </div>
+            <div id='abstract-q3-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <!--div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="abstract-q3-switch" style="font-weight: bold; width: 25%;">Start selection</a>
+            </div-->
+            <div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="abstract-q3-start-button" style="font-weight: bold; width: 15%;" aria-disabled="false">Start selection</a>
+                <a href="#" role="button" class="btn btn-sm btn-warning disabled" id="abstract-q3-confirm-button" style="font-weight: bold; width: 15%;" aria-disabled="true">Confirm selection</a>
+            </div>
+            <br />
+            <label>
+                <b>
+                    2. In the abstract, how many phrases or terms are NOT familiar to you?
                 </b>
             </label>
             <div class="container">
                 <div class="form-row m-1">
                     <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar0" value="unfamiliar0" required />
+                        <label class="form-check-label" for="unfamiliar0">
+                            0
+                        </label>
+                    </div>
+                    <div class="form-check col">
                         <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar1to2" value="unfamiliar1to2" required />
                         <label class="form-check-label" for="unfamiliar1to2">
-                            1~2
+                            1 or 2
                         </label>
                     </div>
                     <div class="form-check col">
                         <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar3to4" value="unfamiliar3to4" />
                         <label class="form-check-label" for="unfamiliar3to4">
-                            3~4
+                            3 or 4
                         </label>
                     </div>
                     <div class="form-check col">
                         <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar5to6" value="unfamiliar5to6" />
                         <label class="form-check-label" for="unfamiliar5to6">
-                            5~6
-                        </label>
-                    </div>
-                    <div class="form-check col">
-                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar6more" value="unfamiliar6more" />
-                        <label class="form-check-label" for="unfamiliar6more">
-                            More than 6
+                            5 or more
                         </label>
                     </div>
                 </div>
@@ -61,30 +82,12 @@
             <br />
             <label for="unfamiliarTermsUserInput">
                 <b>
-                    2. Please write down one or two phrases or terms that you are LEAST familiar
-                    with.
+                    3. Please write down one or two phrases or terms that are the LEAST familiar to you.
                 </b>
             </label>
             <!--input type="text" class="form-control" id="unfamiliarTermsUserInput" placeholder="Type Here." autocomplete="off" required /-->
             <textarea class="form-control" id="unfamiliarTermsUserInput" rows="1" placeholder="Type Here." autocomplete="off" required></textarea>
             <p style="padding: 3px 12px;">Separate by comma “,” .</p>
-            <label>
-                <b>
-                    3. Please select a single sentence in the abstract that best describes the <span class="text-success">main findings/claims</span> of the paper.
-                </b>
-                <!--br />
-                <p style="padding: 3px 12px">
-                    Please click "Start selection" button below to enable sentence selection in the abstract. After your selection, a "Comfirm selection" buttom will appear here. Please click it to complete the question.
-                </p-->
-            </label>
-            <div id="abstract-q3-display" class="card" style=" padding: 6px 12px; color:#4B5057;">
-                Loading...
-            </div>
-            <div id='abstract-q3-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
-            <div style="text-align: center;">
-                <button class="btn btn-sm btn-primary" id="abstract-q3-switch" style="font-weight: bold; width: 25%;">Start selection</button>
-            </div>
-            <br />
             <label>
                 <b>
                     4. How much do you understand the
@@ -132,7 +135,7 @@
             <label>
                 <b>
                     6. How do your own experiences in general support or contradict to the
-                    <span class="text-success">main findings/claims</span> of the paper? 
+                    <span class="text-success">main findings/claims</span> of the paper?
                 </b>
             </label>
             <div class="container">
@@ -140,14 +143,14 @@
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="contradictions" id="ContradictCompletelyContradict" value="ContradictCompletelyContradict" required />
                     <label class="form-check-label" for="ContradictCompletelyContradict">
-                        Completely contradict to
+                        Completely contradict
                     </label>
                     <br />
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="contradictions" id="ContradictSomewhatContradict" value="ContradictSomewhatContradict" />
                     <label class="form-check-label" for="ContradictSomewhatContradict">
-                        Somewhat contradict to
+                        Somewhat contradict
                     </label>
                 </div>
                 <div class="form-check">

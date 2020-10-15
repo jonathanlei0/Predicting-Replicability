@@ -116,12 +116,30 @@
                     </div>
                 </div>
             </div>
+            <br />
             <label class="pr-3 pt-2">
                 <b>
                     3. Please choose one paper to do the following task:
                 </b>
             </label>
-            <div class="container">
+            <div class="form-check form-check-inline">
+                <input onchange="studyUpdate(1);" class="form-check-input" type="radio" name="taskStudy" id="taskStudy1" value="taskStudy1" required />
+                <label class="form-check-label" for="taskStudy1">
+                    Paper 1
+                </label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input onchange="studyUpdate(2);" class="form-check-input" type="radio" name="taskStudy" id="taskStudy2" value="taskStudy2" />
+                <label class="form-check-label" for="taskStudy2">
+                    Paper 2
+                </label>
+            </div>
+            <br />
+            <span class="d-inline" id="chosenStudyText" style="visibility: hidden;">You chose the paper: "<b class="d-inline" id="chosenStudy"></b>"
+            </span>
+            <p> Use a few sentences to describe, according to your understanding, how the given experiment of the paper you chose justifies its findings/claims?
+            </p>
+            <!--div class="container">
                 <div class="form-row m-1">
                     <div class="form-check col">
                         <input onchange="studyUpdate(1);" class="form-check-input" type="radio" name="taskStudy" id="taskStudy1" value="taskStudy1" required />
@@ -146,22 +164,21 @@
                         <span class="d-inline" id="chosenStudyText" style="display: none !important;">Your choice is the study "<b class="d-inline" id="chosenStudy"></b>"</span>
                     </label>
                 </div>
-            </div>
+            </div-->
             <script>
             function studyUpdate(paperNo) {
                 document.getElementById("chosenStudy").innerHTML =
                     document.getElementById("studyTitle" + paperNo).innerHTML.replace("Title:", "");
-                document.getElementById("chosenStudyBefore").style = "display: none!important;";
-                document.getElementById("chosenStudyText").style = "display: block";
+                //document.getElementById("chosenStudyBefore").style = "visibility: visible;";
+                document.getElementById("chosenStudyText").style = "visibility: visible;";
             }
             </script>
-            <br />
-            <label for="mainClaimsUserInput">
+            <!--label for="mainClaimsUserInput">
                 <b>
                     4. Please use a few sentences to describe according to your understanding
                     how the given experiment justifies their findings/claims?
                 </b>
-            </label>
+            </label-->
             <textarea class="form-control" id="mainClaimsUserInput" rows="3" placeholder="Type Here." required></textarea>
             <br />
         </div>

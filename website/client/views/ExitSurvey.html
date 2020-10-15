@@ -11,7 +11,7 @@
                 <div class="form-group">
                     <p style="font-weight: bold;">What is your age?</p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="ages" id="agesUnder18" value="option1" required/>
+                        <input class="form-check-input" type="radio" name="ages" id="agesUnder18" value="option1" required />
                         <label class="form-check-label" for="agesUnder18">
                             Under 18
                         </label>
@@ -57,7 +57,7 @@
                 <div class="form-group">
                     <p style="font-weight: bold;">Your Gender:<br /></p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="genders" id="female" value="option1" required/>
+                        <input class="form-check-input" type="radio" name="genders" id="female" value="option1" required />
                         <label class="form-check-label" for="female">
                             Female
                         </label>
@@ -80,7 +80,7 @@
                 <div class="form-group">
                     <p style="font-weight: bold;">Your highest education degree:<br /></p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="degree" id="highschool" value="option1" required/>
+                        <input class="form-check-input" type="radio" name="degree" id="highschool" value="option1" required />
                         <label class="form-check-label" for="highschool">
                             High School
                         </label>
@@ -119,7 +119,7 @@
                 <div class="form-group">
                     <p style="font-weight: bold;">Do you have any degree (Bachelor, Master, or Doctoral degree) in any social science subjects (psychology, economics, sociology, law, business, etc.)?<br /></p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="socialscience" id="ssyes" value="option1" required/>
+                        <input class="form-check-input" type="radio" name="socialscience" id="ssyes" value="option1" required />
                         <label class="form-check-label" for="ssyes">
                             Yes
                         </label>
@@ -138,7 +138,7 @@
                         Have you heard about any research project about the replicability of social studies like the Social Science Replication Project (SSRP), Many Lab (ML), Experimental Economics Replication Project (EERP), Reproducibility Project: Psychology (RPP), etc?<br />
                     </p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="projectreplication" id="pryes" value="option1" required/>
+                        <input class="form-check-input" type="radio" name="projectreplication" id="pryes" value="option1" required />
                         <label class="form-check-label" for="pryes">
                             Yes
                         </label>
@@ -156,7 +156,7 @@
                 <div class="form-group">
                     <p style="font-weight: bold;">Have you heard about any study in our experiments before?<br /></p>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="heardrep" id="hryes" value="option1" required/>
+                        <input class="form-check-input" type="radio" name="heardrep" id="hryes" value="option1" required />
                         <label class="form-check-label" for="hryes">
                             Yes
                         </label>
@@ -169,8 +169,41 @@
                     </div>
                 </div>
             </li>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">Are you happy with this online experiment?<br /></p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="happy-HIT" id="happy-about-this-HIT" value="option1" required />
+                        <label class="form-check-label">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="happy-HIT" id="neutral-about-this-HIT" value="option2" />
+                        <label class="form-check-label">
+                            Neutral
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="happy-HIT" id="not-happy-about-this-HIT" value="option3" />
+                        <label class="form-check-label">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label for="exit-survey-bug">
+                        <b>(Optional) Please let us know how we could improve the experience of this online experiment.
+                        </b>
+                    </label>
+                    <textarea class="form-control" id="exit-survey-bug" rows="3" placeholder="Type Here." autocomplete="off"></textarea>
+                    <br />
+                </div>
+            </li>
         </ol>
-        {{> BidirectNavigation nextPage="ExperimentEnd" nextText="Confirm and Proceed"
+        {{> BidirectNavigation nextPage="ExperimentEnd" nextText="Submit HIT"
         prevRemoved=true}}
     </form>
 </template>

@@ -14,7 +14,7 @@
         <br />
         <div>
             <h5>
-                <b>Instruction: </b> 
+                <b>Instruction: </b>
                 The material below describes one of the experiments that the authors ran to obtain the findings/claims in the abstract (previous page). Read the materials and answer questions 7-10.
             </h5>
         </div>
@@ -29,37 +29,43 @@
         <br />
         <br />
         <div class="w-100 px-3 pt-3 border border-dark">
-            <!--label for="participantRecruitCheck">
-        <b>
-          6. How many participants were recruited in the experimental study?
-        </b>
-      </label>
-      <div class="row container">
-        <div style="width: 120px;">
-          <input type="number" class="form-control" id="participantRecruitCheck" placeholder="0" required />
-        </div>
-        <div class="col-sm no-gutters">
-          <label for="participantRecruitCheck">Participants</label>
-        </div>
-      </div>
-      <br /-->
             <label for="method-q-main-claim">
                 <b>
-                    7. Please select a single setence that best describes what the experiment/study in the material does?
+                    7. Please indicate whether there is any paragraph before the "Method" section in the material. If there are such paragraphs, please select from them a single sentence that best describes what the experiment/study does?
                 </b>
             </label>
+            <div class="container">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="begining-paragraph-existence" id="begining-paragraph-exists" value="1" required checked="checked" />
+                        <label class="form-check-label" for="begining-paragraph-existence">
+                            There is a paragraph before the "Method" section.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="begining-paragraph-existence" id="begining-paragraph-NOT-exists" value="0" />
+                        <label class="form-check-label" for="begining-paragraph-existence">
+                            There is NO paragraph before the "Method" section.
+                        </label>
+                    </div>
+                </div>
+            </div>
             <div id="method-q-main-claim-display" class="card" style="display: none; padding: 6px 12px; color:#4B5057;">
                 Loading...
             </div>
             <div id='method-q-main-claim-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <!--div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="method-q-main-claim-switch" style="font-weight: bold; width: 25%;">Start selection</a>
+            </div-->
             <div style="text-align: center;">
-                <button class="btn btn-sm btn-primary" id="method-q-main-claim-switch" style="font-weight: bold; width: 25%;">Start selection</button>
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="method-q-main-claim-start-button" style="font-weight: bold; width: 15%;" aria-disabled="false">Start selection</a>
+                <a href="#" role="button" class="btn btn-sm btn-warning disabled" id="method-q-main-claim-confirm-button" style="font-weight: bold; width: 15%;" aria-disabled="true">Confirm selection</a>
             </div>
             <br />
             <div class="row container"></div>
             <label for="method-main-claim">
                 <b>
-                    8. Please try your best to select <b class="text-success">three</b> setences that best indicate the most important three steps of the experiment/study in the material.
+                    8. Please select <b class="text-success">three</b> sentences that best describe the most important steps of the experiment/study.
                 </b>
                 <p> More info: A "step" decribes what the organizer does or what the participants are asked to do. The most important steps may appear in different sections of the material. (If there are multiple experiments/ studies/ trials/ treatments, please select the corresponding setences for the first experiments/ studies/ trials/ treatments mentioned.)
                 </p>
@@ -68,20 +74,47 @@
                 Loading...
             </div>
             <div id='method-q-main-step-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <!--div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="method-q-main-step-switch" style="font-weight: bold; width: 25%;">Start selection</a>
+            </div-->
             <div style="text-align: center;">
-                <button class="btn btn-sm btn-primary" id="method-q-main-step-switch" style="font-weight: bold; width: 25%;">Start selection</button>
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="method-q-main-step-start-button" style="font-weight: bold; width: 15%;" aria-disabled="false">Start selection</a>
+                <a href="#" role="button" class="btn btn-sm btn-warning disabled" id="method-q-main-step-confirm-button" style="font-weight: bold; width: 15%;" aria-disabled="true">Confirm selection</a>
+            </div>
+            <br />
+            <label for="participantRecruitCheck">
+                <b>
+                    9. How many participants were recruited in the experimental study?
+                </b>
+            </label>
+            <div class="row container">
+                <div style="width: 120px;">
+                    <input type="number" class="form-control" id="participantRecruitCheck" placeholder="0" required />
+                </div>
+                <div class="col-sm no-gutters">
+                    <label for="participantRecruitCheck">Participants</label>
+                </div>
             </div>
             <br />
             <div class="row container"></div>
             <p></p>
             <label for="predictionProbability">
                 <b>
-                    9. If the same type of experiments are re-performed, what probability
+                    10. If the same type of experiments are re-performed, what probability
                     do you assign that the findings presented in the abstract will be
                     observed? Make your best prediction from 0% (not likely at all) to 100
                     % (with certainty the same finding).
                 </b>
+                <div style="display: inline-block; padding: 0.2em;">
+                    <a href="#" role="button" id="show-abstract-button"  class="btn btn-outline-primary btn-sm" style="width: 8em;">Show abstract</a>
+                </div>
             </label>
+            <div id="show-abstract" class="collapsible">
+                <div id="abstractText" class="card card-body" style="display: block; padding: 6px 12px; color:#4B5057;">
+                    Loading...
+                </div>
+                <br>
+            </div>
             <input type="range" id="predictionProbability" required />
             <!-- <input type="range" class="custom-range" /> -->
             <label for="predictionProbability">Your prediction: <span id="predictionProbabilityValue"></span>%
@@ -146,7 +179,7 @@
             <br />
             <label>
                 <b>
-                    10. How do you feel that the findings/claims of the whole paper may
+                    11. How do you feel that the findings/claims of the whole paper may
                     hold in other scenarios besides the scenario tested in the above
                     experiment?
                 </b>

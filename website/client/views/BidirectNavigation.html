@@ -4,11 +4,11 @@
         {{#if this.prevRemoved}}
         {{else}}
         {{#if this.prevText}}
-        <button href="" class="btn btn-lg btn-outline-primary" id="prevBtn">
+        <button href="#" role="button" class="btn btn-lg btn-outline-primary" id="prevBtn">
             &#x3C; {{prevText}}
         </button>
         {{else}}
-        <button href="" class="btn btn-lg btn-outline-primary" id="prevBtn">
+        <button href="#" role="button" class="btn btn-lg btn-outline-primary" id="prevBtn">
             &#x3C; Back
         </button>
         {{/if}}
@@ -16,11 +16,11 @@
         &nbsp;
         {{#if this.nextText}}
         <!--input type="submit" value="{{nextText}} &#62;" class="btn btn-lg btn-outline-primary" id="nextBtn" /-->
-        <button class="btn btn-lg btn-outline-primary" id="nextBtn">
+        <button href="#" role="button" class="btn btn-lg btn-outline-primary" id="nextBtn">
             {{nextText}} &#62;
         </button>
         {{else}}
-        <button class="btn btn-lg btn-outline-primary" id="nextBtn">
+        <button href="#" role="button" class="btn btn-lg btn-outline-primary" id="nextBtn">
             Next &#62;
         </button>
         {{/if}}
