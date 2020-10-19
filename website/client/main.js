@@ -1,6 +1,8 @@
+import '/imports/startup/client';
+
+
 Template.MainLayout.onCreated(function() {
     //sessionStorage.clear();
-    websiteLevelVariablesRefresh();
     pageLevelVariablesRefresh();
 });
 
@@ -63,7 +65,6 @@ Template.MainLayout.events({
     },
 
     'click .close': function(event, instance) {
-        console.log(event);
         reactivatePage();
         var closeId = event.target.id;
         if (closeId == "popup-warning-1-close" || closeId == "popup-warning-2-close") {

@@ -2,11 +2,10 @@ Template.Paper1Page2.onCreated(function() {
     pageLevelVariablesRefresh();
     //localStorage.curr_paper_id = Math.floor(Math.random() * 25);
     customized_question_complete_status = [1];
-    currPage = "Paper1Page2"
 });
 
 Template.Paper1Page2.onRendered(function() {
-    var id = mySessionStorage.get('curr_paper_id');
+    var id = glob.currPaperExpIdList[nonNeg(glob.taskId-1)];
 
     document.getElementById("studyTitle").innerHTML =
         "<b>Title: </b><em>" + httpGet("/paper_data/title/[title]" + id + ".txt") + "</em>";

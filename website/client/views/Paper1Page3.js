@@ -2,11 +2,10 @@ Template.Paper1Page3.onCreated(function() {
     pageLevelVariablesRefresh();
     customized_question_complete_status = [1, 1];
     bar_status = "default"
-    currPage = "Paper1Page3"
 });
 
 Template.Paper1Page3.onRendered(function() {
-    var id = mySessionStorage.get('curr_paper_id');
+    var id = glob.currPaperExpIdList[nonNeg(glob.taskId-1)];
 
     document.getElementById("studyTitle").innerHTML =
         "<b>Title: </b><em>" + httpGet("/paper_data/title/[title]" + id + ".txt") + "</em>";
@@ -145,7 +144,7 @@ Template.Paper1Page3.events({
             highlight_color = METHOD_HIGHLIGHT_COLOR2;
             location.href = "#";
             location.href = "#studyTitle";
-            document.getElementById('method-q-main-claim-feedback').style.visibility = "hidden";
+            document.getElementById('method-q-main-step-feedback').style.visibility = "hidden";
             customized_question_complete_status[1] = 2;
             element.innerHTML = 'Confirm selection';
             element.className = element.className.replace('btn-primary', 'btn-warning');
@@ -188,7 +187,7 @@ Template.Paper1Page3.events({
         highlight_color = METHOD_HIGHLIGHT_COLOR2;
         location.href = "#";
         location.href = "#studyTitle";
-        document.getElementById('method-q-main-claim-feedback').style.visibility = "hidden";
+        document.getElementById('method-q-main-step-feedback').style.visibility = "hidden";
         customized_question_complete_status[1] = 2;
 
         var confirmButton = document.getElementById('method-q-main-step-confirm-button');
@@ -242,11 +241,7 @@ Template.Paper1Page3.events({
             startButton.setAttribute("recorded-status", customized_question_complete_status[0]);
 
             customized_question_complete_status[0] = 0;
-        }
-    },
-
-    'change #begining-paragraph-exists': function(event, instance) {
-        if (document.getElementById('begining-paragraph-exists').checked) {
+        } else {
             var startButton = document.getElementById('method-q-main-claim-start-button');
             var confirmButton = document.getElementById('method-q-main-claim-confirm-button');
 
@@ -263,16 +258,37 @@ Template.Paper1Page3.events({
                 startButton.classList.add('disabled');
                 startButton.ariaDisabled = true;
             }
-            // var element = document.getElementById('method-q-main-claim-switch');
-            // var buttomText = element.innerHTML.toLowerCase();
-            // if (buttomText.includes('restart')) {
-            //     customized_question_complete_status[0] = 0;
-            // } else if (buttomText.includes('confirm')) {
-            //     customized_question_complete_status[0] = 2;
-            // } else customized_question_complete_status[0] = 1;
-            // element.disabled = false;
         }
     },
+
+    // 'change #begining-paragraph-exists': function(event, instance) {
+    //     if (document.getElementById('begining-paragraph-exists').checked) {
+    //         var startButton = document.getElementById('method-q-main-claim-start-button');
+    //         var confirmButton = document.getElementById('method-q-main-claim-confirm-button');
+
+    //         var recordedStatus = parseInt(startButton.getAttribute("recorded-status"), 10);
+    //         customized_question_complete_status[0] = recordedStatus;
+    //         if (recordedStatus <= 1) {
+    //             confirmButton.classList.add('disabled');
+    //             confirmButton.ariaDisabled = true;
+    //             startButton.classList.remove('disabled');
+    //             startButton.ariaDisabled = false;
+    //         } else if (recordedStatus == 2) {
+    //             confirmButton.classList.remove('disabled');
+    //             confirmButton.ariaDisabled = false;
+    //             startButton.classList.add('disabled');
+    //             startButton.ariaDisabled = true;
+    //         }
+    //         // var element = document.getElementById('method-q-main-claim-switch');
+    //         // var buttomText = element.innerHTML.toLowerCase();
+    //         // if (buttomText.includes('restart')) {
+    //         //     customized_question_complete_status[0] = 0;
+    //         // } else if (buttomText.includes('confirm')) {
+    //         //     customized_question_complete_status[0] = 2;
+    //         // } else customized_question_complete_status[0] = 1;
+    //         // element.disabled = false;
+    //     }
+    // },
 
 
     'click #show-abstract-button': function(event, instance) {

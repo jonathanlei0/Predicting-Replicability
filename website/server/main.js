@@ -1,5 +1,9 @@
 import { Meteor } from 'meteor/meteor';
-import { EJSON } from 'meteor/ejson'
+import { EJSON } from 'meteor/ejson';
+
+
+
+//clcExitSurvey.insert({ "111": 'Hello, world!' });
 
 Meteor.startup(() => {
     // code to run on server at startup

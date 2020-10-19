@@ -20,8 +20,8 @@
         </div>
         <br />
         <div class="w-100 px-3 pt-3 border border-dark">
-            <div id="test-text">
-                <p id="methodText" class="methodText">
+            <div id="test-text" name="test-text">
+                <p id="methodText" name="methodText" class="methodText">
                     Loading...
                 </p>
             </div>
@@ -29,23 +29,28 @@
         <br />
         <br />
         <div class="w-100 px-3 pt-3 border border-dark">
-            <label for="method-q-main-claim">
-                <b>
+            <label id="method-q-main-claim-label" name="method-q-main-claim-label" for="method-q-main-claim">
+                <!--b>
                     7. Please indicate whether there is any paragraph before the "Method" section in the material. If there are such paragraphs, please select from them a single sentence that best describes what the experiment/study does?
+                </b-->
+                <b>
+                    7. Please select a <span class="text-success">single</span> sentence that best describes what the experiment/study does? If you think that there is no such a sentence, please check box below.
                 </b>
+                <br />
+                Such a sentence usually appears in a paragraph (if exists) before the "Method" section.
             </label>
             <div class="container">
                 <div class="form-group">
-                    <div class="form-check">
+                    <!--div class="form-check">
                         <input class="form-check-input" type="radio" name="begining-paragraph-existence" id="begining-paragraph-exists" value="1" required checked="checked" />
                         <label class="form-check-label" for="begining-paragraph-existence">
                             There is a paragraph before the "Method" section.
                         </label>
-                    </div>
+                    </div-->
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="begining-paragraph-existence" id="begining-paragraph-NOT-exists" value="0" />
+                        <input class="form-check-input" type="checkbox" name="begining-paragraph-existence" id="begining-paragraph-NOT-exists" value="0" />
                         <label class="form-check-label" for="begining-paragraph-existence">
-                            There is NO paragraph before the "Method" section.
+                            There is NO such a sentence.
                         </label>
                     </div>
                 </div>
@@ -53,7 +58,9 @@
             <div id="method-q-main-claim-display" class="card" style="display: none; padding: 6px 12px; color:#4B5057;">
                 Loading...
             </div>
-            <div id='method-q-main-claim-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <div id='method-q-main-claim-feedback' style="visibility: hidden; text-align: center; padding: 3px 12px; margin: 3px;">
+                <b class="text-success">Confirmed, good job!</b>
+            </div>
             <!--div style="text-align: center;">
                 <a href="#" role="button" class="btn btn-sm btn-primary" id="method-q-main-claim-switch" style="font-weight: bold; width: 25%;">Start selection</a>
             </div-->
@@ -63,7 +70,7 @@
             </div>
             <br />
             <div class="row container"></div>
-            <label for="method-main-claim">
+            <label id="method-q-main-step-label" name="method-q-main-step-label" for="method-main-claim">
                 <b>
                     8. Please select <b class="text-success">three</b> sentences that best describe the most important steps of the experiment/study.
                 </b>
@@ -73,7 +80,9 @@
             <div id="method-q-main-step-display" class="card" style="display: none; padding: 6px 12px; color:#4B5057;">
                 Loading...
             </div>
-            <div id='method-q-main-step-feedback' style="visibility: hidden; padding: 3px 12px;">Confirmed, good job!</div>
+            <div id='method-q-main-step-feedback' style="visibility: hidden; text-align: center; padding: 3px 12px;margin: 3px;">
+                <b class="text-success">Confirmed, good job!</b>
+            </div>
             <!--div style="text-align: center;">
                 <a href="#" role="button" class="btn btn-sm btn-primary" id="method-q-main-step-switch" style="font-weight: bold; width: 25%;">Start selection</a>
             </div-->
@@ -106,7 +115,7 @@
                     % (with certainty the same finding).
                 </b>
                 <div style="display: inline-block; padding: 0.2em;">
-                    <a href="#" role="button" id="show-abstract-button"  class="btn btn-outline-primary btn-sm" style="width: 8em;">Show abstract</a>
+                    <a href="#" role="button" id="show-abstract-button" class="btn btn-outline-primary btn-sm" style="width: 8em;">Show abstract</a>
                 </div>
             </label>
             <div id="show-abstract" class="collapsible">
@@ -187,19 +196,19 @@
             <div class="container">
                 <div class="form-group">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioNo" value="otherScenarioNo" required />
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioNo" value="1" required />
                         <label class="form-check-label" for="otherScenarioNo">
                             The claims/findings will probability NOT hold in other scenarios.
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioMaybe" value="otherScenarioMaybe" required />
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioMaybe" value="2" required />
                         <label class="form-check-label" for="otherScenarioMaybe">
                             The claims/findings may partially hold in some similar scenarios.
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioTrue" value="otherScenarioTrue" required />
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioTrue" value="3" required />
                         <label class="form-check-label" for="otherScenarioTrue">
                             The claims/findings will hold to be true in many other similar
                             scenarios.
@@ -224,8 +233,6 @@
             background: yellow;
         }
         </style>
-        <!--prettier-ignore-->
-        <!--{{>Modal modalTitle="Important Alert" modalText="You have attempted to toggle text that is in two states. Please make sure you only select either normal or highlighted text but not a combination."}}-->
         {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
         ="Pair1Page1" prevRemoved=true prevPage="Paper1Page2"}}
     </form>
