@@ -127,7 +127,7 @@ recordPairwisePageResponse = function() {
         "assignmentId": assignmentId,
         "hitId": hitId,
         "currPage": getCurrPage(),
-        "section": "pairwsie_comparison",
+        "section": "pairwise_comparison",
         "paper_md5_id_1": glob.currPaperMd5IdList[0],
         "paper_title_1": glob.currPaperTitleList[0],
         "paper_exp_id_1": glob.currPaperExpIdList[0],

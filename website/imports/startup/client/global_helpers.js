@@ -40,7 +40,10 @@ getCurrPage = function() {
     while (i>=0 && (pathSplit[i].includes('=')||pathSplit[i].includes("&"))) {
         i--;
     }
-    return pathSplit[i].split('#')[0];
+    var currPage = pathSplit[i].split('#')[0];
+    if ("harvard.edu" in currPage) currPage="WelcomeForAll"; // The root page is WelcomeForAll
+
+    return currPage;
 }
 
 // mySessionStorage = {
