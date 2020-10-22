@@ -1,0 +1,85 @@
+<template name="MainLayout">
+
+    <head>
+        <title>Predicting Replicability</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+        <!-- JS, Popper.js, and jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="bg-light" id="body">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm py-5">
+                    <div class="card">
+                        <div class="p-5">
+                            {{>yield}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="selection-overlay" name="selection-overlay" class="overlay-transparent">
+            <div id="highlightBox" class="bg-light border border-dark p-3">
+                <a id="toggleButton" class="btn btn-lg btn-warning">
+                    Select/Unselect
+                </a>
+                <a id="closeToggleButton" class="btn btn-lg btn-outline-danger">
+                    X
+                </a>
+            </div>
+        </div>
+        <div id="popup-warning-1" name="popup-warning-1" class="overlay">
+            <div class="popup alert alert-info">
+                <a id="popup-warning-1-close" class="close">&times;</a>
+                <div>
+                    You have not selected any sentence yet!
+                </div>
+            </div>
+        </div>
+        <div id="popup-warning-2" name="popup-warning-2" class="overlay">
+            <div class="popup alert alert-info">
+                <a id="popup-warning-2-close" class="close">&times;</a>
+                <div>
+                    You either select too few sentences or too many sentences for this question! 
+                </div>
+            </div>
+        </div>
+        <div id="popup-warning-3" name="popup-warning-3" class="overlay">
+            <div class="popup alert alert-info">
+                <a id="popup-warning-3-close" class="close">&times;</a>
+                <div>
+                    This sentence has been already selected for another question you have answered, and should not be a good answer to this question!
+                </div>
+            </div>
+        </div>
+        <div id="popup-warning-4" name="popup-warning-4" class="overlay">
+            <div class="popup alert alert-info">
+                <a id="popup-warning-4-close" class="close">&times;</a>
+                <div>
+                    Please confirm your selections in Question 7 first.
+                </div>
+            </div>
+        </div>
+        <div id="popup-warning-5" name="popup-warning-5" class="overlay">
+            <div class="popup alert alert-info">
+                <a id="popup-warning-5-close" class="close">&times;</a>
+                <div>
+                    Please confirm your selections in Question 8 first.
+                </div>
+            </div>
+        </div>
+        <div id="popup-warning-moving-bar" name="popup-warning-moving-bar" class="overlay">
+            <div class="popup alert alert-info">
+                <a id="popup-warning-moving-bar-close" class="close">&times;</a>
+                <div>
+                    Please make a prediction in Question 10 using the slider.
+                </div>
+            </div>
+        </div>
+    </body>
+</template>

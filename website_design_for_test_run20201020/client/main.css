@@ -1,0 +1,263 @@
+/* CSS declarations go here */
+
+html,
+body {
+    min-height: 100vh;
+    height: auto;
+}
+
+
+/* START FOR RANGE SLIDER */
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="range"] {
+        overflow: hidden !important;
+
+        width: 100% !important;
+        -webkit-appearance: none !important;
+        background-color: #e9ecef !important;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        height: 1em !important;
+        -webkit-appearance: none !important;
+        color: #007bff !important;
+        margin-top: -1px !important;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 1em !important;
+        -webkit-appearance: none !important;
+        height: 1em !important;
+        cursor: ew-resize !important;
+        background: #007bff !important;
+        box-shadow: -50vw 0 0 50vw #90bae8 !important;
+    }
+}
+
+/** FF*/
+input[type="range"]::-moz-range-progress {
+    background-color: #007bff !important;
+}
+
+input[type="range"]::-moz-range-track {
+    background-color: #e9ecef !important;
+}
+
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+    background-color: #007bff !important;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background-color: #e9ecef !important;
+}
+
+/* END FOR RANGE SLIDER */
+
+
+h3, h4 {
+    font-weight: bold;
+}
+
+/* START FOR PAPER MATERIAL */
+#studyTitle {
+}
+
+#abstractText {
+    text-align: justify;
+}
+
+.methodText {
+    text-align: justify;
+}
+
+.methodText h2 {
+    font-size: 1.5rem;
+    margin-block-end: 1.5rem; 
+    display: inline;
+}
+
+.methodText h3 {
+    font-size: 1.4rem;
+    margin-block-end: 1.5rem; 
+    display: inline;
+}
+
+.methodText h4 {
+    font-size: 1.15rem; 
+}
+
+.methodText p {
+    margin-block-start: 0.8rem;
+    margin-block-end: 0.8rem; 
+}
+
+img.rs_skip {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.NLM_table-wrap {
+    text-align: center;
+}
+
+.NLM_table-wrap img{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+    max-height: 40em;
+}
+
+.figure {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+.figure img{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.figure .caption p{
+    font-style: italic;
+    text-align: justify;
+}
+/* END FOR PAPER MATERIAL */
+
+
+/* START FOR SENTENCE SELECTION */
+#highlightBox {
+    position: absolute;
+}
+
+.sentence {
+    cursor: pointer;
+}
+
+#hoverSentence {
+    background-color: #e6e6e6;
+}
+
+#selectedSentence {
+    background-color: #b7d6f7;
+}
+
+.highlight1 {
+    background-color: yellow;
+}
+
+.highlight2 {
+    background-color: lime;
+}
+
+#hoverSentence.highlight1 {
+    background-color: yellow;
+}
+
+#hoverSentence.highlight2 {
+    background-color: lime;
+}
+/* END FOR RANGE SLIDER */
+
+
+
+/* START FOR POPUP WARNING */
+.overlay-transparent {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay-transparent:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 140px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: all 200ms;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.popup .close:hover {
+    color: #06D85F;
+}
+
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+/* END FOR POPUP WARNING */
+
+
+/* For some other components*/
+
+.collapsible {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease-out;
+}
+
+
+/* END For some other components*/
+
+
+/*@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}*/

@@ -10,10 +10,12 @@ Template.MainLayout.onCreated(function() {
 Template.MainLayout.events({
 
     'click .sentence': function(event, instance) {
-        if (selection_type == null) return;
+        //if (selection_type == null) return false;
         if (document.getElementById("selectedSentence") != null) {
+            // cancel the selection id of the previously selected sentenence
             document.getElementById("selectedSentence").id = "";
         }
+
         event.target.id = "selectedSentence";
         location.href = "#";
         location.href = "#selection-overlay"
@@ -31,32 +33,32 @@ Template.MainLayout.events({
         }
     },
 
-    'click #toggleButton': function(event, instance) {
-        var currHighlightColor = "highlight" + highlight_color.toString();
-        var currElementClassName = document.getElementById("selectedSentence").className;
-        var toggled = false;
-        reactivatePage();
-        if (currElementClassName.includes(currHighlightColor)) {
-            // The selected sentence has been already highlighted
-            document.getElementById("selectedSentence").className = "sentence";
-            toggled = true;
-        } else if (currElementClassName.includes("highlight")) {
-            // The selected sentence has been highlighted in another color
-            location.href = "#";
-            location.href = "#popup-warning-3";
-        } else {
-            // The selected sentence has NOT been highlighted
-            document.getElementById("selectedSentence").className = currHighlightColor + " " + currElementClassName;
-            toggled = true;
-        }
-        //document.getElementById("highlightBox").style.display = "none";
-        document.getElementById("selectedSentence").id = "";
-        if (toggled) {
-            refreshAbstractSelectionDisplay(ABSTRACT_HIGHLIGHT_COLOR1);
-            refreshMethodMainClaimSelectionDisplay(METHOD_HIGHLIGHT_COLOR1);
-            refreshMethodMainStepSelectionDisplay(METHOD_HIGHLIGHT_COLOR2);
-        }
-    },
+    // 'click #toggleButton': function(event, instance) {
+    //     var currHighlightColor = "highlight" + highlight_color.toString();
+    //     var currElementClassName = document.getElementById("selectedSentence").className;
+    //     var toggled = false;
+    //     reactivatePage();
+    //     if (currElementClassName.includes(currHighlightColor)) {
+    //         // The selected sentence has been already highlighted
+    //         document.getElementById("selectedSentence").className = "sentence";
+    //         toggled = true;
+    //     } else if (currElementClassName.includes("highlight")) {
+    //         // The selected sentence has been highlighted in another color
+    //         location.href = "#";
+    //         location.href = "#popup-warning-3";
+    //     } else {
+    //         // The selected sentence has NOT been highlighted
+    //         document.getElementById("selectedSentence").className = currHighlightColor + " " + currElementClassName;
+    //         toggled = true;
+    //     }
+    //     //document.getElementById("highlightBox").style.display = "none";
+    //     document.getElementById("selectedSentence").id = "";
+    //     if (toggled) {
+    //         refreshAbstractSelectionDisplay(ABSTRACT_HIGHLIGHT_COLOR1);
+    //         refreshMethodMainClaimSelectionDisplay(METHOD_HIGHLIGHT_COLOR1);
+    //         refreshMethodMainStepSelectionDisplay(METHOD_HIGHLIGHT_COLOR2);
+    //     }
+    // },
 
     'click #closeToggleButton': function(event, instance) {
         //document.getElementById("highlightBox").style.display = "none";

@@ -127,7 +127,7 @@
             <br />
             <label for="mainClaimsUserInput">
                 <b>
-                    5. Use <span class="text-success">your own language</span> to briefly describe the <span>main findings/claims</span> of the paper. Make your best guess if necessary. 
+                    5. Use <span class="text-success">your own language</span> to briefly describe the <span>main findings/claims</span> of the paper. Make your best guess if necessary.
                 </b>
             </label>
             <textarea class="form-control" id="mainClaimsUserInput" rows="3" placeholder="Write with your own language. Do not copy from the material." autocomplete="off" required></textarea>
@@ -179,4 +179,15 @@
         {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper1Page3"
         prevRemoved=true prevPage="Paper1Page1"}}
     </form>
+    <div id="selection-overlay" name="selection-overlay" class="overlay-transparent">
+        <div id="highlightBox" class="bg-light border border-dark p-3">
+            <!--a id="toggleButton" class="btn btn-lg btn-warning" style="background-color: yellow;">
+                Select/Unselect
+            </a-->
+            {{> SentenceSelectionButton text="Select/Unselect" color="yellow" btnClass="btn-warning" highlight="1"}}
+            <a id="closeToggleButton" class="btn btn-lg btn-outline-danger">
+                X
+            </a>
+        </div>
+    </div>
 </template>

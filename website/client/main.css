@@ -137,6 +137,10 @@ img.rs_skip {
     position: absolute;
 }
 
+#methodHighlightBox {
+    position: absolute;
+}
+
 .sentence {
     cursor: pointer;
 }
@@ -163,6 +167,11 @@ img.rs_skip {
 
 #hoverSentence.highlight2 {
     background-color: lime;
+}
+
+.myBth {
+    margin: 10em;
+    padding: 0.5em;
 }
 /* END FOR RANGE SLIDER */
 

@@ -23,16 +23,30 @@
                 </div>
             </div>
         </div>
-        <div id="selection-overlay" name="selection-overlay" class="overlay-transparent">
+        <!--div id="selection-overlay" name="selection-overlay" class="overlay-transparent">
             <div id="highlightBox" class="bg-light border border-dark p-3">
-                <a id="toggleButton" class="btn btn-lg btn-warning">
+                <a id="toggleButton" class="btn btn-lg btn-warning" style="background-color: yellow;">
                     Select/Unselect
                 </a>
                 <a id="closeToggleButton" class="btn btn-lg btn-outline-danger">
                     X
                 </a>
             </div>
-        </div>
+        </div-->
+        <!--div id="method-selection-overlay" name="method-selection-overlay" class="overlay-transparent">
+            <div id="methodHighlightBox" class="bg-light border border-dark p-3" style="vertical-align: top;">
+                    <a href="#" id="methodToggleButton1" class="btn btn-lg btn-warning" style="background-color: yellow;">
+                        Select/Unselect for <b>Q7</b>
+                    </a>
+                    <a id="methodCloseToggleButton" class="btn btn-lg btn-outline-danger">
+                        X
+                    </a>
+                    <br />
+                    <a  id="methodToggleButton2" class="btn btn-lg btn-success" style="margin-top: 3px; background-color: lime;">
+                        Select/Unselect for <b>Q8</b>
+                    </a>
+            </div>
+        </div-->
         <div id="popup-warning-1" name="popup-warning-1" class="overlay">
             <div class="popup alert alert-info">
                 <a id="popup-warning-1-close" class="close">&times;</a>
@@ -45,15 +59,15 @@
             <div class="popup alert alert-info">
                 <a id="popup-warning-2-close" class="close">&times;</a>
                 <div>
-                    You either select too few sentences or too many sentences for this question! 
+                    You either select too few sentences or too many sentences for this question!
                 </div>
             </div>
         </div>
         <div id="popup-warning-3" name="popup-warning-3" class="overlay">
             <div class="popup alert alert-info">
                 <a id="popup-warning-3-close" class="close">&times;</a>
-                <div>
-                    This sentence has been already selected for another question you have answered, and should not be a good answer to this question!
+                <div style="text-align: justify;">
+                    A sentence cannot be selected for more than one questions. If you want to change the highlight color of this sentence, you can first unselect it from its current color and then select it using the target color. 
                 </div>
             </div>
         </div>
