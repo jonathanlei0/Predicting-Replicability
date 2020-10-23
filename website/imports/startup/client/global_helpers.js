@@ -13,7 +13,9 @@ pageLevelVariablesRefresh = function() {
     METHOD_SELECTION_NUM_TYPE2 = 3;
     //ABSTRACT_INSTRUCTION_TYPE1 = "Please go to the abstact and click a sentence. It will be displayed here.<br /><br />";
     ABSTRACT_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start. After selection, click "Confirm selection" to finish.'
-    METHOD_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start. After selection, click "Confirm selection" to finish.'
+    //METHOD_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start. After selection, click "Confirm selection" to finish.'
+    //ABSTRACT_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start.'
+    METHOD_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start.'
     customized_question_complete_status = [0]; //0 means "completed or allowed to go next"
                                                //1 means "have not started but required to start and complete"
                                                //2 means "started but not completed"
