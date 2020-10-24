@@ -140,13 +140,14 @@ recordPairwisePageResponse = function() {
     //q1
     entry["pairwise_replication_comparison"] = parseInt(getRadioSelectedValue("pairwiseReplicateComparison"));
     entry["pairwise_replication_comparison_note"] = getRadioSelectedId("pairwiseReplicateComparison");
+    entry["pairwise_replication_comparison_reason"] = document.getElementById("pairwiseReplicationReason").value;
     //q2
     entry["pairwise_better_judgement_ability"] = parseInt(getRadioSelectedValue("pairwiseJudgementCapacity"));
     entry["pairwise_better_judgement_ability_note"] = getRadioSelectedId("pairwiseJudgementCapacity");
     //q3
     entry["pairwise_reasoning_paper_choice"] = parseInt(getRadioSelectedValue("pairwiseReasoningPaperChoice"));
     entry["pairwise_reasoning_paper_choice_note"] = getRadioSelectedId("pairwiseReasoningPaperChoice");
-    entry["pairwise_selected_paper_reasoning"] = document.getElementById("mainClaimsUserInput").value;
+    entry["pairwise_selected_paper_reasoning"] = document.getElementById("pairwiseReasoningUserInput").value;
 
     clcMainResponse.insert(entry);
 

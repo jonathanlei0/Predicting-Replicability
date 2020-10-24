@@ -1,7 +1,7 @@
 Template.Paper1Page2.onCreated(function() {
     pageLevelVariablesRefresh();
     //localStorage.curr_paper_id = Math.floor(Math.random() * 25);
-    customized_question_complete_status = [1];
+    selection_complete_status = 1; //status waited to start selection
 });
 
 Template.Paper1Page2.onRendered(function() {
@@ -19,72 +19,6 @@ Template.Paper1Page2.onRendered(function() {
 
 Template.Paper1Page2.events({
 
-    'click #abstract-q3-start': function(event, instance) {
-        event.preventDefault();
-
-        var element = event.target;
-        document.getElementById('mainClaimSelectionTextarea').style.display = "block"
-        console.log(element);
-        element.innerHTML = 'Please confirm ->';
-        element.disabled = true;
-
-        var linkedElement = document.getElementById('abstract-q3-confirm')
-        linkedElement.innerHTML = 'Confirm selection'
-        linkedElement.disabled = false;
-    },
-
-    'click #abstract-q3-confirm': function(event, instance) {
-        event.preventDefault();
-
-        var element = event.target;
-        document.getElementById('mainClaimSelectionTextarea').style.display = "block"
-        console.log(element);
-        element.innerHTML = 'Confirmed!';
-        element.disabled = true;
-
-        var linkedElement = document.getElementById('abstract-q3-start')
-        linkedElement.innerHTML = 'Restart selection'
-        linkedElement.disabled = false;
-    },
-
-    'click #abstract-q3-switch': function(event, instance) {
-        event.preventDefault();
-
-        var element = event.target;
-        document.getElementById('abstract-q3-display').style.display = "block"
-        if (element.innerHTML.includes('tart')) {
-            selection_type = ABSTRACT_SELECTION_TYPE1;
-            highlight_color = ABSTRACT_HIGHLIGHT_COLOR1;
-            location.href = "#";
-            location.href = "#studyTitle";
-            document.getElementById('abstract-q3-feedback').style.visibility = "hidden";
-            customized_question_complete_status[0] = 2;
-            element.innerHTML = 'Confirm selection';
-            element.className = element.className.replace('btn-primary', 'btn-warning');
-        } else { // "Confirm" on the button
-            // Judge whether the selection meets the requirements
-            var scopeElement = document.getElementById("abstractText");
-            var highlightClass = "highlight1";
-            var elementList = scopeElement.getElementsByClassName(highlightClass);
-            if (elementList.length == 1) {
-                // The requirements are met!
-                customized_question_complete_status[0] = 0;
-                selection_type = null;
-                document.getElementById('abstract-q3-feedback').style.visibility = 'visible';
-                setTimeout(function() {
-                    element.innerHTML = 'Restart selection';
-                    element.className = element.className.replace('btn-warning', 'btn-primary');
-                }, 100)
-            } else if (elementList.length == 0) {
-                location.href = "#";
-                location.href = "#popup-warning-1";
-                return;
-            } else {
-                location.href = "#";
-                location.href = "#popup-warning-2";
-            }
-        }
-    },
     'click #abstract-q3-start-button': function(event, instance) {
         event.preventDefault();
 
@@ -94,7 +28,7 @@ Template.Paper1Page2.events({
         location.href = "#";
         location.href = "#studyTitle";
         document.getElementById('abstract-q3-feedback').style.visibility = "hidden";
-        customized_question_complete_status[0] = 2;
+        selection_complete_status = 2;
 
         var confirmButton = document.getElementById('abstract-q3-confirm-button');
         confirmButton.classList.remove('disabled')
@@ -113,7 +47,7 @@ Template.Paper1Page2.events({
         var elementList = scopeElement.getElementsByClassName(highlightClass);
         if (elementList.length == 1) {
             // The requirements are met!
-            customized_question_complete_status[0] = 0;
+            selection_complete_status = 0;
             selection_type = null;
             document.getElementById('abstract-q3-feedback').style.visibility = 'visible';
 
@@ -126,17 +60,11 @@ Template.Paper1Page2.events({
             startButton.ariaDisabled = false;
         } else if (elementList.length == 0) {
             location.href = "#";
-            location.href = "#popup-warning-1";
+            location.href = "#abstract-popup-warning-1";
             return;
         } else {
             location.href = "#";
-            location.href = "#popup-warning-2";
+            location.href = "#abstract-popup-warning-2";
         }
-    },
-    // 'keypress form': function(event, instance) {
-    //     //Enter key
-    //     if (event.which == 13) {
-    //         return false;
-    //     }
-    // }
+    }
 })

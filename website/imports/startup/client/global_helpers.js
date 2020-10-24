@@ -6,7 +6,7 @@ pageLevelVariablesRefresh = function() {
     selection_type = null;
     ABSTRACT_SELECTION_TYPE1 = "abstractSelection1";
     METHOD_SELECTION_TYPE1 = "methodSelectionType1";
-    METHOD_SELECTION_TYPE2 = "methodSelectionType2";
+    //METHOD_SELECTION_TYPE2 = "methodSelectionType2";
     ABSTRACT_HIGHLIGHT_COLOR1 = 1;
     METHOD_HIGHLIGHT_COLOR1 = 1;
     METHOD_HIGHLIGHT_COLOR2 = 2;
@@ -15,8 +15,8 @@ pageLevelVariablesRefresh = function() {
     ABSTRACT_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start. After selection, click "Confirm selection" to finish.'
     //METHOD_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start. After selection, click "Confirm selection" to finish.'
     //ABSTRACT_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start.'
-    METHOD_INSTRUCTION_TYPE1 = 'Please click "Start selection" to start.'
-    customized_question_complete_status = [0]; //0 means "completed or allowed to go next"
+    METHOD_INSTRUCTION_TYPE1 = 'Please follow the "Sentence selection instructions" above to select the asked sentences.'
+    selection_complete_status = 0; //0 means "completed or allowed to go next"
                                                //1 means "have not started but required to start and complete"
                                                //2 means "started but not completed"
 

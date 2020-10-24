@@ -1,7 +1,7 @@
 <template name="Paper1Page2">
     {{>ProgressBar}}
     {{>Title title}}
-    <form action="javascript:void(0);">
+    <form>
         <!--h5 class="text-center">
             Please read the following material and answer questions.
         </h5-->
@@ -38,7 +38,7 @@
                 Loading...
             </div>
             <div id='abstract-q3-feedback' style="visibility: hidden; margin: 3px; padding: 3px 12px; text-align: center;">
-                <b class="text-success">Confirmed, good job!</b>
+                <b class="text-success">Confirmed, good job! If you want to make any changes, please click the "Restart selection" button.</b>
             </div>
             <!--div style="text-align: center;">
                 <a href="#" role="button" class="btn btn-sm btn-primary" id="abstract-q3-switch" style="font-weight: bold; width: 25%;">Start selection</a>
@@ -216,4 +216,6 @@
             </a>
         </div>
     </div>
+    {{> PopupWarning id="abstract-popup-warning-1" text="You have not selected any sentence yet! Please select ONE sentence for this question!" exitTo="#studyTitle"}}
+    {{> PopupWarning id="abstract-popup-warning-2" text="You have selected more than one sentences. Please select ONLY ONE sentence for this question!" exitTo="#studyTitle"}}
 </template>

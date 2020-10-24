@@ -48,21 +48,16 @@ Template.BidirectNavigation.events({
                 return;
             }
 
-            if (customized_question_complete_status != undefined) {
+            if ((selection_complete_status != undefined) &&
+                (selection_complete_status != 0)) {
 
-                for (var i = 0; i < customized_question_complete_status.length; i++) {
-                    sum += customized_question_complete_status[i];
-                }
-                if (sum != 0) {
-                    location.href = "#";
-                    location.href = "#BidirectNavigation-popup";
-
-                    return false;
-                }
+                location.href = "#";
+                location.href = "#BidirectNavigation-popup";
+                return false;
             }
 
 
-            if (sum == 0 && formValid) {
+            if (selection_complete_status == 0 && formValid) {
                 console.log("Valid to go next page!");
                 // Record to database
                 recordUserNavigation(currPage);
@@ -98,20 +93,4 @@ Template.BidirectNavigation.events({
             }
         }
     },
-
-    'click #BidirectNavigation-popup-close': function(event, template) {
-        var currPage = getCurrPage();
-        if (currPage.includes("Paper1Page2")) {
-            location.href = "#";
-            location.href = "#abstract-q3-label";
-        } else if (currPage.includes("Paper1Page3")) {
-            if (customized_question_complete_status[0] != 0) {
-                location.href = "#";
-                location.href = "#method-q-main-claim-label";
-            } else if (customized_question_complete_status[1] != 0) {
-                location.href = "#";
-                location.href = "#method-q-main-step-label";
-            }
-        }
-    }
 });

@@ -1,7 +1,7 @@
 <template name="Paper1Page3">
     {{>ProgressBar}}
     {{>Title}}
-    <form action="javascript:void(0);">
+    <form>
         <!--h5 class="text-center">
             Please read the following material and answer questions.
         </h5-->
@@ -15,7 +15,7 @@
         <div>
             <h5>
                 <b>Instruction: </b>
-                The material below describes one of the experiments that the authors ran to obtain the findings/claims in the abstract (previous page). Read the materials and answer questions 7-10.
+                The material below describes one of the experiments that the authors ran to obtain the findings/claims in the abstract (previous page). Read the materials and answer questions 7-11.
             </h5>
         </div>
         <br />
@@ -29,18 +29,21 @@
         <br />
         <br />
         <div class="w-100 px-3 pt-3 border border-dark">
-            <div class="card mb-3" style="padding: 6px 12px; background-color:Gainsboro;">
-                <p>
-                    <b>Sentence selection instruction: </b><br />
+            <div id="sentence-selection-instruction" class="card mb-3" style="padding: 6px 12px; background-color:Gainsboro;">
+                <p class="mb-0">
+                    <b>Sentence selection instructions: </b><br />
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Question 7</b> and <b>Question 8</b> are two sentence selection questions. Read the questions and then click the "Start selection" button below to enable sentence selection in the material. After clicking a sentence, select from the popup menu which question you select the sentence for.
-                    After finishing both sentence selections, clicking the "Confirm selection" button.
+                    After finishing both sentence selection questions, please click the "Confirm selection" button.
                 </p>
+            <div id='method-selection-feedback' style="visibility: hidden; text-align: center; padding: 3px 12px; margin: 3px;">
+                <b class="text-success">Confirmed, good job! If you want to make any changes, please click the "Restart selection" button.</b>
             </div>
             <div style="text-align: center;">
-                <a href="#" role="button" class="btn btn-primary" id="method-q-main-step-start-button" style="font-weight: bold; width: 20%;" aria-disabled="false">Start selection</a>
-                <a href="#" role="button" class="btn btn-warning disabled" id="method-q-main-step-confirm-button" style="font-weight: bold; width: 20%;" aria-disabled="true">Confirm selection</a>
+                <a href="#" role="button" class="btn btn-primary" id="method-selection-start-button" style="font-weight: bold; width: 20%;" aria-disabled="false">Start selection</a>
+                <a href="#" role="button" class="btn btn-warning disabled" id="method-selection-confirm-button" style="font-weight: bold; width: 20%;" aria-disabled="true">Confirm selection</a>
             </div>
             <br />
+        </div>
             <label id="method-q-main-claim-label" name="method-q-main-claim-label" for="method-q-main-claim">
                 <b>
                     7. Please select a <span class="text-success">single</span> sentence that best describes what the experiment/study does? If you think that there is no such a sentence, please check box below.
@@ -95,6 +98,7 @@
                 <b>
                     9. How many participants were recruited in the experimental study?
                 </b>
+                Usually the number of participants is stated in natural language, but it may also be expressed using the common notation 'n' (for example, n=33). If you cannot find the number of participants recruited, please type '0'. 
             </label>
             <div class="row container">
                 <div style="width: 120px;">
@@ -244,6 +248,19 @@
             </a>
             <p style="padding: 0; margin: 3px;"> </p>
             {{> SentenceSelectionButton text="Select/Unselect for " boldText="Q8" color="lime" btnClass="btn-success" highlight="2"}}
+        </div>
+    </div>
+    {{> PopupWarning id="method-popup-warning-Q7-1" text="You have not selected any sentence for Question 7 yet! Please select ONE sentence for this question!"}}
+    {{> PopupWarning id="method-popup-warning-Q7-2" text="You have selected more than one sentences for Question 7. Please select ONLY ONE sentence for this question!"}}
+    {{> PopupWarning id="method-popup-warning-Q8-1" text="You have selected less than THREE sentences as asked by Question 8!"}}
+    {{> PopupWarning id="method-popup-warning-Q8-2" text="You have selected more than THREE sentences for Question 8. Please select exactly THREE sentences for this question!"}}
+    {{> PopupWarning id="method-popup-warning-checkbox" text="You indicated in the Question 7's checkbox that there is no fit sentence for Question 7. If you find one fit sentence and want to select it, please uncheck the checkbox first."}}
+    <div id="popup-warning-moving-bar" name="popup-warning-moving-bar" class="overlay">
+        <div class="popup alert alert-info">
+            <a id="popup-warning-moving-bar-close" class="close">&times;</a>
+            <div>
+                Please make a prediction in Question 10 using the slider.
+            </div>
         </div>
     </div>
 </template>

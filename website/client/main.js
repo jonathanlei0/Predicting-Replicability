@@ -10,7 +10,7 @@ Template.MainLayout.onCreated(function() {
 Template.MainLayout.events({
 
     'click .sentence': function(event, instance) {
-        //if (selection_type == null) return false;
+        if (selection_type == null) return false;
         if (document.getElementById("selectedSentence") != null) {
             // cancel the selection id of the previously selected sentenence
             document.getElementById("selectedSentence").id = "";
@@ -122,7 +122,7 @@ refreshMethodMainClaimSelectionDisplay = function(color_type) {
 refreshMethodMainStepSelectionDisplay = function(color_type) {
     var scopeElement = document.getElementById("methodText");
     if (scopeElement == null) return;
-    if (selection_type != METHOD_SELECTION_TYPE2) return;
+    if (selection_type != METHOD_SELECTION_TYPE1) return;
 
     var selectedSentenceList = scopeElement.getElementsByClassName("highlight" + color_type);
     if (selectedSentenceList.length == 0) {

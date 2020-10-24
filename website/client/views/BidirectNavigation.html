@@ -25,14 +25,15 @@
         </button>
         {{/if}}
     </div>
-    <div id="BidirectNavigation-popup" name="BidirectNavigation-popup" class="overlay">
+    {{> PopupWarning id="BidirectNavigation-popup" text='Please remember to finish sentence selection questions and click the "Confirm selection" button.' exitTo="#sentence-selection-instruction" }}
+<!--     <div id="BidirectNavigation-popup"  name="BidirectNavigation-popup" class="overlay">
         <div class="popup alert alert-info">
             <a id="BidirectNavigation-popup-close" class="close" href="#">&times;</a>
             <div id="BidirectNavigation-popup-text">
                 Please remember to finish sentence selection questions and click the "Confirm selection" buttons.
             </div>
         </div>
-    </div>
+    </div> -->
     <!--div class="alert alert-danger" role="alert" id="BidirectNavigation-alert" style="display: none;">
         Please click "Confirm selection" button on all sentence selection questions!
     </div-->
