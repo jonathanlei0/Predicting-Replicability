@@ -1,11 +1,17 @@
+import sys
 import os
 import json
 import time
 import numpy as np
 from pymongo import MongoClient
 import hashlib
+import argparse
 
 np.set_printoptions(precision=3, suppress=True)
+
+parser = argparse.ArgumentParser()
+parser.add_argument("port", help="mongodb port to connect", type=int)
+args = parser.parse_args()
 
 
 ### Hyper-parameters
@@ -41,7 +47,7 @@ print(len(paper_title_list))
 
 
 # connect to DB:meteor and fetch the handle of collection:wageringPM
-connection = MongoClient("mongodb://127.0.0.1:3001/meteor")
+connection = MongoClient(f"mongodb://127.0.0.1:{args.port}/meteor")
 
 
 # recreate the collection
