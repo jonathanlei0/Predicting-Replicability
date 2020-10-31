@@ -68,4 +68,4 @@ for i in range(len(paper_title_list)):
     
 clc_hyper_para = connection.meteor.hyperparameter
 clc_hyper_para.drop()
-clc_hyper_para.insert_one({'maximum_pairwise_assignment_per_user': 3})
+clc_hyper_para.insert_one({'max_assign_per_batch_user': 3, 'max_assign_per_user': 15})

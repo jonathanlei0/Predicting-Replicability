@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor'
 
-console.log("collection.js")
 
 clcPaper = new Mongo.Collection('paper');
 clcHyperparameter = new Mongo.Collection('hyperparameter');

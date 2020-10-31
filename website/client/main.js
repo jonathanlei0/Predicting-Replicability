@@ -16,7 +16,7 @@ Template.MainLayout.events({
             document.getElementById("selectedSentence").id = "";
         }
 
-        event.target.id = "selectedSentence";
+        event.currentTarget.id = "selectedSentence";
         location.href = "#";
         location.href = "#selection-overlay"
         document.getElementById("highlightBox").style.top = event.clientY + "px";
@@ -28,8 +28,8 @@ Template.MainLayout.events({
         if (hoveredSentence != null) {
             hoveredSentence.id = "";
         }
-        if (event.target.id != "selectedSentence") {
-            event.target.id = "hoverSentence";
+        if (event.currentTarget.id != "selectedSentence") {
+            event.currentTarget.id = "hoverSentence";
         }
     },
 
@@ -64,16 +64,7 @@ Template.MainLayout.events({
         //document.getElementById("highlightBox").style.display = "none";
         document.getElementById("selectedSentence").id = "";
         reactivatePage();
-    },
-
-    'click .close': function(event, instance) {
-        reactivatePage();
-        var closeId = event.target.id;
-        if (closeId == "popup-warning-1-close" || closeId == "popup-warning-2-close") {
-            location.href = "#";
-            location.href = "#studyTitle";
-        }
-    },
+    }
 });
 
 refreshAbstractSelectionDisplay = function(color_type) {

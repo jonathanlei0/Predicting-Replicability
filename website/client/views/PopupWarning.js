@@ -4,7 +4,7 @@ Template.PopupWarning.events({
         if (this.exitTo) {
             location.href = "#";
             location.href = this.exitTo;
-
+            reactivatePage();
         }
     }
 });

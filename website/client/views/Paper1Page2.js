@@ -37,7 +37,7 @@ Template.Paper1Page2.events({
         var startButton = document.getElementById('abstract-q3-start-button');
         startButton.classList.add('disabled')
         startButton.ariaDisabled = true;
-        startButton.innerHTML = "Restart selection"
+        startButton.innerHTML = "Resume selection"
     },
     'click #abstract-q3-confirm-button': function(event, instance) {
         event.preventDefault();

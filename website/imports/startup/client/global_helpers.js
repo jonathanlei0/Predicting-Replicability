@@ -39,11 +39,18 @@ nonNeg = function(x) {
 getCurrPage = function() {
     var pathSplit = window.location.href.split('/');
     var i=pathSplit.length-1;
-    while (i>=0 && (pathSplit[i].includes('=')||pathSplit[i].includes("&"))) {
+    while (
+        i>=0 
+        && (pathSplit[i].includes('=')
+            ||pathSplit[i].includes("&")
+            ||pathSplit[i]==""
+            )
+        ) {
         i--;
     }
     var currPage = pathSplit[i].split('#')[0];
     if (currPage.includes("harvard.edu")) currPage="WelcomeForAll"; // The root page is WelcomeForAll
+    if (currPage.includes("localhost")) currPage="WelcomeForAll"; // The root page is WelcomeForAll
 
     return currPage;
 }

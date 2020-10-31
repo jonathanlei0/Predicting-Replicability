@@ -42,7 +42,9 @@ Template.Paper1Page3.events({
         var startButton = document.getElementById('method-selection-start-button');
         startButton.classList.add('disabled');
         startButton.ariaDisabled = true;
-        startButton.innerHTML = "Restart selection";
+        startButton.innerHTML = "Resume selection";
+
+        document.getElementById('begining-paragraph-NOT-exists').disabled=false;
     },
 
     'click #method-selection-confirm-button': function(event, instance) {
@@ -87,6 +89,8 @@ Template.Paper1Page3.events({
         startButton.classList.remove('disabled');
         startButton.ariaDisabled = false;
         selection_complete_status = 0;
+
+        document.getElementById('begining-paragraph-NOT-exists').disabled=true;
     },
 
     'change #begining-paragraph-NOT-exists': function(event, instance) {
@@ -98,8 +102,12 @@ Template.Paper1Page3.events({
                 [...elementList].forEach(item => { item.classList.remove(highlightClass)});
             }
             document.getElementById('method-q-main-claim-display').innerHTML =
-                'You indicated that there is NO such a sentence.'
+                'You indicated that there was NO such a sentence.'
         } else {
+            if (selection_complete_status==0) {
+                location.href = "#";
+                location.href = "#method-popup-warning-checkbox-2";
+            }
             refreshMethodMainClaimSelectionDisplay(METHOD_HIGHLIGHT_COLOR1);
         }
     },

@@ -1,1 +1,1 @@
-Implicit Attitude Generalization Occurs Immediately; Explicit Attitude Generalization Takes Time
+An Attention-Based Associative Account of Adjacent and Nonadjacent Dependency Learning

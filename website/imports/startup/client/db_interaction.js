@@ -4,15 +4,52 @@
 
 
 checkUserHistory = function() {
-    var donePairwisePaperRecord =
+    donePairwisePaperRecord =
         clcUserHistory.find({
             'workerId': workerId,
             'type': 'pairwise_paper',
             'status': 'completed',
         }).fetch();
 
-    var hyper = clcHyperparameter.findOne();
-    return donePairwisePaperRecord.length < hyper["maximum_pairwise_assignment_per_user"];
+    var now = new Date().getTime();
+    var halfDayBeforeNow = now - 1000 * 60 * 60 * 12;
+    var numHit = 0;
+    var minTimeOfAll = 1000 * 60 * 60 * 12; // 12 hours as the initial value
+    var minTimeRecent = 1000 * 60 * 60 * 12; // 12 hours as the initial value
+    var accumulateTime = 0;
+    for (var i = 0; i < donePairwisePaperRecord.length; i++) {
+        var currEntry = donePairwisePaperRecord[i];
+        if (minTimeOfAll > currEntry['duration']) {
+            minTimeOfAll = currEntry['duration']
+        }
+        if (currEntry['timestamp'] >= halfDayBeforeNow) {
+            numHit += 1;
+            accumulateTime += currEntry['duration'];
+            if (minTimeRecent > currEntry['duration']) {
+                minTimeRecent = currEntry['duration']
+            }
+        }
+    }
+
+    var minimumTimeOfAllRequirement = 1000 * 60 * 12; // 12 minutes
+    var minimumAverageTimeRequirement = 1000 * 60 * 15 // 15 minutes
+
+    //Total assignment restriction
+    if (donePairwisePaperRecord.length >=
+        clcHyperparameter.findOne()["max_assign_per_user"]) {
+        return false
+    }
+    if (minTimeOfAll < minimumTimeOfAllRequirement) {
+        return false
+    }
+    if ((numHit == 0) ||
+        ((numHit < clcHyperparameter.findOne()["max_assign_per_batch_user"]) &&
+            (accumulateTime / numHit >= minimumAverageTimeRequirement)
+        )
+    ) {
+        return true;
+    }
+    return false;
 }
 
 
@@ -216,6 +253,22 @@ recordPairwisePaperAssignment = function() {
 }
 
 recordPairwisePaperCompletion = function() {
+    var assignmentEntryList = clcUserHistory.find({
+        "workerId": workerId,
+        "assignmentId": assignmentId,
+        "hitId": hitId,
+        "type": "pairwise_paper",
+        "status": "assigned"
+    }).fetch();
+
+    var assignedTimestamp = 0
+    for (var i = 0; i < assignmentEntryList.length; i++) {
+        if (assignmentEntryList[i]['timestamp'] > assignedTimestamp) {
+            assignedTimestamp = assignmentEntryList[i]['timestamp'];
+        }
+    }
+    var completedTimestamp = new Date().getTime();
+
     clcUserHistory.insert({
         "workerId": workerId,
         "assignmentId": assignmentId,
@@ -226,7 +279,8 @@ recordPairwisePaperCompletion = function() {
         "paper_title_1": glob.currPaperTitleList[0],
         "paper_md5_id_2": glob.currPaperMd5IdList[1],
         "paper_title_2": glob.currPaperTitleList[1],
-        "timestamp": new Date().getTime()
+        "timestamp": completedTimestamp,
+        "duration": completedTimestamp - assignedTimestamp
     });
     var entryId = clcPaper.findOne({ "paper_exp_id": glob.currPaperExpIdList[0] })._id;
     clcPaper.update({ "_id": entryId }, {

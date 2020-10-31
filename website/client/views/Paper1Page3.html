@@ -35,7 +35,7 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Question 7</b> and <b>Question 8</b> ask you to select some sentences. Read the questions and then click the “Start selection” button below to enable sentence selection in the material. After clicking on a sentence, select from the dropdown menu which question the sentence is selected for. After finishing selecting sentences for both questions, please click the “Confirm selection” button. 
                 </p>
             <div id='method-selection-feedback' style="visibility: hidden; text-align: center; padding: 3px 12px; margin: 3px;">
-                <b class="text-success">Confirmed, good job! If you want to make any changes, please click the "Restart selection" button.</b>
+                <b class="text-success">Confirmed, good job! If you want to make any changes, please click the "Resume selection" button.</b>
             </div>
             <div style="text-align: center;">
                 <a href="#" role="button" class="btn btn-primary" id="method-selection-start-button" style="font-weight: bold; width: 20%;" aria-disabled="false">Start selection</a>
@@ -109,7 +109,7 @@
                 </div>
             </div>
             <br />
-            <div class="row container"></div>
+            <div class="row container" id="predictionProbability-div" name="predictionProbability-div"></div>
             <p></p>
             <label for="predictionProbability">
                 <b>
@@ -192,7 +192,7 @@
             <br />
             <label>
                 <b>
-                    11. How do you feel that the findings/claims of the whole paper may
+                    11. How do you feel that the findings/claims of the paper may
                     hold in other scenarios besides the scenario tested in the above
                     experiment?
                 </b>
@@ -251,16 +251,26 @@
         </div>
     </div>
     {{> PopupWarning id="method-popup-warning-Q7-1" text="You have not selected any sentence for Question 7 yet! Please select ONE sentence for this question!"}}
+
     {{> PopupWarning id="method-popup-warning-Q7-2" text="You have selected more than one sentences for Question 7. Please select ONLY ONE sentence for this question!"}}
+
     {{> PopupWarning id="method-popup-warning-Q8-1" text="You have selected less than THREE sentences as asked by Question 8!"}}
+
     {{> PopupWarning id="method-popup-warning-Q8-2" text="You have selected more than THREE sentences for Question 8. Please select exactly THREE sentences for this question!"}}
-    {{> PopupWarning id="method-popup-warning-checkbox" text="You indicated in the Question 7's checkbox that there is no fit sentence for Question 7. If you find one fit sentence and want to select it, please uncheck the checkbox first."}}
-    <div id="popup-warning-moving-bar" name="popup-warning-moving-bar" class="overlay">
+
+    {{> PopupWarning id="method-popup-warning-checkbox" text="You indicated in the Question 7's checkbox that there was no suitable sentence for Question 7. If you find one suitable sentence and want to select it, please uncheck the checkbox first."}}
+
+    {{> PopupWarning id="method-popup-warning-checkbox-2" text='As you have already confirmed your sentence selection, to uncheck the checkbox please first click the "Resume selection" button and then uncheck the checkbox.'}}
+
+    {{> PopupWarning id="popup-warning-moving-bar" text='Please make a prediction in Question 10 using the slider.' exitTo="#predictionProbability-div"
+    }}
+
+    <!--div id="popup-warning-moving-bar" name="popup-warning-moving-bar" class="overlay">
         <div class="popup alert alert-info">
             <a id="popup-warning-moving-bar-close" class="close">&times;</a>
             <div>
                 Please make a prediction in Question 10 using the slider.
             </div>
         </div>
-    </div>
+    </div-->
 </template>
