@@ -1,0 +1,224 @@
+<template name="Paper1Page2">
+    {{>ProgressBar}}
+    {{>Title title}}
+    <form>
+        <!--h5 class="text-center">
+            Please read the following material and answer questions.
+        </h5-->
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <h5 id="studyTitle">
+                Loading Title...
+            </h5>
+        </div>
+        <br />
+        <h5>
+            <b>Instruction: </b>
+            The abstract of a paper summarizes the paper. Read the abstract of this paper and answer the questions below.
+        </h5>
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <p id="abstractText" name="abstractText">
+                Loading...
+            </p>
+        </div>
+        <br />
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <div id="sentence-selection-instruction">
+                <!-- This div serves as an anchor of a popup warning's close button-->
+            </div>
+            <label id="abstract-q3-label" name="abstract-q3-label">
+                <b>
+                    1. Please select a single sentence in the abstract that best describes the <span class="text-success">main findings/claims</span> of the paper.
+                </b>
+                <!--br />
+                <p style="padding: 3px 12px">
+                    Please click "Start selection" button below to enable sentence selection in the abstract. After your selection, a "Confirm selection" buttom will appear here. Please click it to complete the question.
+                </p-->
+            </label>
+            <div id="abstract-q3-display" class="card" style=" padding: 6px 12px; color:#4B5057;">
+                Loading...
+            </div>
+            <div id='abstract-q3-feedback' style="visibility: hidden; margin: 3px; padding: 3px 12px; text-align: center;">
+                <b class="text-success">Confirmed, good job! If you want to make any changes, please click the "Resume selection" button.</b>
+            </div>
+            <!--div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="abstract-q3-switch" style="font-weight: bold; width: 25%;">Start selection</a>
+            </div-->
+            <div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="abstract-q3-start-button" style="font-weight: bold; width: 15%;" aria-disabled="false">Start selection</a>
+                <a href="#" role="button" class="btn btn-sm btn-warning disabled" id="abstract-q3-confirm-button" style="font-weight: bold; width: 15%;" aria-disabled="true">Confirm selection</a>
+            </div>
+            <br />
+            <label>
+                <b>
+                    2. In the abstract, how many phrases or terms are NOT familiar to you?
+                </b>
+            </label>
+            <div class="container">
+                <div class="form-row m-1">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar0" value="0" required />
+                        <label class="form-check-label" for="unfamiliar0">
+                            0
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar1to2" value="1 or 2" required />
+                        <label class="form-check-label" for="unfamiliar1to2">
+                            1 or 2
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar3to4" value="3 or 4" />
+                        <label class="form-check-label" for="unfamiliar3to4">
+                            3 or 4
+                        </label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="radio" name="unfamiliarTerms" id="unfamiliar5orMore" value="5 or more" />
+                        <label class="form-check-label" for="unfamiliar5orMore">
+                            5 or more
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <label for="unfamiliarTermsUserInput">
+                <b>
+                    3. Please write down one or two phrases or terms that are the LEAST familiar to you.
+                </b>
+            </label>
+            <textarea class="form-control" id="unfamiliarTermsUserInput" rows="1" placeholder="Type Here." autocomplete="off" required></textarea>
+            <p style="padding: 3px 12px;">Separate by comma "," . Type "N/A" if there is no unfamiliar terms for you.</p>
+            <label>
+                <b>
+                    4. How much do you understand the
+                    <span class="text-success">main findings/claims</span> of the study
+                    after reading the abstract
+                </b>
+            </label>
+            <div class="container">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaimUnderstand" id="mainClaimsGeneralVeryClear" value="4" required />
+                    <label class="form-check-label" for="mainClaimsGeneralVeryClear">
+                        It is very clear to me what the study has found.
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaimUnderstand" id="mainClaimsGeneralIdeas" value="3" />
+                    <label class="form-check-label" for="mainClaimsGeneralIdeas">
+                        I have some general ideas about what the study has found but still find
+                        some places unclear
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaimUnderstand" id="mainClaimsNotSure" value="2" />
+                    <label class="form-check-label" for="mainClaimsNotSure">
+                        I am not so sure about what the study has found, but I can make a rough
+                        guess
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="mainClaimUnderstand" id="mainClaimsNoIdea" value="1" />
+                    <label class="form-check-label" for="mainClaimsNoIdea">
+                        I have no idea what the study attempts to achieve
+                    </label>
+                </div>
+            </div>
+            <br />
+            <label for="mainClaimsUserInput">
+                <b>
+                    5. Use <span class="text-success">your own language</span> to briefly describe the <span>main findings/claims</span> of the paper. Make your best guess if necessary.
+                </b>
+            </label>
+            <textarea class="form-control" id="mainClaimsUserInput" rows="3" placeholder="Write with your own language. Do not copy from the material." autocomplete="off" required></textarea>
+            <br />
+            <label>
+                <b>
+                    6. Do you find the 
+                    <span>main findings/claims</span> surprising?
+                </b>
+            </label>
+            <div class="container">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceCompletelyContradict" value="1" required />
+                    <label class="form-check-label" for="ContradictCompletelyContradict">
+                        Completely surprising
+                    </label>
+                    <br />
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceSomewhatContradict" value="2" />
+                    <label class="form-check-label" for="ContradictSomewhatContradict">
+                        Somewhat surprising
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceSomewhatSupport" value="4" />
+                    <label class="form-check-label" for="ContradictSomewhatSupport">
+                        Somewhat unsurprising
+                    </label>
+                    <br />
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceCompletelySupport" value="5" />
+                    <label class="form-check-label" for="contradictCompletelySupport">
+                        Completely unsurprising
+                    </label>
+                </div>
+                <!--div class="form-row m-1"-->
+                <!--div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceCompletelyContradict" value="1" required />
+                    <label class="form-check-label" for="ContradictCompletelyContradict">
+                        Completely contradict
+                    </label>
+                    <br />
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceSomewhatContradict" value="2" />
+                    <label class="form-check-label" for="ContradictSomewhatContradict">
+                        Somewhat contradict
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceHardToSay" value="3" />
+                    <label class="form-check-label" for="ContradictHardToSay">
+                        Hard to say/no relevant experience
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceSomewhatSupport" value="4" />
+                    <label class="form-check-label" for="ContradictSomewhatSupport">
+                        Somewhat support
+                    </label>
+                    <br />
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceCompletelySupport" value="5" />
+                    <label class="form-check-label" for="contradictCompletelySupport">
+                        Completely Support
+                    </label>
+                </div-->
+                <!--/div-->
+            </div>
+            <br />
+        </div>
+        {{> BidirectNavigation nextText="Confirm and Proceed" nextPage ="Paper1Page3"
+        prevRemoved=true prevPage="Paper1Page1"}}
+    </form>
+    <div id="selection-overlay" name="selection-overlay" class="overlay-transparent">
+        <div id="highlightBox" class="bg-light border border-dark p-3">
+            <!--a id="toggleButton" class="btn btn-lg btn-warning" style="background-color: yellow;">
+                Select/Unselect
+            </a-->
+            {{> SentenceSelectionButton text="Select/Unselect" color="yellow" btnClass="btn-warning" highlight="1"}}
+            <a id="closeToggleButton" class="btn btn-lg btn-outline-danger">
+                X
+            </a>
+        </div>
+    </div>
+    {{> PopupWarning id="abstract-popup-warning-1" text="You have not selected any sentence yet! Please select ONE sentence for this question!" exitTo="#studyTitle"}}
+    {{> PopupWarning id="abstract-popup-warning-2" text="You have selected more than one sentences. Please select ONLY ONE sentence for this question!" exitTo="#studyTitle"}}
+</template>

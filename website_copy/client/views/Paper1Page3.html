@@ -1,0 +1,276 @@
+<template name="Paper1Page3">
+    {{>ProgressBar}}
+    {{>Title}}
+    <form>
+        <!--h5 class="text-center">
+            Please read the following material and answer questions.
+        </h5-->
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <h5 id="studyTitle">
+                Loading Title...
+            </h5>
+        </div>
+        <br />
+        <div>
+            <h5>
+                <b>Instruction: </b>
+                The material below describes one of the experiments that the authors ran to obtain the findings/claims in the abstract (previous page). Read the materials and answer questions 7-11.
+            </h5>
+        </div>
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <div id="test-text" name="test-text">
+                <p id="methodText" name="methodText" class="methodText">
+                    Loading...
+                </p>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="w-100 px-3 pt-3 border border-dark">
+            <div id="sentence-selection-instruction" class="card mb-3" style="padding: 6px 12px; background-color:Gainsboro;">
+                <p class="mb-0">
+                    <b>Sentence selection instruction: </b><br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b> Question 7</b> and <b>Question 8</b> ask you to select some sentences. Read the questions and then click the “Start selection” button below to enable sentence selection in the material. After clicking on a sentence, select from the dropdown menu which question the sentence is selected for. After finishing selecting sentences for both questions, please click the “Confirm selection” button. 
+                </p>
+            <div id='method-selection-feedback' style="visibility: hidden; text-align: center; padding: 3px 12px; margin: 3px;">
+                <b class="text-success">Confirmed, good job! If you want to make any changes, please click the "Resume selection" button.</b>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-primary" id="method-selection-start-button" style="font-weight: bold; width: 20%;" aria-disabled="false">Start selection</a>
+                <a href="#" role="button" class="btn btn-warning disabled" id="method-selection-confirm-button" style="font-weight: bold; width: 20%;" aria-disabled="true">Confirm selection</a>
+            </div>
+            <br />
+        </div>
+            <label id="method-q-main-claim-label" name="method-q-main-claim-label" for="method-q-main-claim">
+                <b>
+                    7. Please select a <span class="text-success">single</span> sentence that best describes what the experiment/study does? Such a sentence usually appears in a paragraph (if exists) before the "Method" section. If you think that there is no such a sentence, please check the box below.
+                </b>
+                <br />
+                <!--Such a sentence usually appears in a paragraph (if exists) before the "Method" section.-->
+            </label>
+            <div class="container">
+                <div class="form-group">
+                    <!--div class="form-check">
+                        <input class="form-check-input" type="radio" name="begining-paragraph-existence" id="begining-paragraph-exists" value="1" required checked="checked" />
+                        <label class="form-check-label" for="begining-paragraph-existence">
+                            There is a paragraph before the "Method" section.
+                        </label>
+                    </div-->
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="begining-paragraph-existence" id="begining-paragraph-NOT-exists" value="0" />
+                        <label class="form-check-label" for="begining-paragraph-existence">
+                            There is NO such a sentence.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div id="method-q-main-claim-display" class="card" style="display: block; padding: 6px 12px; color:#4B5057;">
+                Loading...
+            </div>
+            <!--div id='method-q-main-claim-feedback' style="visibility: hidden; text-align: center; padding: 3px 12px; margin: 3px;">
+                <b class="text-success">Confirmed, good job!</b>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" role="button" class="btn btn-sm btn-primary" id="method-q-main-claim-start-button" style="font-weight: bold; width: 15%;" aria-disabled="false">Start selection</a>
+                <a href="#" role="button" class="btn btn-sm btn-warning disabled" id="method-q-main-claim-confirm-button" style="font-weight: bold; width: 15%;" aria-disabled="true">Confirm selection</a>
+            </div-->
+            <br />
+            <div class="row container"></div>
+            <label id="method-q-main-step-label" name="method-q-main-step-label" for="method-main-claim">
+                <b>
+                    8. Please select <b class="text-success">three</b> sentences that best describe the most important steps of the experiment/study.
+                </b>
+                <p> More info: A "step" decribes what the authors do or what the participants are asked to do. The most important steps may appear in different sections of the material. (If there are multiple experiments/ studies/ trials/ treatments, please select sentences only for the first experiments/ studies/ trials/ treatments mentioned.)
+                </p>
+            </label>
+            <div id="method-q-main-step-display" class="card" style="display: block; padding: 6px 12px; color:#4B5057;">
+                Loading...
+            </div>
+            <!--div id='method-q-main-step-feedback' style="visibility: hidden; text-align: center; padding: 3px 12px;margin: 3px;">
+                <b class="text-success">Confirmed, good job!</b>
+            </div-->
+            <br />
+            <br />
+            <label for="participantRecruitCheck">
+                <b>
+                    9. How many participants were recruited in the experimental study?
+                </b>
+                <p>
+                Usually the number of participants is stated in natural language, but it may also be expressed using the common notation "n" (for example, n=33). If you cannot find the number of participants recruited, please type "0". </p>
+            </label>
+            <div class="row container">
+                <div style="width: 120px;">
+                    <input type="number" class="form-control" id="participantRecruitCheck" placeholder="0" required />
+                </div>
+                <div class="col-sm no-gutters">
+                    <label for="participantRecruitCheck">Participants</label>
+                </div>
+            </div>
+            <br />
+            <div class="row container" id="predictionProbability-div" name="predictionProbability-div"></div>
+            <p></p>
+            <label for="predictionProbability">
+                <b>
+                    10. If the same type of experiments are re-performed, what probability
+                    do you assign that the findings presented in the abstract will be
+                    observed? Make your best prediction from 0% (not likely at all) to 100
+                    % (with certainty the same finding).
+                </b>
+                <div style="display: inline-block; padding: 0.2em;">
+                    <a href="#" role="button" id="show-abstract-button" class="btn btn-outline-primary btn-sm" style="width: 8em;">Show abstract</a>
+                </div>
+            </label>
+            <div id="show-abstract" class="collapsible">
+                <div id="abstractText" class="card card-body" style="display: block; padding: 6px 12px; color:#4B5057;">
+                    Loading...
+                </div>
+                <br>
+            </div>
+            <input type="range" id="predictionProbability" required />
+            <!-- <input type="range" class="custom-range" /> -->
+            <label for="predictionProbability">Your prediction: <span id="predictionProbabilityValue"></span>%
+            </label>
+            <script>
+                var slider = document.getElementById("predictionProbability");
+        var output = document.getElementById("predictionProbabilityValue");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+          output.innerHTML = this.value;
+          bar_status = "changed";
+        };
+      </script>
+            <style>
+                /*Chrome*/
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+          input[type="range"] {
+            overflow: hidden !important;
+
+            width: 100% !important;
+            -webkit-appearance: none !important;
+            background-color: #e9ecef !important;
+          }
+
+          input[type="range"]::-webkit-slider-runnable-track {
+            height: 1em !important;
+            -webkit-appearance: none !important;
+            color: #007bff !important;
+            margin-top: -1px !important;
+          }
+
+          input[type="range"]::-webkit-slider-thumb {
+            width: 1em !important;
+            -webkit-appearance: none !important;
+            height: 1em !important;
+            cursor: ew-resize !important;
+            background: #007bff !important;
+            box-shadow: -50vw 0 0 50vw #90bae8 !important;
+          }
+        }
+
+        /** FF*/
+        input[type="range"]::-moz-range-progress {
+          background-color: #007bff !important;
+        }
+
+        input[type="range"]::-moz-range-track {
+          background-color: #e9ecef !important;
+        }
+
+        /* IE*/
+        input[type="range"]::-ms-fill-lower {
+          background-color: #007bff !important;
+        }
+
+        input[type="range"]::-ms-fill-upper {
+          background-color: #e9ecef !important;
+        }
+      </style>
+            <br />
+            <br />
+            <label>
+                <b>
+                    11. How do you feel that the findings/claims of the paper may
+                    hold in other scenarios besides the scenario tested in the above
+                    experiment?
+                </b>
+            </label>
+            <div class="container">
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioNo" value="1" required />
+                        <label class="form-check-label" for="otherScenarioNo">
+                            The claims/findings will probability NOT hold in other scenarios.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioMaybe" value="2" required />
+                        <label class="form-check-label" for="otherScenarioMaybe">
+                            The claims/findings may partially hold in some similar scenarios.
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="otherScenarioEstimate" id="otherScenarioTrue" value="3" required />
+                        <label class="form-check-label" for="otherScenarioTrue">
+                            The claims/findings will hold to be true in many other similar
+                            scenarios.
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+        <style>
+        .highlight {
+            background-color: yellow;
+        }
+
+        #test-text::-moz-selection {
+            /* Code for Firefox */
+
+            background: yellow;
+        }
+
+        #test-text::selection {
+            background: yellow;
+        }
+        </style>
+        {{> BidirectNavigation nextText="Confirm and Proceed" nextPage
+        ="Pair1Page1" prevRemoved=true prevPage="Paper1Page2"}}
+    </form>
+    <div id="selection-overlay" name="selection-overlay" class="overlay-transparent">
+        <div id="highlightBox" class="bg-light border border-dark p-3">
+            {{> SentenceSelectionButton text="Select/Unselect for " boldText="Q7" color="yellow" btnClass="btn-warning" highlight="1"}}
+            <a id="closeToggleButton" class="btn btn-lg btn-outline-danger">
+                X
+            </a>
+            <p style="padding: 0; margin: 3px;"> </p>
+            {{> SentenceSelectionButton text="Select/Unselect for " boldText="Q8" color="lime" btnClass="btn-success" highlight="2"}}
+        </div>
+    </div>
+    {{> PopupWarning id="method-popup-warning-Q7-1" text="You have not selected any sentence for Question 7 yet! Please select ONE sentence for this question!"}}
+
+    {{> PopupWarning id="method-popup-warning-Q7-2" text="You have selected more than one sentences for Question 7. Please select ONLY ONE sentence for this question!"}}
+
+    {{> PopupWarning id="method-popup-warning-Q8-1" text="You have selected less than THREE sentences as asked by Question 8!"}}
+
+    {{> PopupWarning id="method-popup-warning-Q8-2" text="You have selected more than THREE sentences for Question 8. Please select exactly THREE sentences for this question!"}}
+
+    {{> PopupWarning id="method-popup-warning-checkbox" text="You indicated in the Question 7's checkbox that there was no suitable sentence for Question 7. If you find one suitable sentence and want to select it, please uncheck the checkbox first."}}
+
+    {{> PopupWarning id="method-popup-warning-checkbox-2" text='As you have already confirmed your sentence selection, to uncheck the checkbox please first click the "Resume selection" button and then uncheck the checkbox.'}}
+
+    {{> PopupWarning id="popup-warning-moving-bar" text='Please make a prediction in Question 10 using the slider.' exitTo="#predictionProbability-div"
+    }}
+
+    <!--div id="popup-warning-moving-bar" name="popup-warning-moving-bar" class="overlay">
+        <div class="popup alert alert-info">
+            <a id="popup-warning-moving-bar-close" class="close">&times;</a>
+            <div>
+                Please make a prediction in Question 10 using the slider.
+            </div>
+        </div>
+    </div-->
+</template>

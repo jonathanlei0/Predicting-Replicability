@@ -1,0 +1,221 @@
+<template name="ExitSurvey">
+    {{>ProgressBar}}
+    {{>Title title="Exit Survey"}}
+    <br />
+    <h5>
+        Please help us know your background.
+    </h5>
+    <form action="javascript:void(0);">
+        <ol>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">What is your age?</p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyAge" id="agesUnder18" value="Under 18" required />
+                        <label class="form-check-label" for="agesUnder18">
+                            Under 18
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyAge" id="ages18to24" value="18-24 years old" />
+                        <label class="form-check-label" for="ages18to24">
+                            18-24 years old
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyAge" id="ages25to34" value="25-34 years old" />
+                        <label class="form-check-label" for="ages25to34">
+                            25-34 years old
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyAge" id="ages35to44" value="35-44 years old" />
+                        <label class="form-check-label" for="ages35to44">
+                            35-44 years old
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyAge" id="age45to55" value="45-54 years old" />
+                        <label class="form-check-label" for="age45to55">
+                            45-54 years old
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyAge" id="ageOver54" value="Over 54" />
+                        <label class="form-check-label" for="ageOver54">
+                            Over 54
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">Your Gender:<br /></p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyGenders" id="female" value="Female" required />
+                        <label class="form-check-label" for="female">
+                            Female
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyGenders" id="male" value="Male" />
+                        <label class="form-check-label" for="male">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyGenders" id="other" value="Other" />
+                        <label class="form-check-label" for="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">Your highest education background:<br /></p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyDegree" id="Undergraduate" value="Undergraduate student or below" required />
+                        <label class="form-check-label" for="highschool">
+                            Undergraduate student or below
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyDegree" id="bachelor" value="Bachelor" />
+                        <label class="form-check-label" for="bachelor">
+                            Bachelor
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyDegree" id="master" value="Master or equivalent in your discipline" />
+                        <label class="form-check-label" for="phd">
+                            Master or equivalent in your discipline
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyDegree" id="doctoralstudent" value="Doctoral student" />
+                        <label class="form-check-label" for="doctoralstudent">
+                            Doctoral student
+                        </label>
+                    </div>
+                    <br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyDegree" id="phd" value="Ph.D. or equivalent in your discipline" />
+                        <label class="form-check-label" for="phd">
+                            Ph.D. or equivalent in your discipline
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">Do you have any degree (Bachelor, Master, or Doctoral degree) in any social science subjects (psychology, economics, sociology, law, business, etc.)?<br /></p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveySocSciRelated" id="ssyes" value="1" required />
+                        <label class="form-check-label" for="ssyes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveySocSciRelated" id="ssno" value="0" />
+                        <label class="form-check-label" for="ssno">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">
+                        Have you heard about any research project about the replicability of social studies like the Social Science Replication Project (SSRP), Many Lab (ML), Experimental Economics Replication Project (EERP), Reproducibility Project: Psychology (RPP), etc?<br />
+                    </p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyKnowSSRP" id="pryes" value="1" required />
+                        <label class="form-check-label" for="pryes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyKnowSSRP" id="prno" value="0" />
+                        <label class="form-check-label" for="prno">
+                            No
+                        </label>
+                    </div>
+                    <br />
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">Have you heard about any of the two papers you just read before?<br /></p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="knewPaperAssigned" id="hryes" value="1" required />
+                        <label class="form-check-label" for="hryes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="knewPaperAssigned" id="hrno" value="0" />
+                        <label class="form-check-label" for="hrno">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <p style="font-weight: bold;">Please rate your experience of this online experiment from very bad (1) to excellent (5)?<br /></p>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyHITExperience" id="HIT-experience-1" value="1" />
+                        <label class="form-check-label">
+                            1 (very bad)
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyHITExperience" id="HIT-experience-2" value="2" />
+                        <label class="form-check-label">
+                            2
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyHITExperience" id="HIT-experience-3" value="3" />
+                        <label class="form-check-label">
+                            3
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyHITExperience" id="HIT-experience-4" value="4" />
+                        <label class="form-check-label">
+                            4
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="exitSurveyHITExperience" id="HIT-experience-5" value="5" />
+                        <label class="form-check-label">
+                            5 (excellent)
+                        </label>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="form-group">
+                    <label for="exit-survey-bug">
+                        <b>(Optional) Please let us know how we could improve the experience of this online experiment (including any bugs or typos).
+                        </b>
+                    </label>
+                    <textarea class="form-control" id="exitSurveySuggestion" rows="3" placeholder="Type here. We appreciate your valuable suggestions very much! :-)" autocomplete="off"></textarea>
+                    <br />
+                </div>
+            </li>
+        </ol>
+        {{> BidirectNavigation nextPage="ExperimentEnd" nextText="Finish!"
+        prevRemoved=true}}
+    </form>
+</template>
