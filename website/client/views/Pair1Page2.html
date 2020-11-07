@@ -100,7 +100,7 @@
                 </div>
             </div>
             <!--label><b>Please briefly describe the reason of your choice:</b></label-->
-            <textarea class="form-control" id="pairwiseReplicationReason" rows="2" placeholder="Type your reasons here." required></textarea>
+            <textarea class="form-control" id="pairwiseReplicationReason" rows="2" placeholder="Try your best to give your reasons here." required></textarea>
             <br />
             <label>
                 <b>
@@ -127,9 +127,80 @@
                 </div>
             </div>
             <br />
+            <label>
+                <b>
+                    3. Please rate the general difficulty level of answering each paper's questions to you using the descriptive options below.
+                </b>
+            </label>
+            <p class="ml-4">
+                1 = The paper's material is <b class="text-success">easy</b> for me to grasp, and I'm <b class="text-warning">generally confident</b> about my answers.<br />
+                2 = I need to <b class="text-success">devote some effort</b> to understand the paper's material, but I am <b class="text-warning">(somewhat) confident</b> about my answers. <br />
+                3 = I need to <b class="text-success">devote effort</b> to understand the paper's material, and I am <b class="text-warning">somewhat unsure</b> about my answers. <br />
+                4 = The paper's material is very <b class="text-success">difficult</b> for me to grasp, and I <b class="text-warning">can only try my best</b> to answer the questions.
+            </p>
+            <div class="form-row m-1">
+                <div class="form-check col">
+                    <b style="display: inline-block; vertical-align: top;">Paper 1: </b>
+                    <div style="display: inline-block;">
+                        <div class="form-check form-check-inline ml-3">
+                            <input class="form-check-input" type="radio" name="pairwisePaper1Difficulty" id="paper1Easy" value="1" required />
+                            <label class="form-check-label" for="paper1Easy">
+                                1
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pairwisePaper1Difficulty" id="paper1SomewhatEasy" value="2" />
+                            <label class="form-check-label" for="paper1SomewhatEasy">
+                                2
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pairwisePaper1Difficulty" id="paper1SomewhatHard" value="3" />
+                            <label class="form-check-label" for="paper1SomewhatHard">
+                                3
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pairwisePaper1Difficulty" id="paper1Hard" value="4" />
+                            <label class="form-check-label" for="judgpaper1HardeStudy2">
+                                4
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-check col">
+                    <b style="display: inline-block; vertical-align: top;">Paper 2: </b>
+                    <div style="display: inline-block;">
+                        <div class="form-check form-check-inline ml-3">
+                            <input class="form-check-input" type="radio" name="pairwisePaper2Difficulty" id="paper2Easy" value="1" required />
+                            <label class="form-check-label" for="paper2Easy">
+                                1
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pairwisePaper2Difficulty" id="paper2SomewhatEasy" value="2" />
+                            <label class="form-check-label" for="paper2SomewhatEasy">
+                                2
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pairwisePaper2Difficulty" id="paper2SomewhatHard" value="3" />
+                            <label class="form-check-label" for="paper2SomewhatHard">
+                                3
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="pairwisePaper2Difficulty" id="paper2Hard" value="4" />
+                            <label class="form-check-label" for="judgpaper2HardeStudy2">
+                                4
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <label class="pr-3 pt-2">
                 <b>
-                    3. Please choose one paper to do the following task:
+                    4. Please choose one paper to do the following task:
                 </b>
             </label>
             <div class="form-check form-check-inline">
@@ -147,7 +218,7 @@
             <br />
             <span class="d-inline" id="chosenStudyText" style="visibility: hidden;">You chose the paper: "<b class="d-inline" id="chosenStudy"></b>"
             </span>
-            <p> Use a few sentences to describe, according to your understanding, how the given experiment of the paper is set up in a way to help discover or test the findings/claims of the paper?
+            <p> Try your best to describe with a few sentences how the given experiment of the paper, according to your understanding, is set up in a way to help discover or test the findings/claims of the paper?
             </p>
             <script>
             function studyUpdate(paperNo) {
