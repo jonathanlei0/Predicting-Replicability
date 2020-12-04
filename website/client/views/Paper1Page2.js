@@ -66,5 +66,20 @@ Template.Paper1Page2.events({
             location.href = "#";
             location.href = "#abstract-popup-warning-2";
         }
+    },
+
+    'click .show-example-button': function(event, instance) {
+        event.preventDefault();
+        var button = event.currentTarget;   
+        var id = button.id.replace('-button','');
+        var element = document.getElementById(id);
+        if (button.innerHTML.toLowerCase().includes('show')) {
+            element.style.maxHeight = element.scrollHeight + 'px';
+            button.innerHTML = "Hide example";
+        } else {
+            element.style.maxHeight = null;
+            button.innerHTML = "Show example";
+        }
+
     }
 })

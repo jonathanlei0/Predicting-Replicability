@@ -32,10 +32,24 @@
                 <b>
                     1. Please select a single sentence in the abstract that best describes the <span class="text-success">main findings/claims</span> of the paper.
                 </b>
-                <!--br />
-                <p style="padding: 3px 12px">
-                    Please click "Start selection" button below to enable sentence selection in the abstract. After your selection, a "Confirm selection" buttom will appear here. Please click it to complete the question.
-                </p-->
+                <div style="display: inline-block; padding: 0.2em;">
+                    <a href="#" role="button" id="show-example1-button" class="btn btn-outline-primary btn-sm show-example-button" style="width: 8em;">Show example</a>
+                </div>
+                <div id="show-example1" class="collapsible">
+                    <div class="card card-body" style="display: block; padding: 6px 12px; color:#4B5057;">
+                        <h5>Example:</h5>
+                        <b>Abstract:</b> We propose a self-control analysis of the role of availability in valuation. We explored the hypothesis that, when temptation becomes available, counteractive self-control processes render it less valuable. We found evidence for devaluation of available temptation among gym users before they choose to forgo an unhealthy snack rather than after they make their choice (Study 1), and among students evaluating leisure activities when their decision to enroll in an uninteresting class is reversible rather than irreversible (Study 2). <br />
+                        <b class="text-success">Good selection #1:</b> We explored the hypothesis that, when temptation becomes available, counteractive self-control processes render it less valuable. <br />
+                        <b class="text-success">Good selection #2:</b> We found evidence for devaluation of available temptation among gym users before they choose to forgo an unhealthy snack rather than after they make their choice (Study 1), and among students evaluating leisure activities when their decision to enroll in an uninteresting class is reversible rather than irreversible (Study 2).<br />
+                        <b class="text-danger">Improper selection:</b> We propose a self-control analysis of the role of availability in valuation.
+                        <h5>Example:</h5>
+                        <b>Abstract:</b> Snakes are among the most common targets of fears and phobias. In visual detection tasks, adults detect their presence more rapidly than the presence of other kinds of visual stimuli. We report evidence that very young children share this attentional bias. In three experiments, preschool children and adults were asked to find a single target picture among an array of eight distractors. Both the children and the adults detected snakes more rapidly than three types of nonthreatening stimuli (flowers, frogs, and caterpillars). These results provide the first evidence of enhanced visual detection of evolutionarily relevant threat stimuli in young children. <br />
+                        <b class="text-success">Good selection #1:</b> These results provide the first evidence of enhanced visual detection of evolutionarily relevant threat stimuli in young children.<br />
+                        <b class="text-success">Good selection #2:</b> Both the children and the adults detected snakes more rapidly than three types of nonthreatening stimuli (flowers, frogs, and caterpillars).<br />
+                        <b>Other sentences either describe a general fact or a finding of previous works, but not the findings of this paper, or contain too little useful information by itself alone.</b>
+                    </div>
+                    <br>
+                </div>
             </label>
             <div id="abstract-q3-display" class="card" style=" padding: 6px 12px; color:#4B5057;">
                 Loading...
@@ -130,14 +144,32 @@
             <br />
             <label for="mainClaimsUserInput">
                 <b>
-                    5. Use <span class="text-success">your own language</span> to briefly describe the <span>main findings/claims</span> of the paper. Make your best guess if necessary.
+                    5. Use <span class="text-success">your own language</span> to briefly describe the <span>main results/claims</span> of the paper. Make your best guess if necessary.
                 </b>
+                <div style="display: inline-block; padding: 0.2em;">
+                    <a href="#" role="button" id="show-example2-button" class="btn btn-outline-primary btn-sm show-example-button" style="width: 8em;">Show example</a>
+                </div>
+                <div id="show-example2" class="collapsible">
+                    <div class="card card-body" style="display: block; padding: 6px 12px; color:#4B5057;">
+                        <h5>Example:</h5>
+                        <b>Abstract:</b> We propose a self-control analysis of the role of availability in valuation. We explored the hypothesis that, when temptation becomes available, counteractive self-control processes render it less valuable. We found evidence for devaluation of available temptation among gym users before they choose to forgo an unhealthy snack rather than after they make their choice (Study 1), and among students evaluating leisure activities when their decision to enroll in an uninteresting class is reversible rather than irreversible (Study 2). <br />
+                        <b class="text-success">Good description:</b> The study suggests that a person values temptation less when he/she can access the temptation than when he/she cannot.<br />
+                        <b class="text-danger">Improper description #1:</b> Students value leisure activities more when they cannot change the enrollment decision of an uninteresting class than when they can still choose to enroll in a dull class or not. (<b>This is a good guess and interpretation of one of the two experimental observations of the study, but does not give the main discovery the study aims to show.</b>)<br />
+                        <b class="text-danger">Improper description #2:</b> Gym users are more likely to dislike unhealthy snacks. (<b>This is not mentioned by the abstract at all.</b>)
+                        <h5>Example:</h5>
+                        <b>Abstract:</b> Snakes are among the most common targets of fears and phobias. In visual detection tasks, adults detect their presence more rapidly than the presence of other kinds of visual stimuli. We report evidence that very young children share this attentional bias. In three experiments, preschool children and adults were asked to find a single target picture among an array of eight distractors. Both the children and the adults detected snakes more rapidly than three types of nonthreatening stimuli (flowers, frogs, and caterpillars). These results provide the first evidence of enhanced visual detection of evolutionarily relevant threat stimuli in young children. <br />
+                        <b class="text-success">Good description:</b> The study suggests that very young children detect threatening objects faster than non-threatening objects, just as the phenomena found in adults.<br />
+                        <b class="text-danger">Improper description #1:</b>Snakes are detected by both the children and the adults more rapidly than flowers, frogs, and caterpillars. (<b>This is what the study observes in the experiments, but this observation itself is not the knowledge the study aims to discover.</b>)<br />
+                        <b class="text-danger">Improper description #2:</b> Snakes are deeply rooted fear in children and adults. (<b>This is not the main claim the study wants to show.</b>)
+                    </div>
+                    <br>
+                </div>
             </label>
             <textarea class="form-control" id="mainClaimsUserInput" rows="3" placeholder="Write with your own language. Do not copy from the material." autocomplete="off" required></textarea>
             <br />
             <label>
                 <b>
-                    6. Do you find the 
+                    6. Do you find the
                     <span>main findings/claims</span> surprising?
                 </b>
             </label>
@@ -168,40 +200,6 @@
                         Completely unsurprising
                     </label>
                 </div>
-                <!--div class="form-row m-1"-->
-                <!--div class="form-check">
-                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceCompletelyContradict" value="1" required />
-                    <label class="form-check-label" for="ContradictCompletelyContradict">
-                        Completely contradict
-                    </label>
-                    <br />
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceSomewhatContradict" value="2" />
-                    <label class="form-check-label" for="ContradictSomewhatContradict">
-                        Somewhat contradict
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceHardToSay" value="3" />
-                    <label class="form-check-label" for="ContradictHardToSay">
-                        Hard to say/no relevant experience
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceSomewhatSupport" value="4" />
-                    <label class="form-check-label" for="ContradictSomewhatSupport">
-                        Somewhat support
-                    </label>
-                    <br />
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="personalExperience" id="ExperienceCompletelySupport" value="5" />
-                    <label class="form-check-label" for="contradictCompletelySupport">
-                        Completely Support
-                    </label>
-                </div-->
-                <!--/div-->
             </div>
             <br />
         </div>
